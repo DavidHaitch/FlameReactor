@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flames>
+  <flame version="EMBER-WIN-1.0.0.21" time="0" name="Solar" size="1280 720" center="-0.0746076 0.109377" scale="750" rotate="20" supersample="2" filter="0.5" filter_shape="gaussian" temporal_filter_type="box" temporal_filter_width="1" quality="1000" temporal_samples="100" sub_batch_size="10240" fuse="30" rand_range="1" background="0 0 0" brightness="1000" gamma="50" highlight_power="-1" logscale_k2="0" vibrancy="1" estimator_radius="0" estimator_minimum="0" estimator_curve="0.4" gamma_threshold="0" cam_zpos="0" cam_persp="0" cam_yaw="0" cam_pitch="0" cam_dof="0" blur_curve="0" palette_mode="linear" interpolation="linear" interpolation_type="log" plugins="loonie pre_bwraps pre_loonie pre_Mobius oscilloscope" new_linear="1" curves="0 0 1 0.287879 0.242424 1 0.5 0.5 1 0.742424 0.792929 1 0 0 1 0.25 0.25 1 0.5 0.5 1 0.75 0.75 1 0 0 1 0.25 0.25 1 0.5 0.5 1 0.75 0.75 1 0 0 1 0.25 0.25 1 0.555556 0.454545 1 0.75 0.75 1 " overall_curve="0 0 0.287879 0.242424 0.5 0.5 0.742424 0.792929 1 1 " red_curve="0 0 0.25 0.25 0.5 0.5 0.75 0.75 1 1 " green_curve="0 0 0.25 0.25 0.5 0.5 0.75 0.75 1 1 " blue_curve="0 0 0.25 0.25 0.555556 0.454545 0.75 0.75 1 1 ">
+    <xform weight="1" color="0.961131" var_color="1" color_speed="0.503937" symmetry="-0.00787401" name="Iterator_1" animate="1" loonie="0.5" coefs="1 0 6.12323e-17 1 -1 -1" opacity="1" blur="0"/>
+    <xform weight="1" color="0.985857" var_color="1" color_speed="0.725074" symmetry="-0.450148" name="Iterator_2" animate="1" pre_bwraps="1" pre_bwraps_cellsize="2" pre_bwraps_space="-0.5" pre_bwraps_gain="1" pre_bwraps_inner_twist="2" pre_bwraps_outer_twist="1.57" pre_loonie="1" loonie="0.5" coefs="1 0 6.12323e-17 1 1 -1" opacity="1" blur="0"/>
+    <xform weight="1" color="0.0987857" var_color="1" color_speed="0.481588" symmetry="0.036824" name="Iterator_3" animate="1" loonie="0.5" coefs="1 0 6.12323e-17 1 -1 1" opacity="1" blur="0"/>
+    <xform weight="1" color="0.335233" var_color="1" color_speed="0.310537" symmetry="0.378926" name="Iterator_4" animate="1" loonie="0.5" coefs="1 0 6.12323e-17 1 1 1" opacity="1" blur="0"/>
+    <finalxform color="0" var_color="1" color_speed="0" symmetry="1" name="Camera" animate="0" pre_Mobius="1" pre_Mobius_Re_A="1" pre_Mobius_Im_A="0.5" pre_Mobius_Re_B="0.2" pre_Mobius_Im_B="0.05" pre_Mobius_Re_C="0.5" pre_Mobius_Im_C="0" pre_Mobius_Re_D="1" pre_Mobius_Im_D="0.45" oscilloscope="1" oscilloscope_separation="0.2" oscilloscope_frequency="-2" oscilloscope_amplitude="0.05" oscilloscope_damping="0" coefs="1 0 6.12323e-17 1 0 0" opacity="1"/>
+    <palette count="256" format="RGB">
+      8093BB52799A3F6282535349614F43BF5D1ED67919DA8B24
+      DE9721D7980DC48003C47C06D08416D98610DC7D13DB6A1A
+      CE571DCE4E1DCA5A1ACE5916C75D11CA6412D1790FD47D16
+      D1760DC96311C45E139E33294B32483643531A485F134464
+      214B712A576C296E8F3E8DB695B4D0BAD5EAB8D6EED0E6F4
+      F5CCB6EEC06AEAB251E8A83ADD9E2CDF8A20CF6318BF4D17
+      A9231A730A0F3830253B33263E382C4B43365F52499F8574
+      9DB0BF97ADBA54789A4A4353484733433F263B3525413831
+      4B443E7C6847D27F19D78F19DC990CDDA10BDA9D0EDB8B1C
+      D37918C36118A03D20443B1E2B2517070D090505052F060C
+      340A0E32030D3804066F0A02AD1F13C03B0EC85A1FD07325
+      A085724263823152752543693F434C524B41AC7F2AD89938
+      F1BB61F3D0B2D8F3FCC3E2FEB8D7F39EC0DC90ACC13480A4
+      27678B2D4476163C60082E52080C0F000A04030303060709
+      1B131028262B433930685046CA9B53E2AD39E8AD51E6C261
+      F5C98AB1C8D69DBFDB94B5D446AFDE2F749B1D536F174052
+      2C3B363B4135443A31483E3D643640C33132CA4A27C85A1F
+      D47519E09021EBA535E6AE33F7C42AF5D727F5D010F3D10E
+      E9C70DEAC11BECC019EFC012E8BE07E8AF00E5BA15E3AB18
+      D7A40AE39818E2A435E5AE37E5B048FBC362F8CB7AC6A68D
+      9FB9CA9FB9CA53799D2C6B8E2F4C743542383F392D49382E
+      9A1D19DB0706E80701E80A00AE280B911B1140382D3C3628
+      3933253930293A2D27362B27372A222F221C271E210D1E3C
+      1028580D3360193A5D3436313B322B3B2E28402E2A48381F
+      7607009009069014009E150DB12C19C14B1BD36C1DDD7E20
+      E18D1BD8811AD6821FD77D1CD27B1AD47D16D98610E48C1E
+      F49223EDAC38E7AD3FECAB35E1A533DFA036D78E27D17D25
+      C56A11C76212C65B0DBC5008BC3A08C4550DBE5A04C86104
+      C36908A35500513B16221817050505030000000000000800
+      000A0000030202020204040423060037090B7B2410AF410E
+      CB6D15D7911FD49828E19F24E78F21E38D26D46722CC3E18
+      B3340B852F16443230443F2C663C24B04116D19809C76A0A
+   </palette>
+    <edit date="Mon Apr 05 10:33:52 -0500 2021" action="edit">
+      <edit filename="C:/Users/dahud/FractoriumShepherd/Fractorium/Examples/triptychaos_examples.flame" index="2"/>
+    </edit>
+  </flame>
+</flames>

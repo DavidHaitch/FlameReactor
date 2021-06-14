@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flames>
+  <flame version="EMBER-WIN-21.21.4.1" time="0" name="Flame_2020-12-09-155548_2" size="1280 720" center="0 0" scale="190" rotate="0" supersample="2" filter="1" filter_shape="gaussian" temporal_filter_type="gaussian" temporal_filter_width="1" quality="1000" temporal_samples="100" sub_batch_size="10240" fuse="15" rand_range="1" background="0 0 0" brightness="4" gamma="4" highlight_power="1" logscale_k2="0" vibrancy="1" estimator_radius="0" estimator_minimum="0" estimator_curve="0.4" gamma_threshold="0.1" cam_zpos="0" cam_persp="0" cam_yaw="0" cam_pitch="0" cam_dof="0" blur_curve="0" palette_mode="linear" interpolation="linear" interpolation_type="log" plugins="linear pre_tile_hlp scry pre_ztranslate post_roundspher squirrel" new_linear="1" curves="0 0 1 0.25 0.25 1 0.5 0.5 1 0.75 0.75 1 0 0 1 0.25 0.25 1 0.5 0.5 1 0.75 0.75 1 0 0 1 0.25 0.25 1 0.5 0.5 1 0.75 0.75 1 0 0 1 0.25 0.25 1 0.5 0.5 1 0.75 0.75 1 " overall_curve="0 0 0.25 0.25 0.5 0.5 0.75 0.75 1 1 " red_curve="0 0 0.25 0.25 0.5 0.5 0.75 0.75 1 1 " green_curve="0 0 0.25 0.25 0.5 0.5 0.75 0.75 1 1 " blue_curve="0 0 0.25 0.25 0.5 0.5 0.75 0.75 1 1 ">
+    <xform weight="0.5" color="0" var_color="1" color_speed="1" symmetry="-1" name="" animate="1" linear="1" coefs="-0.004979 0.421426 -0.421426 -0.004979 -0.084591 0.382865" opacity="1" blur="0"/>
+    <xform weight="0.05" color="0.5" var_color="1" color_speed="0.5" symmetry="0" name="" animate="1" linear="1" coefs="0.0809068 0.0036998 0.651755 0.222123 0.182163 -0.275441" opacity="1" blur="0"/>
+    <xform weight="0.2" color="0.467867" var_color="1" color_speed="0.5" symmetry="0" name="" animate="1" pre_tile_hlp="0.85513" pre_tile_hlp_width="0.513867" linear="0.837441" scry="0.26138" coefs="-0.812759 -0.0361368 0.691429 -0.621294 0.812297 0.517792" post="0.992259 -0.22149 0.897602 -0.904509 -0.0728387 0.835832" opacity="1" blur="0"/>
+    <xform weight="0.2" color="0.537598" var_color="1" color_speed="0.5" symmetry="0" name="" animate="1" pre_ztranslate="-0.270857" linear="-0.689001" post_roundspher="-0.445146" coefs="0.913722 0.645276 -0.419063 -0.111086 0.560913 -0.227935" post="-0.81776 0.250298 0.800807 0.701462 0.922564 -0.907602" opacity="1" blur="0"/>
+    <xform weight="0.2" color="0.369988" var_color="1" color_speed="0.5" symmetry="0" name="" animate="1" linear="1" squirrel="1" squirrel_a="-0.0111194" squirrel_b="0.93761" coefs="0.116669 0.90936 0.653707 -0.0682521 -0.644519 -0.644035" post="0.38493 -0.897662 0.873033 0.264525 -0.949812 0.674739" opacity="1" blur="0">
+      <motion motion_frequency="8" motion_function="triangle" motion_offset="-9999" symmetry="19999" linear="0.5" squirrel="1" squirrel_a="1" squirrel_b="1"/>
+    </xform>
+    <finalxform color="1" var_color="1" color_speed="0.5" symmetry="0" name="" animate="1" linear="1" coefs="1 0 0 1 0 0" opacity="1">
+      <motion motion_frequency="16" motion_function="sin" motion_offset="-9999" symmetry="19999" spherical="0.3"/>
+    </finalxform>
+    <palette count="256" format="RGB">
+      4A50663A2898160F9112069A0B03961506A1110C9E1C4A9F
+      1F4EA613568D2A41632D344E393534453535464040485343
+      5E614E4855443D333B321F25272A212629222823273C292D
+      433D3F414E5F565F68814B6F93517F94618CA79A66939067
+      766F555B62685F60646E5457864A6CB9317BF3569DFA57A8
+      C040DBC10F7DC2075EC80A30BA001AB80F50A228416D3747
+      5D3F4B6C43516D47568257508E2B4A87343E682C3652292F
+      38343515265A0F106C0A078A221B9C422EB46651BAAC7BE4
+      B7A8DFD990E2DC8EE2D688FFD96CF9B454EB6D35D83714AE
+      141B6114141E00000A000004000002100408390F1153262B
+      861A3EBB2451DE194FB6356DB22397600EA0440CA5481395
+      81467C78575E8051479B2B3BBD1D29B51C21882029782835
+      613B48523339572D396B2C377E2134800309681D223B1B1C
+      2B1C211C11151A14141B1A161D1C1A2C212543282F4C2633
+      583E47545164545B6E4752664A4F6254454C4F46474F4345
+      473D45443458384862213C7303207C06057D04015C0A074E
+      19172414131912140F16110E1716141C171B2B20262A2756
+      543C9A7C30D18E34E38D57D3886BC8ADA696B6B19BA69A8E
+      9F7198A54DBB795FCA7D59C5915B8C6E5260544D544E4244
+      4F40434C404442373B422F3537342B35372C35372C3E3E34
+      524648765560995D5D9E5C608445746433B0622EC14519C4
+      3913B61F0BA21608A31D1A9D2E56B6587ECF7989E07887DC
+      6351B77F507A615E675B5869435D7423518516447F1C2E5C
+      2F2B2A2622231F191913141910101A0001440C0C56071A67
+      0C296B132F7024376235446D4855684D617A7B8ADBA0BCEE
+      FFBEFFFFD0FFFFFFFFFFFFFFFFFFFDFDFDF3B8B5A4B2AB98
+      986E965F459E5437B56048BA4D48C0234EAC1C6697616B75
+      A77FA4FB74ACE099E9FCAFFDF899FFC07CF3A43EDF9821C8
+      8044825C606B4B5763455565394D66433F3E3834332B2A28
+      25212022211D221F281D19280A074A09055928142F1F191D
+      1B111211100E0100080000000000000303030A0A0A14100F
+      1716141B191A22202329211F332022371722412730422F35
+   </palette>
+    <edit date="Fri Apr 16 11:53:30 -0500 2021" action="edit">
+      <edit filename="C:/Users/dahud/Desktop/render/MotionTest.flame" index="0"/>
+    </edit>
+  </flame>
+</flames>

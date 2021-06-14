@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flames>
+  <flame version="EMBER-WIN-1.0.0.21" time="0" name="Flame_2020-12-30-141518_1" size="1280 720" center="0 0" scale="240" rotate="0" supersample="2" filter="1" filter_shape="gaussian" temporal_filter_type="gaussian" temporal_filter_width="1" quality="1000" temporal_samples="100" sub_batch_size="10240" fuse="15" rand_range="1" background="0 0 0" brightness="4" gamma="4" highlight_power="1" logscale_k2="0" vibrancy="1" estimator_radius="0" estimator_minimum="0" estimator_curve="0.4" gamma_threshold="0.1" cam_zpos="0" cam_persp="0" cam_yaw="0" cam_pitch="0" cam_dof="0" blur_curve="0" palette_mode="linear" interpolation="smooth" interpolation_type="log" plugins="linear post_waves22" new_linear="1" curves="0 0 1 0.25 0.25 1 0.5 0.5 1 0.75 0.75 1 0 0 1 0.25 0.25 1 0.5 0.5 1 0.75 0.75 1 0 0 1 0.25 0.25 1 0.5 0.5 1 0.75 0.75 1 0 0 1 0.25 0.25 1 0.5 0.5 1 0.75 0.75 1 " overall_curve="0 0 0.25 0.25 0.5 0.5 0.75 0.75 1 1 " red_curve="0 0 0.25 0.25 0.5 0.5 0.75 0.75 1 1 " green_curve="0 0 0.25 0.25 0.5 0.5 0.75 0.75 1 1 " blue_curve="0 0 0.25 0.25 0.5 0.5 0.75 0.75 1 1 ">
+    <xform weight="0.5" color="0.786791" var_color="1" color_speed="0.5" symmetry="0" name="" animate="1" linear="0.869606" post_waves22="0.190552" post_waves22_scalex="-0.702652" post_waves22_scaley="0.524965" post_waves22_freqx="0.797054" post_waves22_freqy="0.903575" post_waves22_modex="1" post_waves22_modey="1" post_waves22_powerx="-0.120809" post_waves22_powery="-0.212005" coefs="0.957855 0.683679 0.893037 -0.889801 -0.0748394 -0.104956" opacity="1" blur="0"/>
+    <xform weight="0.5" color="0.483112" var_color="1" color_speed="0.5" symmetry="0" name="" animate="1" linear="-0.753887" post_waves22="0.815037" post_waves22_scalex="0.869771" post_waves22_scaley="0.17407" post_waves22_freqx="-0.659226" post_waves22_freqy="0.124555" post_waves22_modex="0" post_waves22_modey="0" post_waves22_powerx="0.988177" post_waves22_powery="-0.504146" coefs="0.0962071 -0.722809 0.826931 0.975103 0.149791 -0.916331" opacity="1" blur="0"/>
+    <xform weight="1" color="0" var_color="1" color_speed="0" symmetry="1" name="" animate="1" linear="1" coefs="-1 0 0 -1 0 0" opacity="1" blur="0"/>
+    <xform weight="1" color="1" var_color="1" color_speed="0" symmetry="1" name="" animate="1" linear="1" coefs="-1 0 0 1 0 0" opacity="1" blur="0"/>
+    <palette count="256" format="RGB">
+      CE6049D86A53C16C58AA667B8B4A749A555A9B4C4FA15A58
+      94704E92804EAB8B3EC79E44D69F38CBBD29C0CD1DC1C911
+      D3C210E2CA0EDBCA1CD6CC1FE6D629D7C928C7D134B8C827
+      9CB20FA9B201B67F01C57A03CD671DEA7818FFA80BFCAF25
+      F4C821E9BA2EE5C735DBB040CDA84FC29673B8809BB56E80
+      856D7B7C6F696B4B4C4D2A2E51182B510B13230900540F12
+      6F0E009025059C26008D290F5D1612602328731E25822F1F
+      9940389F3E2DAC362CB53029C9462AD36324E3933AEDB151
+      CCA467B77D799D7D6696764D9A744D994B478D553C7C413D
+      7F3536893C348C3C33994A43BB4E49C05541CF6227C27C1A
+      CB992AC2A024C1BC24D4C723D3CD31D3C628CBC322BCC417
+      AFB20BA57800A64323A55942AB7546A1805FB6A97FC2CE82
+      E2EAC1E1E497DCC380E6BB4BEEB132E1A922E6B221E6B928
+      E7BB27F1C21AECD527EBD91DE6DE24DBDF30D4DA38F3DF4C
+      DFE24BD3EB6FF4EF7AECDD76EFCD48E4BF3AEECD30E5D42E
+      EADA2FE6D736D9CE36CFCA30D5C12AD8AF1FD69310C06C0A
+      8A4B226D41264C40304D2325752A416C58598E766C986B65
+      C25E44C75135C8502DCC5125D26B28E8962AEDA829FFC136
+      F8D636F8D835F6E32FF5E23DEFD542DCDB43D8D548D3CF49
+      C9CB46C1C846B7962B8C6E385B461B49330C2F2C0B3E2E2E
+      6E3B4E6F576778606D5E5D7F5E4C7C49507E353E69373B61
+      62385C7731497D3529982F1AA1391CAE4518CA4E06E07F0A
+      EA9C14E9AC13D9AB21CDA42ECF9A4AD37F50D69958E49D7F
+      DEA3A9E8B8B4D6CDACCFBF84DAB05CE3A461ED9D48E7942E
+      EC9039D0804BCC7047DA573BC64327C14219C0350EBA491D
+      C44F23D76036D9653EB57D4CAE8B859C8CA7BBA786BCC083
+      ADB84FC7A14ECD982EC68A2ACA561DBB44029D2B00BD3D0C
+      D44906D46605D77802E38211EDA61AE6B211E0B600D8BA00
+      D7B410C2C80EB7C50EB7C005BCC40ED9B718D0B91DC9AD30
+      D6B043CFCB5FDDCC86DDC9CBFAD9F4FFD0E4FFF2BAF5DF7C
+      F3CB47EFD230EED226DBCD26EED229EDDE2DE1E530DBE135
+      E5D43CE7CE40DCB939CCC336C5CD2AC9CC25D4D41CEFDF06
+   </palette>
+    <edit date="Wed Dec 30 14:15:45 -0600 2020" action="edit">
+      <edit filename="" index="0"/>
+    </edit>
+  </flame>
+</flames>

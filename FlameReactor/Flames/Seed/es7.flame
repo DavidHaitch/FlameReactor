@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flames>
+  <flame version="EMBER-WIN-1.0.0.20" time="0" name="electricsheep.247.02398" size="1280 720" center="0.961083 0.643856" scale="150.235" rotate="94.74" supersample="2" filter="1" filter_shape="gaussian" temporal_filter_type="box" temporal_filter_width="1.2" quality="1000" temporal_samples="100" sub_batch_size="10240" fuse="15" rand_range="1" background="0 0 0" brightness="7" gamma="4" highlight_power="1" logscale_k2="0" vibrancy="1" estimator_radius="11" estimator_minimum="0" estimator_curve="0.6" gamma_threshold="0" cam_zpos="0" cam_persp="0" cam_yaw="0" cam_pitch="0" cam_dof="0" blur_curve="0" palette_mode="linear" interpolation="linear" interpolation_type="log" plugins="linear spherical eyefish flatten blur julian" new_linear="1" curves="0 0 1 0.25 0.25 1 0.5 0.5 1 0.75 0.75 1 0 0 1 0.25 0.25 1 0.5 0.5 1 0.75 0.75 1 0 0 1 0.25 0.25 1 0.5 0.5 1 0.75 0.75 1 0 0 1 0.25 0.25 1 0.5 0.5 1 0.75 0.75 1 " overall_curve="0 0 0.25 0.25 0.5 0.5 0.75 0.75 1 1 " red_curve="0 0 0.25 0.25 0.5 0.5 0.75 0.75 1 1 " green_curve="0 0 0.25 0.25 0.5 0.5 0.75 0.75 1 1 " blue_curve="0 0 0.25 0.25 0.5 0.5 0.75 0.75 1 1 ">
+    <xform weight="100" color="0" var_color="1" color_speed="0.0595" symmetry="0.881" name="" animate="1" linear="0.023" spherical="1.058" eyefish="0.01" flatten="1" coefs="0 -0.687917 0.633606 -0.182287 0.284751 0.981373" opacity="1" blur="0"/>
+    <xform weight="1" color="1" var_color="1" color_speed="0.5435" symmetry="-0.087" name="" animate="1" blur="0" flatten="1" coefs="1.0173 -0.0154 -0.084015 1.07119 0.647654 0.417408" opacity="1"/>
+    <xform weight="0.25" color="0" var_color="1" color_speed="0.4975" symmetry="0.005" name="" animate="1" julian="1" julian_dist="2" julian_power="1000" flatten="1" coefs="0.198643 -0.230682 0.141465 -0.305082 1.21995 -0.040563" opacity="1" blur="0"/>
+    <palette count="256" format="RGB">
+      B14C64B33A52B427409C1F3B771B3D51183F2C14412D1B53
+      2E266930307F32478735648938808B447799506DA65C64B4
+      685AC17852BE894BB29A44A7AB3D9BB13593A02B94902195
+      7F179683248A933B78A25267B26955A979569386607E926B
+      689F765DA88557AF9850B7AB4ABEBE49C2C552C1B75ABFA9
+      63BE9B78C58694D26EB0DE56CCEA3EE8F726F8F618F3DD1D
+      EEC422E8AA28E3902DDE7732D96F3AD56842D0604ACB5852
+      C7515AC95658CF6350D66F49DC7C42E2883AE99432EFA12B
+      F29D2CF1783CF0534CEE2E5DD75151C17445AA973993BA2D
+      8CD227A5D52CBDD832D6DA38EFDD3DFAD947EAC857DBB768
+      CBA679BC9489AC839AAE7188AF5E76B14C64B33A52B42740
+      9C1F3B771B3D51183F2C14412C14412D1B532E266930307F
+      32478735648938808B447799506DA65C64B4685AC17852BE
+      894BB29A44A7AB3D9BB13593A02B949021957F179683248A
+      933B78A25267B26955A979569386607E926B689F765DA885
+      57AF9850B7AB4ABEBE49C2C552C1B75ABFA963BE9B78C586
+      94D26EB0DE56CCEA3EE8F726F8F618F3DD1DEEC422E8AA28
+      E3902DDE7732D96F3AD56842D0604ACB5852C7515AC95658
+      CF6350D66F49DC7C42E2883AE99432EFA12BF29D2CF1783C
+      F0534CEE2E5DD75151C17445AA973993BA2D8CD227A5D52C
+      BDD832D6DA38EFDD3DFAD947EAC857DBB768CBA679BC9489
+      AC839AAE7188AF5E76B14C64B33A52B427409C1F3B771B3D
+      51183F2C14412D1B532E266930307F32478735648938808B
+      447799506DA65C64B4685AC17852BE894BB29A44A7AB3D9B
+      B13593A02B949021957F179683248A933B78A25267B26955
+      A979569386607E926B689F765DA88557AF9850B7AB4ABEBE
+      49C2C552C1B75ABFA963BE9B78C58694D26EB0DE56CCEA3E
+      E8F726F8F618F3DD1DEEC422E8AA28E3902DDE7732D96F3A
+      D56842D0604ACB5852C7515AC95658CF6350D66F49DC7C42
+      E2883AE99432EFA12BF29D2CF1783CF0534CEE2E5DD75151
+      C17445AA973993BA2D8CD227A5D52CBDD832D6DA38EFDD3D
+      FAD947EAC857DBB768CBA679BC9489AC839AAE7188AF5E76
+   </palette>
+    <edit date="Fri Dec 25 10:34:41 -0600 2020" action="edit">
+      <edit date="Sun Sep  6 01:58:20 +0000 2015" id="2398" gen="247" action="clone brood" filename="C:/Users/dahud/FractoriumShepherd/flames/es7.flame" index="0">
+        <edit date="Mon Aug 31 09:00:16 +0000 2015" id="2269" gen="247" action="cross alternate 0: 0 0 1 reframed0" filename="upload" index="0">
+          <edit date="Mon Feb  4 18:40:33 +0000 2013" nick="cqfd93" url="sylvie.gallet.free.fr/index.html" id="72880" gen="244" action="clone upload" filename="genebank2.flam3" index="261">
+            <edit filename="upload" index="0"/>
+          </edit>
+          <edit date="Thu Nov 18 17:34:32 +0000 2010" nick="cqfd93" url="sylvie.gallet.free.fr/index.html" id="33632" gen="244" action="clone upload" filename="genebank2.flam3" index="138">
+            <edit filename="upload" index="0"/>
+          </edit>
+        </edit>
+      </edit>
+    </edit>
+  </flame>
+</flames>

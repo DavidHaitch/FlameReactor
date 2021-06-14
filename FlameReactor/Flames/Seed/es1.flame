@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flames>
+  <flame version="EMBER-WIN-1.0.0.20" time="0" name="electricsheep.247.03765" size="1280 720" center="0.2814 0.156751" scale="421.347" rotate="0" supersample="2" filter="1" filter_shape="gaussian" temporal_filter_type="box" temporal_filter_width="1.2" quality="1000" temporal_samples="100" sub_batch_size="10240" fuse="15" rand_range="1" background="0 0 0" brightness="15" gamma="5.1" highlight_power="0" logscale_k2="0" vibrancy="0" estimator_radius="11" estimator_minimum="0" estimator_curve="0.6" gamma_threshold="0" cam_zpos="0" cam_persp="0" cam_yaw="0" cam_pitch="0" cam_dof="0" blur_curve="0" palette_mode="linear" interpolation="linear" interpolation_type="log" plugins="julian flatten linear julia juliascope" new_linear="1" curves="0 0 1 0.25 0.25 1 0.5 0.5 1 0.75 0.75 1 0 0 1 0.25 0.25 1 0.5 0.5 1 0.75 0.75 1 0 0 1 0.25 0.25 1 0.5 0.5 1 0.75 0.75 1 0 0 1 0.25 0.25 1 0.5 0.5 1 0.75 0.75 1 " overall_curve="0 0 0.25 0.25 0.5 0.5 0.75 0.75 1 1 " red_curve="0 0 0.25 0.25 0.5 0.5 0.75 0.75 1 1 " green_curve="0 0 0.25 0.25 0.5 0.5 0.75 0.75 1 1 " blue_curve="0 0 0.25 0.25 0.5 0.5 0.75 0.75 1 1 ">
+    <xform weight="3" color="0" var_color="1" color_speed="0.5" symmetry="0" name="" animate="1" julian="1" julian_dist="-1.5" julian_power="9" flatten="1" coefs="0.014627 0.149285 -0.149285 0.014627 0 0" opacity="1" blur="0"/>
+    <xform weight="0.333333" color="1" var_color="1" color_speed="0.5" symmetry="0" name="" animate="1" linear="0.738812" julian="0.261188" julian_dist="-1" julian_power="3" flatten="1" coefs="0.521507 0 0 0.521507 0.554129 0.072912" opacity="1" blur="0"/>
+    <xform weight="0.5" color="0" var_color="1" color_speed="0.5" symmetry="0" name="" animate="1" julia="1" flatten="1" coefs="0.707107 0.707107 -0.707107 0.707107 0 0" opacity="1" blur="0"/>
+    <finalxform color="1" var_color="1" color_speed="0.5" symmetry="0" name="" animate="0" juliascope="0.625" juliascope_dist="1" juliascope_power="2" flatten="1" coefs="1 0 0 1 0.980659 0.254354" opacity="1"/>
+    <palette count="256" format="RGB">
+      00008700008100007900007500006E00006800006200005C
+      0000570000510000490000450000400000380000322B0000
+      3000003200003800003A0000400000420000470000490000
+      4F00005500005700005C00005E00006200006600006A0000
+      7000007200007700007900007F00008100008700008C0000
+      8E00009400009600009C00009E0000A20000A50000A90200
+      AF0A00B10E00B71300B91B00BE1F00C02500C62E00C83400
+      CE3800D33C00D54500DB4B00DD4F00E15700E55C00E96000
+      EE6800F06E00F67300F87700FE8100FF8700FF8B00FF9200
+      FF9600FF9E00FFA500FFA900FFAF00FFB500FFBC00FFC000
+      FFBE00FFB900FFB700FFB500FFB100FFAB00FFA900FFA700
+      FFA200FF9E00FF9E00FF9800FF9600FF9200FF9000FF8C00
+      FF8900FF8500FF7F00FF7F00FF7D00FF7500FF7300FF7200
+      FF7000FF6A00FF6800FF6600FF6000FF5E00FF5B00FF5700
+      FF5700FF5300FF5100FF4900FF4B00FF4900FF4300FF4000
+      FF3E00FF3C00FF3600FF3400FF3400FF2E00FF2C00FF2900
+      FF2300FF2300FF2100FF1F00FF1900FF1700FF1500FF1000
+      FF0E00FF0A00FF0600FF0200FF0000FF0000FF0000FF0000
+      FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000
+      FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000
+      FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000
+      FF0000FF0000FF0000FF0000FF0602FE0A0EFC0E1BF61329
+      F4193AF01F47EE2759E92C6CE7327DE5369CDF3EB9DD42DD
+      C443E59E47EC8749F66A4BFE4F4FFF475CFF4366FF3A72FF
+      367DFF307FFF298CFF2394FF1D98FF159EFF10A2FF0AA9FF
+      02B1FF00B5FF00C0FF00CCFF00D0FF00D9FF00E3FF00ECFF
+      00E1FF00D7FF00CCFF00C0FF00BBFF00AFFF00A7FF009CFF
+      0090FF008BFF0087FF007DFF0079FF0070FF0066FF0062FF
+      0059FF0057FF004FFF0047FF0042FF0038FF0030FF002CFF
+      0027FF001DFF0017FF0010FF000CFE0006F80000F00000EC
+      0000E50000DF0000DB0000D30000CE0000C80000C00000BC
+      0000B70000AF0000A90000A500009E00009800009400008C
+   </palette>
+    <edit date="Fri Dec 25 10:25:56 -0600 2020" action="edit">
+      <edit date="Wed Nov 11 03:57:08 +0000 2015" id="3765" gen="247" action="clone brood" filename="C:/Users/dahud/FractoriumShepherd/flames/es1.flame" index="0">
+        <edit date="Mon Nov  2 09:00:25 +0000 2015" id="3653" gen="247" action="cross alternate 1: 0 0 0 reframed0 improved colors" filename="upload" index="0">
+          <edit date="Sun May 31 23:32:33 EDT 2009" id="16077" gen="243" action="clone brood" filename="genebank.flam3" index="8">
+            <edit date="Sun May 31 04:14:56 EDT 2009" id="16058" action="cross alternate 1: 0 1 0 0 1 improved colors" filename="upload" index="0">
+              <edit date="Tue Nov  4 14:21:02 EST 2008" id="7739" action="clone brood" filename="spex" index="0">
+                <edit date="Tue Nov  4 04:14:22 EST 2008" id="7719" action="cross alternate 0: 1 0 0 0 0 0 0 0 0 cmap_cross 0: 40 107 196 236" filename="upload" index="0">
+                  <edit date="Wed Oct 29 13:54:34 EDT 2008" nick="revdrace" url="www.tiedyedfreaks.org/ace/sheep/" id="7410" action="clone upload" filename="spex" index="0">
+                    <edit filename="upload" index="0"/>
+                  </edit>
+                  <edit date="Sun Oct 26 14:03:08 EDT 2008" id="7216" action="clone brood" filename="spex" index="0">
+                    <edit date="Thu Oct 23 04:18:27 EDT 2008" id="7021" action="cross alternate 0: 0 1 0 0 0 1 improved colors" filename="upload" index="0"/>
+                  </edit>
+                </edit>
+              </edit>
+              <edit date="Wed Apr 29 13:31:33 EDT 2009" id="15345" action="clone brood" filename="spex" index="0">
+                <edit date="Tue Apr 28 04:20:03 EDT 2009" id="15301" action="cross alternate 0: 0 1 1 0 1 cmap_cross 0: 240 255" filename="upload" index="0">
+                  <edit date="Sat Apr 18 06:58:08 EDT 2009" nick="pureguitarfury" url="f--l--A--r--k.deviantart.com" id="15087" action="clone upload" filename="spex" index="0">
+                    <edit filename="upload" index="0"/>
+                  </edit>
+                  <edit date="Mon Feb  9 22:57:23 EST 2009" id="12333" action="clone brood" filename="spex" index="0">
+                    <edit date="Fri Jan 30 04:14:25 EST 2009" id="11958" action="mutate xform" filename="upload" index="0"/>
+                  </edit>
+                </edit>
+              </edit>
+            </edit>
+          </edit>
+          <edit date="Mon Jan 25 21:28:38 +0000 2010" id="11049" gen="244" action="clone brood" filename="genebank2.flam3" index="31">
+            <edit date="Sun Jan 24 04:14:09 +0000 2010" id="11001" action="cross alternate 0: 1 1 0 improved colors" filename="upload" index="0">
+              <edit date="Sun Dec 13 17:58:04 +0000 2009" nick="BrothaLewis" url="" id="2653" action="clone upload" filename="spex" index="0">
+                <edit filename="upload" index="0"/>
+              </edit>
+              <edit date="Thu Dec 31 19:32:14 +0000 2009" id="4771" action="clone brood" filename="spex" index="0">
+                <edit date="Thu Dec 10 16:08:54 +0000 2009" id="2562" action="cross union improved colors" filename="upload" index="0">
+                  <edit date="Mon Nov 23 03:47:00 +0000 2009" id="2224" action="clone brood" filename="spex" index="0">
+                    <edit date="Fri Nov 20 16:33:56 +0000 2009" id="2172" action="cross alternate 1: 1 0 0 0 1 1 1" filename="upload" index="0"/>
+                  </edit>
+                  <edit date="Sun Oct  4 22:34:09 +0000 2009" nick="EibeItu" url="www.renderosity.com/homepage.php?userid=625227" id="1310" action="clone upload" filename="spex" index="0">
+                    <edit filename="upload" index="0"/>
+                  </edit>
+                </edit>
+              </edit>
+            </edit>
+          </edit>
+        </edit>
+      </edit>
+    </edit>
+  </flame>
+</flames>

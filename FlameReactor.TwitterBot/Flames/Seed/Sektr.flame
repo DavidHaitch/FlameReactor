@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flames>
+  <flame version="EMBER-WIN-21.21.4.1" time="0" name="Flame_2020-12-08-143415_2" size="1280 720" center="0 0" scale="110" rotate="0" supersample="2" filter="1" filter_shape="gaussian" temporal_filter_type="gaussian" temporal_filter_width="1" quality="1000" temporal_samples="100" sub_batch_size="10240" fuse="15" rand_range="1" background="0 0 0" brightness="4" gamma="4" highlight_power="-1" logscale_k2="0" vibrancy="1" estimator_radius="0" estimator_minimum="0" estimator_curve="0.4" gamma_threshold="0.1" cam_zpos="0" cam_persp="0" cam_yaw="0" cam_pitch="0" cam_dof="0" blur_curve="0" palette_mode="linear" interpolation="linear" interpolation_type="log" plugins="wedge_julia julia disc spherical" new_linear="1" curves="0 0 1 0.25 0.25 1 0.5 0.5 1 0.75 0.75 1 0 0 1 0.25 0.25 1 0.5 0.5 1 0.75 0.75 1 0 0 1 0.25 0.25 1 0.5 0.5 1 0.75 0.75 1 0 0 1 0.25 0.25 1 0.5 0.5 1 0.75 0.75 1 " overall_curve="0 0 0.25 0.25 0.5 0.5 0.75 0.75 1 1 " red_curve="0 0 0.25 0.25 0.5 0.5 0.75 0.75 1 1 " green_curve="0 0 0.25 0.25 0.5 0.5 0.75 0.75 1 1 " blue_curve="0 0 0.25 0.25 0.5 0.5 0.75 0.75 1 1 ">
+    <xform weight="0.3" color="0.42742" var_color="1" color_speed="0.5" symmetry="0" name="" animate="1" wedge_julia="0.4" wedge_julia_angle="0" wedge_julia_count="1" wedge_julia_power="1" wedge_julia_dist="0" coefs="1 0 0 1 0 0" opacity="1" blur="0"/>
+    <xform weight="0.3" color="0.315932" var_color="1" color_speed="0.5" symmetry="0" name="" animate="1" julia="0.6" coefs="1 0 0 1 0 0" opacity="1" blur="0"/>
+    <xform weight="0.1" color="0.193015" var_color="1" color_speed="0.5" symmetry="0" name="" animate="1" disc="0.6" coefs="1 0 0 1 0 0" opacity="1" blur="0"/>
+    <xform weight="0.2" color="0.192157" var_color="1" color_speed="0.5" symmetry="0" name="" animate="1" spherical="1" coefs="1 0 0 1 0 0" opacity="1" blur="0"/>
+    <palette count="256" format="RGB">
+      FF690FFEA300FFBE00FFBE00FEBD03F5731BCE02379F0052
+      9F00529F0052AE0B38FB3F1AFF3A20B8004C7B3073423B7F
+      7F0083AB008CA200557770A4CBC9B4DDBD56FEC202FD7E09
+      FD4044FB2155F7086EFF3B26FF3F20FB3F1AFF6100E26302
+      F2960FFCA508FF9D1EE16B3BEC525EFC6327FB6B08FC7E03
+      FDAB01FCB10AFFA902FECD07ECEE07F8BD3DCBC69C7A7EBB
+      5179BF56599C9E0E917557895D577DBDD505FEC502FBBE03
+      EFB72CEBDAAEFFFDFEE9FEFFB9A2F25178C33472A5493E8A
+      5369B5AEABE2D0D1CCAD4FA3DC425EFF6215E172096C984D
+      845C98B4DE88FFE613FE9E09FC4E1BFF484BCA93419BCC5F
+      D8DE08FBCD08FEA910FF8B33FF9A48CCC7B1CCC7B1FF9377
+      E04265A104516500533C186F95014FAC043FEB0545FF3A20
+      FF3F20EA0645BC0571B120857A6E9C4C6DBA227DAC227DAC
+      237CA8592B98AA009BE1058DD90154BA066ABC2C5DFF8436
+      82AC48207EA4217EA75B8BBBC9D4C3D2D4D1FFF9FAD1D1D9
+      EA6499E30968A10052372F6B423881970253F73D3EF88802
+      FF690FFEA300FFBE00FFBE00FEBD03F5731BCE02379F0052
+      9F00529F0052AE0B38FB3F1AFF3A20B8004C7B3073423B7F
+      7F0083AB008CA200557770A4CBC9B4DDBD56FEC202FD7E09
+      FD4044FB2155F7086EFF3B26FF3F20FB3F1AFF6100E26302
+      F2960FFCA508FF9D1EE16B3BEC525EFC6327FB6B08FC7E03
+      FDAB01FCB10AFFA902FECD07ECEE07F8BD3DCBC69C7A7EBB
+      5179BF56599C9E0E917557895D577DBDD505FEC502FBBE03
+      EFB72CEBDAAEFFFDFEE9FEFFB9A2F25178C33472A5493E8A
+      5369B5AEABE2D0D1CCAD4FA3DC425EFF6215E172096C984D
+      845C98B4DE88FFE613FE9E09FC4E1BFF484BCA93419BCC5F
+      D8DE08FBCD08FEA910FF8B33FF9A48CCC7B1CCC7B1FF9377
+      E04265A104516500533C186F95014FAC043FEB0545FF3A20
+      FF3F20EA0645BC0571B120857A6E9C4C6DBA227DAC227DAC
+      237CA8592B98AA009BE1058DD90154BA066ABC2C5DFF8436
+      82AC48207EA4217EA75B8BBBC9D4C3D2D4D1FFF9FAD1D1D9
+      EA6499E30968A10052372F6B423881970253F73D3EF88802
+   </palette>
+    <edit date="Fri Apr 16 11:54:50 -0500 2021" action="edit">
+      <edit filename="C:/Users/dahud/Desktop/render/Collapsar/Collapsar.flame" index="1"/>
+    </edit>
+  </flame>
+</flames>

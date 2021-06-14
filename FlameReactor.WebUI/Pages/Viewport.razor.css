@@ -1,0 +1,113 @@
+﻿.backgroundVid {
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.about-btn {
+    position: fixed;
+    bottom: 4%;
+    right: 2%;
+}
+
+.fullscreen-btn {
+    display: flex;
+    justify-content: flex-end;
+    margin: 4px;
+    align-items: start;
+    z-index: 3;
+    font-size: 24px;
+}
+
+.thumb-btn {
+    display: flex;
+    justify-content: space-around;
+    margin: 4px;
+    align-items: start;
+    z-index: 3;
+    font-size: 24px;
+}
+
+.viewport-header {
+    position: relative;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.progbar {
+    z-index: 5;
+    width: 100vw;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background: transparent;
+    border-radius: 0;
+    height: 2rem;
+    font-size: 14px;
+}
+
+.messagefade1 {
+    font-family: 'Comfortaa', sans-serif;
+    user-select: none;
+    color: white;
+    font-size: 28px;
+    font-weight: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 33vh;
+    z-index: 2;
+    animation: messagefadeanim1 15s 0s 1;
+    position: relative;
+    opacity: 0;
+}
+
+.messagefade2 {
+    font-family: 'Comfortaa', sans-serif;
+    user-select: none;
+    color: white;
+    font-size: 28px;
+    font-weight: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 33vh;
+    z-index: 2;
+    animation: messagefadeanim2 15s 0s 1;
+    position: relative;
+    opacity: 0;
+}
+
+@keyframes messagefadeanim1 {
+    0% {
+        opacity: 1.0;
+    }
+
+    66% {
+        opacity: 1.0;
+    }
+
+    100% {
+       opacity: 0;
+    }
+}
+
+@keyframes messagefadeanim2 {
+    0% {
+        opacity: 1.0;
+    }
+
+    66% {
+        opacity: 1.0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}

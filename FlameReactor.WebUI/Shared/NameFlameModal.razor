@@ -1,0 +1,25 @@
+﻿
+@using FlameReactor.DB.Models
+<div class="simple-form">
+    <img src="@flame.ImagePathWeb" class="mb-4" style="object-fit: contain; max-width:80vw; max-height:50vh" />
+
+    <div class="form-group">
+        <input @bind="FlameName" type="text" class="form-control" id="flameName" placeholder="Name this flame" />
+    </div>
+
+    <button @onclick="SubmitForm" class="btn btn-primary">Submit</button>
+    <button @onclick="Cancel" class="btn btn-secondary">Cancel</button>
+</div>
+
+@code {
+
+    [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; }
+    [Parameter] public Flame flame { get; set; }
+    string FlameName { get; set; }
+
+    protected override void OnInitialized() => BlazoredModal.SetTitle("");
+
+    async Task SubmitForm() => await BlazoredModal.CloseAsync(ModalResult.Ok(FlameName));
+    async Task Cancel() => await BlazoredModal.CancelAsync();
+
+}

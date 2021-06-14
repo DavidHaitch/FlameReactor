@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flames>
+  <flame version="EMBER-WIN-1.0.0.21" time="0" name="Spread" size="1280 720" center="0 0.112" scale="750" rotate="-30" supersample="2" filter="0.5" filter_shape="gaussian" temporal_filter_type="box" temporal_filter_width="1" quality="1000" temporal_samples="100" sub_batch_size="10240" fuse="30" rand_range="1" background="0 0 0" brightness="15" gamma="3.5" highlight_power="-1" logscale_k2="0" vibrancy="1.2" estimator_radius="0" estimator_minimum="0" estimator_curve="0.4" gamma_threshold="0.0025" cam_zpos="0" cam_persp="0" cam_yaw="0" cam_pitch="0" cam_dof="0" blur_curve="0" palette_mode="linear" interpolation="linear" interpolation_type="log" plugins="disc wedge sineblur spherical eyefish pre_julian polar" new_linear="1" curves="0 0 1 0.25 0.25 1 0.5 0.5 1 0.75 0.75 1 0 0 1 0.242424 0.19697 1 0.530303 0.454545 1 0.787879 0.727273 1 0 0 1 0.25 0.25 1 0.5 0.5 1 0.75 0.75 1 0 0 1 0.25 0.25 1 0.5 0.5 1 0.75 0.75 1 " overall_curve="0 0 0.25 0.25 0.5 0.5 0.75 0.75 1 1 " red_curve="0 0 0.242424 0.19697 0.530303 0.454545 0.787879 0.727273 1 1 " green_curve="0 0 0.25 0.25 0.5 0.5 0.75 0.75 1 1 " blue_curve="0 0 0.25 0.25 0.5 0.5 0.75 0.75 1 1 ">
+    <xform weight="3" color="0.0301547" var_color="1" color_speed="0.025" symmetry="0.95" name="Iterator_0" animate="1" disc="1" coefs="-0.995694 0.092701 -0.092701 -0.995694 0 0" chaos="0 0 0 0 0 0 1 " opacity="0" blur="0"/>
+    <xform weight="0.1" color="0.212956" var_color="1" color_speed="0.5" symmetry="0" name="Iterator_1" animate="1" wedge="1" wedge_angle="2.35" wedge_hole="0" wedge_count="2" wedge_swirl="0" coefs="1 0 6.12323e-17 1 0 0" post="6.12323e-17 -1 1 0 0 0" chaos="1 0 0 1 0 0 0 " opacity="0" blur="0"/>
+    <xform weight="0.5" color="0.0425666" var_color="1" color_speed="0" symmetry="1" name="Iterator_2" animate="1" wedge="1" wedge_angle="0.79159" wedge_hole="0" wedge_count="2" wedge_swirl="0" coefs="1 0 6.12323e-17 1 0.0025 0" chaos="1 0 0 1 0 0 0 " opacity="0" blur="0"/>
+    <xform weight="0.5" color="0.576517" var_color="1" color_speed="0" symmetry="1" name="Iterator_3" animate="1" sineblur="1" sineblur_power="2" coefs="1 0 6.12323e-17 1 0 0" chaos="0 1 0 0 0 0 0 " opacity="0" blur="0"/>
+    <xform weight="0.5" color="0" var_color="1" color_speed="0" symmetry="1" name="Iterator_4" animate="1" spherical="1" coefs="1 0 6.12323e-17 1 0 0" chaos="0 0 0 0 0 1 0 " opacity="1" blur="0"/>
+    <xform weight="0.5" color="0" var_color="1" color_speed="0" symmetry="1" name="Iterator_5" animate="1" spherical="1" coefs="1 0 6.12323e-17 1 0 0" chaos="0 0 1 0 0 0 0 " opacity="1" blur="0"/>
+    <xform weight="0.5" color="0" var_color="1" color_speed="0" symmetry="1" name="Iterator_6" animate="1" eyefish="1" coefs="1 0 6.12323e-17 1 0 0" chaos="0 0 0 0 1 0 0 " opacity="0" blur="0"/>
+    <finalxform color="0" var_color="1" color_speed="0" symmetry="1" name="flam3_camera" animate="0" pre_julian="-1" pre_julian_dist="1" pre_julian_power="3" polar="1" coefs="1 0 6.12323e-17 1 0 0" opacity="1"/>
+    <palette count="256" format="RGB">
+      0B01001C02012A06103A101245191A542329773A37823C3C
+      85463D844A497F484B7A3E3E5A2B25481F1D592A247A3B32
+      985634AF6B44DEC376F5E7A8F8F0CCFCFCE2FEFEF2FFFFF7
+      FFFFF2F3F2E0DCD8D9C2B7BDAC9BA3A18C95986D669F5F5F
+      AA645CC3804BD5A952F0A057DA9F45DB8F2DCB663CD15B2B
+      B4482C9A4A439D4D4C9B5754A77E78AA969FBDAEB3C1B2B7
+      C3B2BAD3CACFD7D1D3DBD7D8DCD8D9DDD9DADEDADBF1E8C9
+      F5E9C3EFDDB5EFC392E1C66FD88853B45235AA3D1490200A
+      7B10066E221584362C733E3A6A4C4E60454E5C4851644F58
+      6F5A63705A66988486A48A95A48F98AB9CA3A18D96A18288
+      88625F875C5392564E9454387D473B6E423956363959424C
+      6C4E5A87524E976B4EC88058DDB05FE8C977EDD79EF8E7A1
+      F7E8ADF3E1B9FBECC3FDF5D1FBF0D2FAEFD1FAEFD3DBD7D8
+      CEC8CCBAADB4BAAEB2B6A7AEB3A6ADB4ABAEBFB4BAD5CFD1
+      DAD4D6DBD7D8DFD6D9DFD9DBE0DADCE3DDDFE2DEDFF4F2DD
+      FAF7D6FBF5DBFBF8E5FCFAEEFCFDEBFAF7E4E1DDDED7D1D3
+      BBB5B9A091948D6764895653953D399636208F29138E2D27
+      983C2FAA3A22A93F2FAC48309C48309E4233A74B3CA65544
+      9C5251874E5489605EA08F95BCAFB6C6BBBFD9D3D5DCD8D9
+      DDD9DADED8DADCD8D9D9D3D5C8C2C4B1A6ACB4A3ABAC857E
+      A45B489C6F5CB09F6BDFB06CE9D090EEE6C2E4D9DDE0DCDD
+      E5DFE1F6F2D9FBF1D6F7F2D4E0DCDDD7D1D3C5B1BAB4A5AC
+      A28E97947E806D5962774F4D94522F9D4736933E37834645
+      7148467B4E39783F34772E28572618431F1F3C14142C0F14
+      26070D260B102204041E02012908012E0F0D34181434232B
+      38242D3C222B3D131D3A0F1832111A3B101943141A492122
+      62332D793D337B412B6C2A14421416300A092604021A0100
+      1301001601001C06092E06072E0F0D370A073C0F123E1013
+      3D101544121D401F265039435A454E6C484C78474A8F4B40
+      A35040A86B3FD09366E4C197E9DAB3DBD5D7DCD6D8D6D0D2
+      BBB0B4A08C956E5A6341232B3D1C233C111A411218442022
+      563F495F45506F4F5471535572545669525A5B3D45644A55
+   </palette>
+    <edit date="Mon Apr 05 10:33:23 -0500 2021" action="edit">
+      <edit filename="C:/Users/dahud/FractoriumShepherd/Fractorium/Examples/triptychaos_examples.flame" index="0"/>
+    </edit>
+  </flame>
+</flames>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flames>
+  <flame version="EMBER-WIN-1.0.0.20" time="0" name="electricsheep.247.20160" size="1280 720" center="-0.954274 0.227789" scale="421.543" rotate="-16.15" supersample="2" filter="1" filter_shape="gaussian" temporal_filter_type="box" temporal_filter_width="1.2" quality="1000" temporal_samples="100" sub_batch_size="10240" fuse="15" rand_range="1" background="0 0 0" brightness="100" gamma="4.5" highlight_power="0" logscale_k2="0" vibrancy="1" estimator_radius="11" estimator_minimum="0" estimator_curve="0.6" gamma_threshold="0" cam_zpos="0" cam_persp="0" cam_yaw="0" cam_pitch="0" cam_dof="0" blur_curve="0" palette_mode="linear" interpolation="linear" interpolation_type="log" plugins="spherical flatten linear curl rectangles" new_linear="1" curves="0 0 1 0.25 0.25 1 0.5 0.5 1 0.75 0.75 1 0 0 1 0.25 0.25 1 0.5 0.5 1 0.75 0.75 1 0 0 1 0.25 0.25 1 0.5 0.5 1 0.75 0.75 1 0 0 1 0.25 0.25 1 0.5 0.5 1 0.75 0.75 1 " overall_curve="0 0 0.25 0.25 0.5 0.5 0.75 0.75 1 1 " red_curve="0 0 0.25 0.25 0.5 0.5 0.75 0.75 1 1 " green_curve="0 0 0.25 0.25 0.5 0.5 0.75 0.75 1 1 " blue_curve="0 0 0.25 0.25 0.5 0.5 0.75 0.75 1 1 ">
+    <xform weight="0.915" color="0" var_color="1" color_speed="0.22" symmetry="0.56" name="" animate="1" spherical="1" flatten="1" coefs="1.24127 -1.4672 0.669792 1.20288 -0.201262 0.106223" opacity="1" blur="0"/>
+    <xform weight="0.99" color="1" var_color="1" color_speed="0.1205" symmetry="0.759" name="" animate="1" linear="0.876" curl="0.11" curl_c1="0.434502" curl_c2="0.914567" rectangles="0.005" rectangles_x="1" rectangles_y="1" flatten="1" coefs="0.726684 0.690857 -0.690857 0.726684 -0.52727 0.16582" opacity="1" blur="0"/>
+    <palette count="256" format="RGB">
+      00695F006B5B006B5B006F57006F5600735300735100764E
+      00774B007949007B47007E43007F43007F3F007F3C00853B
+      006F5600596F004387FC0000F70000F70600F70D00F71400
+      F61B00F52700F32C00EF3300EF3B00EF3F00EF4700EE4F00
+      ED5700EC5E00E76300E76B00E77300E77700E67F00E38700
+      DF8F00DF9600DF9C00DF9F00DFA700DDAF00DCB700D7BF00
+      CFBD00CCB700C3B700BCB700B5B600A7B3009FAF008FAF00
+      7FAE0976AC1363A7204FA72837A6332CA34F279F6B209F7F
+      149E950B979F018FA70087AF0085B7007FC3007FCC007FD5
+      007FDD007FE60083EE0086F70085EF0083EC007FE6007FDF
+      007FD7007FD5007BCF007BC7007BC50079BF0077B70077B3
+      0076AE0073A700739F00739D006F97006F8F006F8C006F87
+      006E7F006B7B006B76006B6F00696B00676300675F006657
+      006757006757006757006757006956006953006B53006B53
+      006B53006B51006E4F006F4F006F4F006F4F006F4F006F4E
+      00714E00734B00734B00734B00734B00764B007649007747
+      00774700774700774700794700764B00714F006B5600675B
+      006363005F6700576F004E73004679003C7F003483002887
+      00208F00129300079700009F0500A50E00A71600AF2300B5
+      2800B73000BF3800C53F00C74300CF4B00D55100D75700DF
+      5900DE5E00DD5F00D76300D76700D76900D76B00D57100D3
+      7300CF7700CF7B00CF7E00CE7F00CC8300C78700C78700C7
+      8D00C68F00C38F00BF9600BF9700BF9E00BE9F00BDA300B7
+      A700B7A700B7AD00B7AF00B5A700AFA300A79E009F970097
+      8F009587008F8700877F007F7B007B7300736F006F670167
+      63075F5B0D5B5714514F1A4B4B243B384724274B19194F10
+      1253080A5700045B00035F00036100036600036900036E00
+      006B00006B00006B0000690700670B00670F006715006619
+      00632300632700632C006133005F37005F3C005F3F005E46
+      005B4B005B4F005B5300595900575E00576300566700536B
+      00536F005173004F77004F7B00517B005377005376005773
+      005971005B6F005E6E005F6B005F67006367006663006763
+   </palette>
+    <edit date="Fri Dec 25 10:32:07 -0600 2020" action="edit">
+      <edit date="Sat Dec 19 20:25:01 -0600 2020" action="edit" filename="C:/Users/dahud/FractoriumShepherd/flames/es3.flame" index="0">
+        <edit date="Thu Oct  5 09:01:32 -0400 2017" action="clone" filename="C:/Users/dahud/Downloads/electricsheep.247.20160.flam3" index="4">
+          <edit date="Fri Sep 22 22:37:42 -0400 2017" id="20160" gen="247" action="clone brood" filename="spex" index="0">
+            <edit date="Sun Jun 25 09:01:13 -0400 2017" id="17499" gen="247" action="cross alternate 1: 1 0 reframed1" filename="upload" index="0">
+              <edit date="Sun May 31 23:36:25 EDT 2009" id="16088" gen="243" action="clone brood" filename="genebank.flam3" index="11">
+                <edit date="Wed May 27 04:15:52 EDT 2009" id="15942" action="cross alternate 1: 0 0 0 1 1 1 improved colors" filename="upload" index="0">
+                  <edit date="Sun May 24 04:34:51 EDT 2009" nick="cqfd93" url="sylvie.gallet.free.fr/" id="15845" action="clone upload" filename="spex" index="0">
+                    <edit filename="upload" index="0"/>
+                  </edit>
+                  <edit date="Wed Sep 24 16:28:26 EDT 2008" id="4995" action="clone brood" filename="spex" index="0">
+                    <edit date="Tue Sep 23 04:12:08 EDT 2008" id="4882" action="mutate symmetry" filename="upload" index="0">
+                      <edit date="Mon Jul 28 01:53:23 EDT 2008" id="1426" action="clone brood" filename="spex" index="0"/>
+                    </edit>
+                  </edit>
+                </edit>
+              </edit>
+              <edit date="Mon Jul 13 08:39:58 -0400 2009" id="17249" gen="243" action="clone brood" filename="genebank.flam3" index="65">
+                <edit date="Mon Jul 13 04:28:23 -0400 2009" id="17229" action="cross alternate 0: 0 1 improved colors" filename="upload" index="0">
+                  <edit date="Sun Mar 26 15:48:22 PST 2006" action="genebank 198 28884" filename="genebank.flam3" index="778"/>
+                  <edit date="Sun Mar 26 15:48:07 PST 2006" action="genebank 198 22864" filename="genebank.flam3" index="618"/>
+                </edit>
+              </edit>
+            </edit>
+          </edit>
+        </edit>
+      </edit>
+    </edit>
+  </flame>
+</flames>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flames>
+  <flame version="EMBER-WIN-1.0.0.21" time="0" name="Shen-Long_by_plangkye" size="1280 720" center="0 0" scale="212.074" rotate="90" supersample="2" filter="0.5" filter_shape="gaussian" temporal_filter_type="box" temporal_filter_width="1" quality="1000" temporal_samples="100" sub_batch_size="10240" fuse="15" rand_range="1" background="0 0 0" brightness="200" gamma="5" highlight_power="-1" logscale_k2="0" vibrancy="1" estimator_radius="0" estimator_minimum="0" estimator_curve="0.4" gamma_threshold="0.01" cam_zpos="0" cam_persp="0" cam_yaw="0" cam_pitch="0" cam_dof="0" blur_curve="0" palette_mode="linear" interpolation="linear" interpolation_type="log" plugins="spherical flatten julian lazysusan juliascope pre_gaussian_blur linear gaussian_blur" new_linear="1" curves="0 0 1 0.25 0.25 1 0.5 0.5 1 0.75 0.75 1 0 0 1 0.25 0.25 1 0.5 0.5 1 0.75 0.75 1 0 0 1 0.25 0.25 1 0.5 0.5 1 0.75 0.75 1 0 0 1 0.25 0.25 1 0.5 0.5 1 0.75 0.75 1 " overall_curve="0 0 0.25 0.25 0.5 0.5 0.75 0.75 1 1 " red_curve="0 0 0.25 0.25 0.5 0.5 0.75 0.75 1 1 " green_curve="0 0 0.25 0.25 0.5 0.5 0.75 0.75 1 1 " blue_curve="0 0 0.25 0.25 0.5 0.5 0.75 0.75 1 1 ">
+    <xform weight="10" color="0.25" var_color="1" color_speed="0.05" symmetry="0.9" name="" animate="1" spherical="1" flatten="1" coefs="0.514884 -0.291959 -0.291959 -0.514884 0.260617 0.264754" chaos="0 1 0 1 1 " opacity="0" blur="0"/>
+    <xform weight="0.5" color="1" var_color="1" color_speed="0.005" symmetry="0.99" name="" animate="1" julian="1" julian_dist="1" julian_power="-2" flatten="1" coefs="-2.45771 0.393163 -0.393163 -2.45771 1.86 0.040523" chaos="0 0 1 1 1 " opacity="0" blur="0"/>
+    <xform weight="0.5" color="0" var_color="1" color_speed="0" symmetry="1" name="" animate="1" lazysusan="1" lazysusan_spin="3.532" lazysusan_space="0.18" lazysusan_twist="0" lazysusan_x="0" lazysusan_y="0" flatten="1" coefs="1.35721 0.696568 -0.696568 1.35721 0 0" chaos="1 0 0 1 1 " opacity="1" blur="0"/>
+    <xform weight="0.01" color="0" var_color="1" color_speed="0.375" symmetry="0.25" name="" animate="1" juliascope="1.111" juliascope_dist="-1" juliascope_power="50" flatten="1" coefs="1 0 0 1 0 0" chaos="1 0 0 1 1 " opacity="1" blur="0"/>
+    <xform weight="0.005" color="0" var_color="1" color_speed="0.5" symmetry="0" name="" animate="1" pre_gaussian_blur="1" linear="1" spherical="0.37" gaussian_blur="0.043" flatten="1" coefs="1 0 0 1 0 0" chaos="1 0 0 1 1 " opacity="1" blur="0"/>
+    <palette count="256" format="RGB">
+      24390C5766827E94AA89A6B292AEB9A0B3BAA3B7BEA1B4BA
+      9AACB593A5AE8A909B9067177F4D035D14064E0A06410402
+      3500081E0400090302010100000001030103050009150F04
+      201100270302300500360400380303410300420202460303
+      4C07015004014F0300500400510900510F00571A01674408
+      6C970B5D9F1F7B95A18BA3AF95ABB59EB0B8A2B1BAA6B2BB
+      A4AFB9A1ADB5A2AAADAC7B4AB27103BB7501BE7A00B87A02
+      A57B086C8F247593A481A1B081A6B66794AE5C698748450F
+      4C18034811034910014B0F024D0E034E0B044E09034D0901
+      4A0901480A02470A04420904420601400602420A01440C02
+      450801440601450600470700470801490A024B0C014B0E01
+      510D02540F015A11026317028B4F00975706863F09661504
+      5D0F055C0C06650A027D1B03A34202B34C02BE5E05CE7404
+      D37901D58202D68801D18901C68302B57001A76400965A01
+      7E57073A54072240023E5A0A8357049D5301A65702A85802
+      A95801AF5701B45A04B16204B56601B16901B36D03BC7001
+      C36B01C56D00C87402C07904BF7902B37103AD69029E6A09
+      6B798E728BA26D88A258658A5C2C21561005540A02520903
+      540701590B005B0E016311016E1400973904A54402AA4606
+      AA4502A84902AB4E00AD5800AF5F02B66900BD7200C57B02
+      CE7F02D18202D48103D07C01CE7A01C67C04BF7702BA6805
+      B15908A94A05A449029D39017C19066610025F10035B0E02
+      571002580F045F16028334029F4301A24C00A25002A85806
+      AD6006AF6003AC6102AD6203AE6602A76604A27113919799
+      A2ABB0A3ACB3A9B2B7A8B1BAA8B8C1A9B9BEB0BABCB6BFB7
+      B4BDBCADBEC4B1BFC8A9BFC69FBEC994B0BB8AA6B2859EAC
+      6D7E924A58253A1B054713024E1303510F055C212257637C
+      667E9B5E6971825F049263039860019F5C02A66702B17100
+      AF7502AB791098854692A3AD96A8B19AACB599B0B897ADBA
+      9AABB995A9B891A9B18A9A9DAC7C17C37C06C57E07C87F07
+      D4820BAFB0ACAFB7B8ADB6B5A0AAB38BA1AE7D8AA05B6269
+      2B3A061D12050F0C040306040103040403020B0B011A1903
+   </palette>
+    <edit date="Mon Apr 05 10:30:03 -0500 2021" action="edit">
+      <edit filename="C:/Users/dahud/FractoriumShepherd/Fractorium/Examples/plangkye_examples.flame" index="13"/>
+    </edit>
+  </flame>
+</flames>

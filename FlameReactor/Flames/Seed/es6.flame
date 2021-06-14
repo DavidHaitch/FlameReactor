@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flames>
+  <flame version="EMBER-WIN-1.0.0.20" time="0" name="electricsheep.247.02330" size="1280 720" center="0.352368 0.191301" scale="329.744" rotate="-108.52" supersample="2" filter="1" filter_shape="gaussian" temporal_filter_type="box" temporal_filter_width="1.2" quality="1000" temporal_samples="100" sub_batch_size="10240" fuse="15" rand_range="1" background="0 0 0" brightness="100" gamma="4" highlight_power="1" logscale_k2="0" vibrancy="1" estimator_radius="11" estimator_minimum="0" estimator_curve="0.6" gamma_threshold="0" cam_zpos="0" cam_persp="0" cam_yaw="0" cam_pitch="0" cam_dof="0" blur_curve="0" palette_mode="linear" interpolation="linear" interpolation_type="log" plugins="linear flatten julian spherical diamond bubble" new_linear="1" curves="0 0 1 0.25 0.25 1 0.5 0.5 1 0.75 0.75 1 0 0 1 0.25 0.25 1 0.5 0.5 1 0.75 0.75 1 0 0 1 0.25 0.25 1 0.5 0.5 1 0.75 0.75 1 0 0 1 0.25 0.25 1 0.5 0.5 1 0.75 0.75 1 " overall_curve="0 0 0.25 0.25 0.5 0.5 0.75 0.75 1 1 " red_curve="0 0 0.25 0.25 0.5 0.5 0.75 0.75 1 1 " green_curve="0 0 0.25 0.25 0.5 0.5 0.75 0.75 1 1 " blue_curve="0 0 0.25 0.25 0.5 0.5 0.75 0.75 1 1 ">
+    <xform weight="1.5" color="0" var_color="1" color_speed="0.489" symmetry="0.022" name="" animate="1" linear="1" flatten="1" coefs="0.838249 0.508352 -0.508352 0.838249 0 0.00917" opacity="1" blur="0"/>
+    <xform weight="0.5" color="1" var_color="1" color_speed="0.5" symmetry="0" name="" animate="1" julian="0.5" julian_dist="5" julian_power="17" flatten="1" coefs="0.418346 -0.504463 0.534893 -0.650545 0 0" opacity="1" blur="0"/>
+    <xform weight="0.108" color="0" var_color="1" color_speed="0.9975" symmetry="-0.995" name="" animate="1" spherical="1" flatten="1" coefs="-0.235544 -0.592484 0.59248 -0.235538 3.16283 0.289237" opacity="1" blur="0"/>
+    <xform weight="0.5" color="1" var_color="1" color_speed="0.499" symmetry="0.00199997" name="" animate="1" diamond="0.329" flatten="1" coefs="-0.109123 0.045244 0.050807 0.116943 -0.191273 -0.661255" opacity="1" blur="0"/>
+    <xform weight="0.5" color="0" var_color="1" color_speed="1" symmetry="-1" name="" animate="1" diamond="0.329" flatten="1" coefs="0.117665 0.010479 0.016372 0.142618 0.914917 1.10808" opacity="1" blur="0"/>
+    <finalxform color="1" var_color="1" color_speed="0" symmetry="1" name="" animate="0" spherical="1" bubble="-1.813" coefs="0.829755 2.17701 -2.17701 0.829755 0 0.012953" opacity="1"/>
+    <palette count="256" format="RGB">
+      B5EBDE94D8D673C4CF52B0C7319DC01089B90479AE0B6DA1
+      126194195586204979283E6C2F325F3626513D1A44440E37
+      46052B44002049011D4F031B5404185B0916620F15691413
+      701A12771F107E250E852A0D8C300B93350A9A3A08A14006
+      A84505AF4D04B45704B96105BE6B05C37505C87F05CE8906
+      D39306D89E06DDA806E2B207E7BC07EDC607F2D007F7DA08
+      FCE408F1DD09E6D50ADBCE0BD0C70CC6BF0DBBB80EB0B00F
+      A5A9109AA2118F9A12849313798C146F8515657E175A771A
+      50701C4C6D1B496A1A4566184263173E60163B5D15375A13
+      3456123053112C5010294D0E254A0D22460C1E430B1B4009
+      173D08143A071036060C3304093003052D02022A01012900
+      022C01032F02053102063403073704063903023B01033F01
+      0846020E4D03135404195A061E6107246808296F092F750B
+      347C0C40840F4C8C12589416649C1970A41C78A81C85B120
+      92BB239FC427ACCE2BB9D72EC7E03AD5E84DE3EF60F1F774
+      FFFF87F9FF94F3FFA2EDFFAFE8FFBDE2FFCADCFFD8D6FFE5
+      B5EBDE94D8D673C4CF52B0C7319DC01089B90479AE0B6DA1
+      126194195586204979283E6C2F325F3626513D1A44440E37
+      46052B44002049011D4F031B5404185B0916620F15691413
+      701A12771F107E250E852A0D8C300B93350A9A3A08A14006
+      A84505AF4D04B45704B96105BE6B05C37505C87F05CE8906
+      D39306D89E06DDA806E2B207E7BC07EDC607F2D007F7DA08
+      FCE408F1DD09E6D50ADBCE0BD0C70CC6BF0DBBB80EB0B00F
+      A5A9109AA2118F9A12849313798C146F8515657E175A771A
+      50701C4C6D1B496A1A4566184263173E60163B5D15375A13
+      3456123053112C5010294D0E254A0D22460C1E430B1B4009
+      173D08143A071036060C3304093003052D02022A01012900
+      022C01032F02053102063403073704063903023B01033F01
+      0846020E4D03135404195A061E6107246808296F092F750B
+      347C0C40840F4C8C12589416649C1970A41C78A81C85B120
+      92BB239FC427ACCE2BB9D72EC7E03AD5E84DE3EF60F1F774
+      FFFF87F9FF94F3FFA2EDFFAFE8FFBDE2FFCADCFFD8D6FFE5
+   </palette>
+    <edit date="Fri Dec 25 10:34:28 -0600 2020" action="edit">
+      <edit date="Fri Sep  4 03:15:09 +0000 2015" action="clone" filename="C:/Users/dahud/FractoriumShepherd/flames/es6.flame" index="0">
+        <edit date="Fri Sep  4 03:14:09 +0000 2015" id="2330" gen="247" action="clone brood" filename="spex" index="0">
+          <edit date="Thu Sep  3 09:00:29 +0000 2015" id="2319" gen="247" action="cross alternate 1: 1 0 1 1 1 reframed1 improved colors" filename="upload" index="0">
+            <edit date="Sat Apr 16 03:45:06 +0000 2011" id="42475" gen="244" action="clone brood" filename="genebank2.flam3" index="167">
+              <edit date="Thu Mar 24 07:29:07 +0000 2011" id="40460" action="cross alternate 0: 0 1 1 improved colors" filename="upload" index="0">
+                <edit date="Tue Nov  2 13:57:53 +0000 2010" nick="sajrty" url="sajrtygmail.com" id="33393" action="clone upload" filename="spex" index="0">
+                  <edit nick="Sajrty" url="http://oxidizer.sf.net" comm="" date="Sat Oct 30 15:57:32 EDT 2010" filename="upload" index="0">
+                    <edit nick="BrothaLewis" url="" date="Fri Oct 29 01:25:38 EDT 2010"/>
+                    <edit nick="" url="" date="Fri Oct 29 01:25:38 EDT 2010"/>
+                  </edit>
+                </edit>
+                <edit date="Mon Feb  8 18:03:11 +0000 2010" nick="cqfd93" url="sylvie.gallet.free.fr/index.html" id="12020" action="clone upload" filename="spex" index="0">
+                  <edit filename="upload" index="0"/>
+                </edit>
+              </edit>
+            </edit>
+            <edit date="Sun Feb 13 08:34:09 +0000 2011" nick="cqfd93" url="sylvie.gallet.free.fr/index.html" id="38241" gen="244" action="clone upload" filename="genebank2.flam3" index="160">
+              <edit filename="upload" index="0"/>
+            </edit>
+          </edit>
+        </edit>
+      </edit>
+    </edit>
+  </flame>
+</flames>

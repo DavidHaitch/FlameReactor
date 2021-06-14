@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flames>
+  <flame version="EMBER-WIN-1.0.0.21" time="0" name="Basic-EyeCan_by_plangkye" size="1280 720" center="-0.183651 -0.146674" scale="750" rotate="25" supersample="2" filter="0.2" filter_shape="gaussian" temporal_filter_type="box" temporal_filter_width="1" quality="1000" temporal_samples="100" sub_batch_size="10240" fuse="15" rand_range="1" background="0 0 0" brightness="4" gamma="4" highlight_power="1" logscale_k2="0" vibrancy="1" estimator_radius="9" estimator_minimum="0" estimator_curve="0.4" gamma_threshold="0.01" cam_zpos="0" cam_persp="0" cam_yaw="0" cam_pitch="0" cam_dof="0" blur_curve="0" palette_mode="linear" interpolation="linear" interpolation_type="log" plugins="blur gaussian_blur pre_gaussian_blur linear spherical eyefish post_smartcrop radial_blur scry julian hemisphere foci" new_linear="1" curves="0 0 1 0.286735 0.209184 1 0.5 0.5 1 0.737755 0.815306 1 0 0 1 0.25 0.25 1 0.5 0.5 1 0.75 0.75 1 0 0 1 0.25 0.25 1 0.5 0.5 1 0.75 0.75 1 0 0 1 0.25 0.25 1 0.5 0.5 1 0.75 0.75 1 " overall_curve="0 0 0.286735 0.209184 0.5 0.5 0.737755 0.815306 1 1 " red_curve="0 0 0.25 0.25 0.5 0.5 0.75 0.75 1 1 " green_curve="0 0 0.25 0.25 0.5 0.5 0.75 0.75 1 1 " blue_curve="0 0 0.25 0.25 0.5 0.5 0.75 0.75 1 1 ">
+    <xform weight="0.125" color="0.087" var_color="1" color_speed="0.5" symmetry="0" name="Shine" animate="1" blur="0" gaussian_blur="0.1" coefs="1 0 0 1 0 0" post="0.207338 0 0 0.207338 0.092992 -0.123015" chaos="1 1 0 1 0 0 0 0 0 0 0 " opacity="0"/>
+    <xform weight="0.5" color="0.087" var_color="1" color_speed="1" symmetry="-1" name="Sclera" animate="1" pre_gaussian_blur="3.065" linear="0.097" coefs="1 0 0 1 0 0" chaos="0 0 1 0 0 0 0 0 0 0 0 " opacity="0" blur="0"/>
+    <xform weight="0.5" color="0" var_color="1" color_speed="0" symmetry="1" name="Sclera_2" animate="1" pre_gaussian_blur="1" linear="1" spherical="0.021" gaussian_blur="0.033" coefs="0.620921 0 0 0.620921 0 0" chaos="0 0 0 1 0 0 0 0 0 0 0 " opacity="0" blur="0"/>
+    <xform weight="0.5" color="0" var_color="1" color_speed="0.5" symmetry="0" name="Eyeball" animate="1" linear="0.306" eyefish="0.072" post_smartcrop="1" post_smartcrop_power="2" post_smartcrop_radius="0.201" post_smartcrop_roundstr="-0.743" post_smartcrop_roundwidth="1.11" post_smartcrop_distortion="0.177" post_smartcrop_edge="0.05" post_smartcrop_scatter="0" post_smartcrop_offset="0.051" post_smartcrop_rotation="0" post_smartcrop_cropmode="1" post_smartcrop_static="2" coefs="0 -1.48033 1.48033 0 -0.110069 -0.01875" post="0 1 -1 0 0 0" chaos="1 0 0 0 0 1 1 1 1 1 0 " opacity="1" blur="0"/>
+    <xform weight="0.125" color="0" var_color="1" color_speed="0.4" symmetry="0.2" name="Iris" animate="1" radial_blur="1.835" radial_blur_angle="0" scry="2.784" post_smartcrop="1" post_smartcrop_power="4" post_smartcrop_radius="-0.63" post_smartcrop_roundstr="0" post_smartcrop_roundwidth="1" post_smartcrop_distortion="0" post_smartcrop_edge="0.075" post_smartcrop_scatter="2" post_smartcrop_offset="0.499" post_smartcrop_rotation="0" post_smartcrop_cropmode="1" post_smartcrop_static="2" coefs="1 0 0 1 0 0" chaos="0 0 0 0 0 0 0 0 0 0 1 " opacity="0" blur="0"/>
+    <xform weight="0.125" color="1" var_color="1" color_speed="0.25" symmetry="0.5" name="BG_Color" animate="1" pre_gaussian_blur="0.726" julian="0.508" julian_dist="1" julian_power="2" post_smartcrop="1" post_smartcrop_power="2" post_smartcrop_radius="-0.35" post_smartcrop_roundstr="0.006" post_smartcrop_roundwidth="3.82" post_smartcrop_distortion="0.224" post_smartcrop_edge="0.15" post_smartcrop_scatter="0.15" post_smartcrop_offset="0.068" post_smartcrop_rotation="0" post_smartcrop_cropmode="1" post_smartcrop_static="2" coefs="0.998598 0 0 0.998598 0 0" post="0 1 -1 0 0 0" chaos="1 0 0 0 1 1 1 1 1 1 0 " opacity="1" blur="0"/>
+    <xform weight="0.5" color="0" var_color="1" color_speed="0" symmetry="1" name="Translate_Left" animate="1" linear="1" coefs="1 0 0 1 -1.625 0" chaos="0 1 0 0 1 0 10 10 1 1 0 " opacity="1" blur="0"/>
+    <xform weight="0.5" color="0" var_color="1" color_speed="0" symmetry="1" name="Translate_Right" animate="1" linear="1" coefs="1 0 0 1 1.625 0" chaos="0 1 0 0 1 0 10 10 1 1 0 " opacity="1" blur="0"/>
+    <xform weight="0.5" color="0" var_color="1" color_speed="0" symmetry="1" name="Translate_Up" animate="1" linear="1" coefs="1 0 0 1 2.475 -0.7" chaos="0 1 0 0 1 0 10 10 10 10 0 " opacity="1" blur="0"/>
+    <xform weight="0.5" color="0" var_color="1" color_speed="0" symmetry="1" name="Translate_Down" animate="1" linear="1" coefs="1 0 0 1 -2.475 0.7" chaos="0 1 0 0 1 0 10 10 10 10 0 " opacity="1" blur="0"/>
+    <xform weight="0.5" color="0" var_color="1" color_speed="0" symmetry="1" name="Iris_2" animate="1" hemisphere="0.272" coefs="0.683013 0 0 0.683013 0 0" chaos="0 0 0 4 1 0 0 0 0 0 0 " opacity="0" blur="0"/>
+    <finalxform color="0" var_color="1" color_speed="0" symmetry="1" name="" animate="0" foci="1.362" coefs="0.55361 0.276358 0.276358 -0.55361 -1.03072 -2.40738" post="0.309989 -0.225332 0.225332 0.309989 -0.1926 -0.094469" opacity="1"/>
+    <palette count="256" format="RGB">
+      41440164820088A70CA2BF2FD6E621F2F333FAF170F3F89A
+      DBDFBED1DCB4B0CDAFB7C2BCF2CBE0F5EAE8FAF6D1E5EFE7
+      ECE1E7DBE6D6BFD3B8A4C495829E886EA3996EA79E6A9790
+      347D6A29454600453D003839013236011E2E002432013437
+      0F3E2C0154102B480E4035082B2B0F350D01420123EC0089
+      810E5B1B004544004D6D0055992C34C55813D36C10E1800D
+      F3BD29F8D32DFEEA31FEEA30FFEA2FF0C124E29919D39524
+      C4922FF9B274F3C07FEDCE8BEFCF6DF2D150F3E356F4F55C
+      F8F632FAE72EFDD92BE0D241C3CC57B3C660A4C069C47066
+      FC432EA2280182140D63001955092348132D4D293A533F48
+      B28395B74675BC0A56DC0641FC032DFB0124FA001BEE0000
+      E0001281010E50062D1F0C4C0F0929000706001C03003100
+      75A706AAA00DDF9915E68426EE6F38D96E46C46E55A34128
+      A241001A3B280D4A15005A0200590201590202311F000D2C
+      00002400002100001F00011C00021900031C00041F000022
+      01002400092C00142F001F33002C37003A3B00483D015643
+      023634032C1A052301021E0A001913002224022A36003638
+      00564311656756848A9BA4ADC298B3E98CB9C0968AABA38C
+      8AB88A77AA60649D366CA22B75A7208BB40EA4BE1C94BD09
+      92B5037B870179610F773C1E632A1F2D27111B1133010A2B
+      0100220004240009270018250028241C6410436E03907734
+      DA9460DAC380D5C181D0C0829CB25F9B976A95A986D47E97
+      FF055CFF057CFF059DED34A3DC63AAEC7792F3A49DF4A59E
+      FD9B82FD0559FD0559FE0559F30040E80028DF0400C50F02
+      450023311B1A1E3612025C02007402017604006414016622
+      00654502432501542101651D2A83034A88032F8200007502
+      005605003F12002820000A2A000B2B00213129472F799429
+      92B620C5BD1DFEEB2DFDFB37FAF444F4F45EF8FA95BCD39D
+      6DAA9B6AA69268A289327E720360560255450235382D1B31
+      6D0056B80058D7013DF0003DEE0E19EE0E0CE85004C56F00
+      9EAA0CB1B642C4A433FC7440F06745FA4331FB291AFA3F14
+      FA3F16ED5724C7861E8B884189905C89674E583136404407
+   </palette>
+    <edit date="Mon Apr 05 10:30:56 -0500 2021" action="edit">
+      <edit filename="C:/Users/dahud/FractoriumShepherd/Fractorium/Examples/plangkye_examples.flame" index="7"/>
+    </edit>
+  </flame>
+</flames>

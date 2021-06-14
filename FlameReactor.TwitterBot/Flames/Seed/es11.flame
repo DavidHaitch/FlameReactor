@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flames>
+  <flame version="EMBER-WIN-1.0.0.20" time="0" name="electricsheep.247.50551" size="1280 720" center="0.271222 0.0855416" scale="330.394" rotate="127" supersample="2" filter="1" filter_shape="gaussian" temporal_filter_type="box" temporal_filter_width="1.2" quality="1000" temporal_samples="100" sub_batch_size="10240" fuse="15" rand_range="1" background="0 0 0" brightness="25" gamma="3.5" highlight_power="1" logscale_k2="0" vibrancy="1" estimator_radius="11" estimator_minimum="0" estimator_curve="0.6" gamma_threshold="0" cam_zpos="0" cam_persp="0" cam_yaw="0" cam_pitch="0" cam_dof="0" blur_curve="0" palette_mode="linear" interpolation="linear" interpolation_type="log" plugins="radial_blur flatten linear spherical julian" new_linear="1" curves="0 0 1 0.25 0.25 1 0.5 0.5 1 0.75 0.75 1 0 0 1 0.25 0.25 1 0.5 0.5 1 0.75 0.75 1 0 0 1 0.25 0.25 1 0.5 0.5 1 0.75 0.75 1 0 0 1 0.25 0.25 1 0.5 0.5 1 0.75 0.75 1 " overall_curve="0 0 0.25 0.25 0.5 0.5 0.75 0.75 1 1 " red_curve="0 0 0.25 0.25 0.5 0.5 0.75 0.75 1 1 " green_curve="0 0 0.25 0.25 0.5 0.5 0.75 0.75 1 1 " blue_curve="0 0 0.25 0.25 0.5 0.5 0.75 0.75 1 1 ">
+    <xform weight="0.69" color="0" var_color="1" color_speed="0.9" symmetry="-0.8" name="" animate="1" radial_blur="0.05" radial_blur_angle="-1" flatten="1" coefs="0.303742 -0.369781 0.0984803 0.528188 0.61813 -0.0682457" post="1.03186 0.0220774 -0.0220774 1.03186 0 0" opacity="1" blur="0"/>
+    <xform weight="100" color="1" var_color="1" color_speed="0.02" symmetry="0.96" name="" animate="1" linear="0.01" spherical="2.8" flatten="1" coefs="-1 -0 -0 1 1 -0" opacity="1" blur="0"/>
+    <finalxform color="0" var_color="1" color_speed="0.5" symmetry="0" name="" animate="0" julian="0.625" julian_dist="1" julian_power="2" flatten="1" coefs="-0.831091 0.445234 0.490703 0.716706 -0.405788 0.0352626" opacity="1"/>
+    <palette count="256" format="RGB">
+      2400004100005D0000790900961500B12400C83200E43C00
+      FF4A00FF5900FF6600FF7100FF7A00FF7A00FF7F00FF7F00
+      FF7F00F77F00DA840BC58417AA84249684327A843C62844A
+      4A845432896217896C00897A008984008484007F84007984
+      00717F006C7F00677F00627A005C7A00547A004F7A004A79
+      004579003C75003775003275002D71002D6700295D132954
+      2929453C293C4F293266292979241D0B162339436E384470
+      3D4878424C80444E8547518A4E589447548E4150883A497D
+      344273333F6E323D6A2D3862283258172145111A3C0B1433
+      08102E060D29050C2A040C2B040B2B030929030727030524
+      030321030322030424040828050D30131B451D2452282D5F
+      2F3364363A6A3C426F3E48703B4C733C4C743D4C76404E77
+      445078414E763F4D743A4C7330446F8645688E3D5D963550
+      9D2E45AD1E2DB51620BD0E15C40709CB0000CB0700CB0F00
+      CB1700CB1F00CB2F0034A03A459C2862981D7E941492910E
+      91880C948D109B9B1E9DA535A2B253ACBF75B8C995C2D0AC
+      C7D3B4A85E6B8E609F875EAB805CB76E58CF5C52E94C4CFF
+      5959F27073D833E49B48D19E5ABB9C66A5946C938A6D8681
+      6D827E6E847E718B7E759479839F799CAB7CB4B37EBBAB7F
+      BDA87FBBA87DB4AA78A9AB7091A0677A945E688B575C8452
+      5882505984525D8A5563935B6B9E6172A96778B26D7CB870
+      7DBA717AB96F6FB66960B26156AD614DA86245A46440A166
+      3EA06741A26149A95171B455A7C066CCBF77D7AD87DEA393
+      E0A197E1A794E3BB8CE6E67FA9EA7061ED6B53F0A64AF2D6
+      46F3E84AEFE155E4CD63D3B56EBFA076AB90799A85798F80
+      788B7E77907D739D786CB16772C85483DC3C97EA289FEE20
+      91EB236EE32C45D63742C85F4ABB814FB29250AF970C0C0C
+      0C0C0C0C0C0C0C0C0CD1D3A8D9D1B9DBD1C0D7CEBBCCC6AF
+      BBBA9DA4A98A8E997A7F8D6F7A896B798E6A729B6458AF58
+      44C4682CD78818E5AA10EAB816E59C23D85A51C53496B142
+      9E894B91694F8D605091654F9C754AAC9540B1BE3190CE21
+      6DD9135FDD0E55D9103BCC151EB91A1FA43821914C228454
+   </palette>
+    <edit date="Fri Dec 25 10:36:33 -0600 2020" action="edit">
+      <edit date="Sun Oct  4 21:18:13 -0400 2020" id="50551" gen="247" action="clone brood" filename="C:/Users/dahud/FractoriumShepherd/flames/es11.flame" index="0">
+        <edit date="Sun Sep 27 11:57:40 -0400 2020" id="50340" action="cross alternate 0: 0 1 reframed1 improved colors" filename="upload" index="0">
+          <edit date="Sun May  5 21:42:56 -0400 2019" id="37026" gen="247" action="clone brood" filename="spex" index="0">
+            <edit date="Fri May  3 21:54:27 -0400 2019" id="36969" action="mutate all coefs" filename="upload" index="0">
+              <edit date="Sat Apr 27 11:26:18 -0400 2019" id="36792" gen="247" action="clone brood" filename="spex" index="0">
+                <edit date="Wed Apr 17 23:16:12 -0400 2019" id="36561" action="cross alternate 1: 0 0 cmap_cross 1: 53 reframed0 improved colors" filename="upload" index="0">
+                  <edit date="Sun Apr 14 14:26:04 -0400 2019" nick="freakiebeat" url="www.esheeper.com" id="36464" gen="247" action="clone upload" filename="spex" index="0">
+                    <edit filename="upload" index="0"/>
+                  </edit>
+                  <edit date="Sat Mar 30 12:11:53 -0400 2019" id="36085" gen="247" action="clone brood" filename="spex" index="0">
+                    <edit date="Wed Mar 27 21:39:40 -0400 2019" id="35993" action="mutate xform 2 coefs reframed1" filename="upload" index="0"/>
+                  </edit>
+                </edit>
+              </edit>
+            </edit>
+          </edit>
+          <edit date="Mon Sep 21 09:01:39 -0400 2020" action="clone" filename="spex" index="0">
+            <edit date="Thu Sep 17 12:07:18 -0400 2020" id="50038" gen="247" action="clone brood" filename="spex" index="0">
+              <edit date="Thu Dec 26 09:01:53 -0500 2019" id="43205" action="mutate xform 2 coefs reframed0 improved colors" filename="upload" index="0">
+                <edit date="Sat Dec 14 20:56:18 -0500 2019" id="42941" gen="247" action="clone brood" filename="spex" index="0">
+                  <edit date="Sat Dec 14 09:01:46 -0500 2019" id="42901" action="mutate xform 0 coefs improved colors" filename="upload" index="0">
+                    <edit date="Thu Dec 12 09:01:41 -0500 2019" action="clone" filename="spex" index="0"/>
+                  </edit>
+                </edit>
+              </edit>
+            </edit>
+          </edit>
+        </edit>
+      </edit>
+    </edit>
+  </flame>
+</flames>

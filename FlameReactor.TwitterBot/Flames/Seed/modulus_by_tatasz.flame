@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flames>
+  <flame version="EMBER-WIN-1.0.0.21" time="0" name="modulus_by_tatasz" size="1280 720" center="0 -0.001" scale="315.72" rotate="0" supersample="2" filter="0.5" filter_shape="gaussian" temporal_filter_type="box" temporal_filter_width="1" quality="1000" temporal_samples="100" sub_batch_size="10240" fuse="30" rand_range="1" background="0 0 0" brightness="16" gamma="9995" highlight_power="-1" logscale_k2="0" vibrancy="1" estimator_radius="0" estimator_minimum="0" estimator_curve="0.4" gamma_threshold="0" cam_zpos="0" cam_persp="0" cam_yaw="0" cam_pitch="0" cam_dof="0" blur_curve="0" palette_mode="linear" interpolation="linear" interpolation_type="log" plugins="modulus linear" new_linear="1" curves="0 0 1 0.267677 0.040404 1 0.560606 0.383838 1 0.75 0.75 1 0 0 1 0.25 0.25 1 0.5 0.5 1 0.75 0.75 1 0 0 1 0.25 0.25 1 0.5 0.5 1 0.75 0.75 1 0 0 1 0.25 0.25 1 0.5 0.5 1 0.75 0.75 1 " overall_curve="0 0 0.267677 0.040404 0.560606 0.383838 0.75 0.75 1 1 " red_curve="0 0 0.25 0.25 0.5 0.5 0.75 0.75 1 1 " green_curve="0 0 0.25 0.25 0.5 0.5 0.75 0.75 1 1 " blue_curve="0 0 0.25 0.25 0.5 0.5 0.75 0.75 1 1 ">
+    <xform weight="1" color="0.175294" var_color="1" color_speed="0.02" symmetry="0.96" name="Iterator_0" animate="1" modulus="1" modulus_x="2" modulus_y="2" coefs="1 0 6.12323e-17 -1 -1.5099 -0.470297" post="0.25 0.933013 -0.933013 0.25 0 0" chaos="0 0 1 " opacity="1" blur="0"/>
+    <xform weight="0.071797" color="0.875371" var_color="1" color_speed="0.8235" symmetry="-0.647" name="Iterator_1" animate="1" modulus="1" modulus_x="2" modulus_y="2" coefs="-1 1.22465e-16 6.12323e-17 -1 1.14273 -3.53769" post="0.0669873 0.25 -0.25 0.0669873 2 -2" chaos="0 0 1 " opacity="1" blur="0"/>
+    <xform weight="0.5" color="0.814106" var_color="1" color_speed="0" symmetry="1" name="Iterator_2" animate="1" linear="1" coefs="1 0 6.12323e-17 1 0 0" chaos="1 1 0 " opacity="0" blur="0"/>
+    <finalxform color="0" var_color="1" color_speed="0" symmetry="1" name="flam3_camera" animate="0" modulus="1" modulus_x="2" modulus_y="2" coefs="1 0 6.12323e-17 1 -0.069719 -0.275267" post="6.12323e-17 1 -1 1.22465e-16 0 0" opacity="1"/>
+    <palette count="256" format="RGB">
+      D0E2E6CEDFE6CED6E3D0CCE3C8D0E3C0BDDCAFC0D0ADBED0
+      A6C0CDAABCC8ABB4BB9B98AD9098AD96A5A28A9CA08B9DA1
+      AC9FA6B48A98DB9A9EE29D98E3ACB2DCB0BFD1C6D6D4DCE7
+      D5E7E9DEECECE2F2E8E1EDE9D1E6E9C7E0E5B2D3E4A5CBE2
+      8CC7E790C2D989B7CE95B5CA9EC3D3A7C9D5B7D1DEC4D8E3
+      CCDFE6CBE3E7C5E7E8BFE4EAB9D9E8A4C7DB92B2C7899EB9
+      7D999D768894667475586A746F7C8C7C91A684A6BFA4C0CE
+      ADCBD6BCDBDDC9E1E5CCE0E9CFE2E9D1E2E9D1E2E9D2E5E9
+      D4E8E7DAEEE3D5EEEAD4ECECD5E7EBD3E6EAD3E7E8D2ECE9
+      D0EFEAD0EFF1D2EFEBD2E7EAD2E7E8CCE4E6CBDDE7BFD5EA
+      AED9E9A2D5E69ACEE396C6DD9FC2D5A2C3D4AEB7C6C99DB6
+      E09F99DFA3A2E2AEB2C6D0D1C8D9E0C3DBE7BCDEEAB7D1DE
+      A9C4CD92A7BC7D93A17475796163605960666973757B8698
+      85A1B69DB2C39EBBCB98C2D8A2CDE0A7C2DD9BB9D58DB2CF
+      87A7CE889CBF97AABBA2BEC9B1C8CEBDD4DCCEDAE6CDE2E7
+      CEE6E8CFE7E9C9E7F1C7ECF5CAEEECCFEFEACFEFEAC6EDEA
+      CAE7E5CDE5E7CFE4E7CCE4E8CBE3E7C9E2E7C0E1E6B8DADC
+      AEC7DBA1B9C59CADB78F8F9BE17B62F08831EAA327EBA438
+      EAAE65D7A776E09790E99267E17457E16E53696468555851
+      4C4E49484B425753525B65677F888591A3ADABBBC8BBCDDB
+      C0DBE6C2E6E6C3E6E8BDE6ECBFE6EBC6E1EAC8D9E3BED3D4
+      B2B6C1C5AEB6E0A6A5DCAEB9B9B1C6B6C4C7BFD2D9CBDEE5
+      CFE5E3D4E9E0D0E4E2CCE1E6C7DBE6C1D8E6B5CCDCABC6D1
+      A0C0BF8DA1AC7C8999576A704E626955535E5D5F5A5C5964
+      59686B697A8C7485996A849B6982A16185A96F90BD789AB3
+      79B0D769B3D87BB2DB96BCE1AECADFC8DCE7D4E6E8E7F3E9
+      ECF7E9ECF6EBEAF4EBEAF4EBE8F8EDE8F8EEE1F4F2E7F7EC
+      EDF3E9F5ECE3F0F3E8E9F3E8D6E9E5C9DED9ECC2B4EEB892
+      F3B457F2AB2FEFA721E78112F27932E89A45FDBF6CECB8A2
+      C2C4D3BDD0DEC3D1DECDDEE5CFE3E4CEE6E6CEE6E8CDE5E7
+      CCE4E8C8E1E8BDE3E6B9DCE2A9D0E1B2D3E2C0D7E5C7DBE6
+      C7E2E9CEE6EACFE7E9D2E7E8D1E6E7D0E5E6D0E1E8CADCE6
+   </palette>
+    <edit date="Mon Apr 05 10:32:03 -0500 2021" action="edit">
+      <edit filename="C:/Users/dahud/FractoriumShepherd/Fractorium/Examples/tatasz_examples.flame" index="0"/>
+    </edit>
+  </flame>
+</flames>

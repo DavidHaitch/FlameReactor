@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flames>
+  <flame version="EMBER-WIN-1.0.0.21" time="0" name="Flame_2021-04-09-161458_12" size="1280 720" center="0.334961 -0.383246" scale="750" rotate="90" supersample="2" filter="0.5" filter_shape="gaussian" temporal_filter_type="box" temporal_filter_width="1" quality="1000" temporal_samples="100" sub_batch_size="10240" fuse="15" rand_range="1" background="0 0 0" brightness="200" gamma="6.5" highlight_power="-1" logscale_k2="0" vibrancy="1" estimator_radius="0" estimator_minimum="0" estimator_curve="0.4" gamma_threshold="1.24" cam_zpos="-5.9" cam_persp="0.02" cam_yaw="-1.01229" cam_pitch="0.331613" cam_dof="0" blur_curve="0" palette_mode="linear" interpolation="linear" interpolation_type="log" plugins="pre_GlynnSim4 linear scry" new_linear="1" curves="0 0 1 0.25 0.25 1 0.5 0.5 1 0.75 0.75 1 0 0 1 0.25 0.25 1 0.5 0.5 1 0.75 0.75 1 0 0 1 0.25 0.25 1 0.5 0.5 1 0.75 0.75 1 0 0 1 0.25 0.25 1 0.5 0.5 1 0.75 0.75 1 " overall_curve="0 0 0.25 0.25 0.5 0.5 0.75 0.75 1 1 " red_curve="0 0 0.25 0.25 0.5 0.5 0.75 0.75 1 1 " green_curve="0 0 0.25 0.25 0.5 0.5 0.75 0.75 1 1 " blue_curve="0 0 0.25 0.25 0.5 0.5 0.75 0.75 1 1 ">
+    <xform weight="0.333333" color="0.287712" var_color="1" color_speed="0.5" symmetry="0" name="" animate="1" pre_GlynnSim4="-0.114218" pre_GlynnSim4_radius="-0.920611" pre_GlynnSim4_contrast="0" pre_GlynnSim4_pow="0.328928" pre_GlynnSim4_X="0.583252" pre_GlynnSim4_Y="-0.0816678" linear="0.819031" scry="0.431075" coefs="-0.668452 1.07753 0.884224 -0.290256 0.610681 -0.221825" post="0.999848 -0.0174526 0.0174526 0.999848 0 -1" opacity="1" blur="0"/>
+    <xform weight="0.333333" color="0.842128" var_color="1" color_speed="0.5" symmetry="0" name="" animate="1" pre_GlynnSim4="-0.155242" pre_GlynnSim4_radius="-0.991328" pre_GlynnSim4_contrast="0" pre_GlynnSim4_pow="0.251168" pre_GlynnSim4_X="0.324544" pre_GlynnSim4_Y="-0.203204" linear="-0.126602" scry="-0.350061" coefs="0.0626625 -0.738695 0.688993 0.576326 -0.0714455 -0.51177" post="1 -3.49691e-07 3.49691e-07 1 2 0" opacity="1" blur="0"/>
+    <xform weight="0.333333" color="0.889217" var_color="1" color_speed="0.5" symmetry="0" name="" animate="1" pre_GlynnSim4="0.125336" pre_GlynnSim4_radius="0.832861" pre_GlynnSim4_contrast="0" pre_GlynnSim4_pow="-0.840816" pre_GlynnSim4_X="0.840622" pre_GlynnSim4_Y="-0.313694" linear="0.059927" scry="-0.944276" coefs="0.218995 0.710309 -0.572971 -0.435268 0.0832928 -0.434139" opacity="1" blur="0"/>
+    <xform weight="1" color="0" var_color="1" color_speed="0" symmetry="1" name="" animate="1" linear="1" coefs="-0.5 0.866025 -0.866025 -0.5 3 0" post="0.017452 -0.999848 0.999848 0.017452 0 0" opacity="1" blur="0"/>
+    <xform weight="1" color="1" var_color="1" color_speed="0" symmetry="1" name="" animate="1" linear="1" coefs="-0.5 -0.866025 0.866025 -0.5 0 0" opacity="1" blur="0"/>
+    <xform weight="1" color="1" var_color="1" color_speed="0" symmetry="1" name="" animate="1" linear="1" coefs="-1 0 0 1 0 0" post="0.0697566 0.997564 -0.997564 0.0697566 0 0" opacity="1" blur="0"/>
+    <palette count="256" format="RGB">
+      77461E6D461C6A3F1B633A1B5C3617502E12422A0E3D240D
+      39220C36220C3A230C4225104E2811512C0E5831135E3411
+      6539126D3C146E3A186A391B69361C61321A562B13532C11
+      532E125834185D371D623D216740216940236B3C206B3D1E
+      693B1E62391C5E391A5B351A5B321E5A33215A3720563D1F
+      5B411B5839194D2F174B2717452314421D0D401C0D361F0C
+      3429123F2711402817472A1B4D2C1D522E1B542F1B502C17
+      4B2718422218392217371E102F170C351E0F3F201647291B
+      56322058342259351E57342053301C4D2B16502617552817
+      60301966351C673B1A6A3C1A6E401C6A3D1E60371E5C341E
+      55351D4A301B4428184224154323133E210D3E210C40200C
+      45210D4F280F522B0F5B3212653C176C3F13664019603B1B
+      5D371B5C30175427174A2215472315452616442617442A19
+      482D1B4C361E4D37175936115D37115E3E195E3A1C5B361C
+      5C351F5C39205D371F60371E693B1B6F3E1C78401C7B421C
+      7D431D7E431B84471B87481C89491B8C491C90491C8E481A
+      89411982431C7C421B793F1D73421B74431B7A451D804B20
+      8351238B53248F5B22935D298C5727874E21864D2086491E
+      87461C8243187D3E16783F186E37196A3B1C6E3F1C6C411C
+      6C401B6D4116774912774A12744B166C3F1768381B5E3619
+      5B321A532E194B261446251040220D3C210E3B200D3A2110
+      402215412619472C1B552F1C58321F57321E542D1A4B2919
+      4428134126123D250F3C250E44260E4929124F2E1657331C
+      5E381E653B1E6B411C6E411B71411B74421C79421C72431D
+      703F1C733E19723F1C70431E74461D7B471F814B21874C22
+      8D4B20924D219650208F5022914B1F904B1B8F4C1C8C491E
+      88471E83481D804A1E7C471F7B471C7A431C7A441A7A471B
+      78481E73461E6F421D6B3E1E5D391F57331E4E2F1C472A19
+      462618472817482C154F2F1251280E54270E542F11593215
+      5E3A1865391A6A35176C2F145C30145427105728165A311B
+      613B246D412575472079451E7B431D7E441E80461E7D481E
+      7D4A207A4621764626814924834F2183481D7E4117824319
+   </palette>
+    <edit date="Fri Apr 09 16:17:43 -0500 2021" action="edit">
+      <edit filename="" index="11"/>
+    </edit>
+  </flame>
+</flames>

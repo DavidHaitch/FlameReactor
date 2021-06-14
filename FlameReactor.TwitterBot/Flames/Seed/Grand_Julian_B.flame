@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flames>
+  <flame version="EMBER-WIN-1.0.0.21" time="0" name="Grand_Julian_B" size="1280 720" center="0 0" scale="375" rotate="-45" supersample="2" filter="0.5" filter_shape="gaussian" temporal_filter_type="box" temporal_filter_width="1" quality="1000" temporal_samples="100" sub_batch_size="10240" fuse="15" rand_range="1" background="0 0 0" brightness="30" gamma="3" highlight_power="1" logscale_k2="0" vibrancy="1" estimator_radius="9" estimator_minimum="0" estimator_curve="0.4" gamma_threshold="0.01" cam_zpos="0" cam_persp="0" cam_yaw="0" cam_pitch="0" cam_dof="0" blur_curve="0" palette_mode="linear" interpolation="smooth" interpolation_type="log" plugins="pre_gaussian_blur bubble julian flatten" new_linear="1" curves="0 0 1 0.25 0.25 1 0.5 0.5 1 0.75 0.75 1 0 0 1 0.25 0.25 1 0.5 0.5 1 0.75 0.75 1 0 0 1 0.25 0.25 1 0.5 0.5 1 0.75 0.75 1 0 0 1 0.25 0.25 1 0.5 0.5 1 0.75 0.75 1 " overall_curve="0 0 0.25 0.25 0.5 0.5 0.75 0.75 1 1 " red_curve="0 0 0.25 0.25 0.5 0.5 0.75 0.75 1 1 " green_curve="0 0 0.25 0.25 0.5 0.5 0.75 0.75 1 1 " blue_curve="0 0 0.25 0.25 0.5 0.5 0.75 0.75 1 1 ">
+    <xform weight="0.5" color="1" var_color="1" color_speed="0.5" symmetry="0" name="" animate="1" pre_gaussian_blur="10" bubble="0.2" coefs="1 0 0 1 0 0" opacity="1" blur="0"/>
+    <xform weight="6" color="0" var_color="1" color_speed="0.5" symmetry="0" name="" animate="1" julian="1" julian_dist="-1" julian_power="2" flatten="1" coefs="0.707107 -0.707107 0.707107 0.707107 0 -0.3" opacity="1" blur="0"/>
+    <xform weight="1" color="0.5" var_color="1" color_speed="0.5" symmetry="0" name="" animate="1" julian="0.2" julian_dist="-1" julian_power="15" flatten="1" coefs="0.707107 -0.707107 0.707107 0.707107 0 0" opacity="1" blur="0"/>
+    <xform weight="1" color="0.75" var_color="1" color_speed="0.5" symmetry="0" name="" animate="1" julian="0.3" julian_dist="-1" julian_power="8" flatten="1" coefs="0.707107 -0.707107 0.707107 0.707107 0 0" opacity="1" blur="0"/>
+    <palette count="256" format="RGB">
+      2D3E584D76AE558DC05B98B45B98B45D96B36098B1688C9C
+      74934D6F93156086006578043F4C0015300300190A0E0F07
+      13120D142208243D152D5F18424436445569508BAD5291B0
+      5393AF5595B05595B05893B15893B15895B15895B15A9FAF
+      659A8072A336618114503C013D1F1D472011662511732C0E
+      872E04933309AA2A4BA84655A04B689791916399B1508CAE
+      507F933541570721540926221A282B44333B53393A504647
+      596A34585F2C5D600F6274065F5500582D1A862B19932F00
+      AA3102D03000D63500C41F0BB02601882B0A4C1006240902
+      1107000305040000070A0605170D0B14130E2423295E5A34
+      7C854696927990A0627FAC4790A94391A0438E9D40988F2A
+      9E8A319F862CC56018C75523BE5D33BD5B42C16B5A978B7F
+      908C8B639BB26AA3B76BA4B56FA6BA6CA5B967AAB372ACAE
+      A79EA1ACA7A4ADA8A5A0A7AD75A8BD629CB45693B0508CA8
+      6E6D6B873C1D8231207D27426C68675189A05B8498635E5B
+      873C1DA5481CC03936B14D4DC36960C56765CE5B5ECE5E53
+      D64F49CD5533CB5923DB621DC75E25BE5F319D954296A138
+      92A02F827C326D8122465F1D463308392608341B17440B00
+      4E0E1C832816AE3A09C24624C46859968C8A6496AD6199B2
+      5D96B35A95B35C95B26199B0778A98958B89A1656572756C
+      5F8DA55E96B15F97B26098B1639BB2629DAB9D9392A69C9D
+      A49E9E959A9D6AA3B6659EB2619BB1669EB768A1B492979A
+      9C9794A79F9CAAA1A2AFA6A7B4AEAEB5AFAF88BAD57CB4CF
+      70A9C46CABBD68AEB864A7B769A3B96C9EB5989292B670A6
+      C56064DE4C4DDE3B28CC182195082B73221F5F0A214E1F2F
+      542C345E47516B6C815D94B25C98B4609CB65E9EB95D9DB6
+      5E9AB65A9AB55A9AB55D9AB9609CB6649DB869A1B865A2B7
+      639FB7619FB85E9EB75999B45999B45B98B4619BB16495A6
+      7B8083913E52652A3C4514171D1216190B0A1B07090D080C
+      0D0B0E130D111A12103522245C3B426552705094A75292AE
+      5291B05291B05190AF4D88AA2F4982373F415124415F0A21
+      6E19308C2842863556994868B94C5FB1687C5E9EB7A29A98
+   </palette>
+    <edit date="Mon Apr 05 10:34:17 -0500 2021" action="edit">
+      <edit filename="C:/Users/dahud/FractoriumShepherd/Fractorium/Examples/tyrantwave_base_forms.flame" index="6"/>
+    </edit>
+  </flame>
+</flames>

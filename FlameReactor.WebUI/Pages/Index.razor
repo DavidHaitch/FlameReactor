@@ -1,0 +1,16 @@
+﻿@page "/"
+@inherits IndexModel
+    <div class="page" @onmousemove="() => ShowUI()" @ontouchstart="() => ShowUI()">
+        <div class="sidebar">
+            <NavMenu OnStateChange=@UpdateState />
+        </div>
+
+        <div class="main">
+            <div class="content">
+                <Viewport StateVar="@StateVar"></Viewport>
+            </div>
+        </div>
+    </div>
+
+
+

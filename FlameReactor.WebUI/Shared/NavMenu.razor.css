@@ -1,0 +1,61 @@
+.navbar-toggler {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+.top-row {
+    height: 5rem;
+    font-weight:200;
+    background-color: rgba(0,0,0,0.0);
+}
+
+.navbar-brand {
+    font-size: 1.1rem;
+}
+
+.oi {
+    width: 2rem;
+    font-size: 1.1rem;
+    vertical-align: text-top;
+    top: -2px;
+}
+
+.btn
+{
+    border-radius:0 !important;
+}
+
+@media (min-width: 768px) {
+    .navbar-toggler {
+        display: none;
+    }
+
+    .collapse {
+        /* Never collapse the sidebar for wide screens */
+        display: block;
+    }
+}
+
+.pulse {
+    animation: pulseanim 5s 0s infinite alternate;
+    padding: 2px;
+}
+
+@keyframes pulseanim {
+    0% {
+        background-color: transparent;
+        transform: scale(1.0);
+        color: indianred;
+    }
+
+    66% {
+        background-color: indianred;
+        transform: scale(1.125);
+        color: black;
+    }
+
+    100% {
+        background-color: indianred;
+        transform: scale(1.125);
+        color: black;
+    }
+}

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flames>
+  <flame version="EMBER-WIN-1.0.0.21" time="0" name="Cap_And_Bells__by_plangkye" size="1280 720" center="0 -0.15" scale="750" rotate="0" supersample="2" filter="0" filter_shape="gaussian" temporal_filter_type="box" temporal_filter_width="1" quality="1000" temporal_samples="100" sub_batch_size="10240" fuse="15" rand_range="1" background="0 0 0" brightness="40.8609" gamma="5" highlight_power="1" logscale_k2="0" vibrancy="1" estimator_radius="0" estimator_minimum="0" estimator_curve="0.4" gamma_threshold="0.01" cam_zpos="0" cam_persp="0" cam_yaw="0" cam_pitch="0" cam_dof="0" blur_curve="0" palette_mode="linear" interpolation="linear" interpolation_type="log" plugins="waves2 twoface pre_gaussian_blur linear auger cylinder loonie splits spherical bipolar" new_linear="1" curves="0 0 1 0.25 0.25 1 0.75 0.75 1 1 1 1 0 0 1 0.25 0.25 1 0.75 0.75 1 1 1 1 0 0 1 0.25 0.25 1 0.75 0.75 1 1 1 1 0 0 1 0.25 0.25 1 0.75 0.75 1 1 1 1 " overall_curve="0 0 0.25 0.25 0.75 0.75 1 1 " red_curve="0 0 0.25 0.25 0.75 0.75 1 1 " green_curve="0 0 0.25 0.25 0.75 0.75 1 1 " blue_curve="0 0 0.25 0.25 0.75 0.75 1 1 ">
+    <xform weight="0.5" color="0.426044" var_color="1" color_speed="0.00999999" symmetry="0.98" name="" animate="1" waves2="0.963" waves2_freqx="3.219" waves2_scalex="-0.033303" waves2_freqy="5.487" waves2_scaley="0.0696974" waves2_freqz="0" waves2_scalez="0" twoface="0.061" coefs="-1.02077 0.290088 -0.1672 -0.947417 3.01105 0.496923" post="0.921867 0.294325 0.012272 1.0156 1.59794 -0.453888" chaos="43 1 0 1 0 0 0 " opacity="0" blur="0"/>
+    <xform weight="0.5" color="0.00161031" var_color="1" color_speed="1" symmetry="-1" name="" animate="1" pre_gaussian_blur="1" linear="1" coefs="-0.811331 -0.531946 -0.577693 0.791617 1.29855 0.70432" post="0.543305 0.451086 -0.817536 0.575878 0.402061 -1.60425" chaos="10 1 0 0.1 0 0 0 " opacity="0" blur="0"/>
+    <xform weight="0.5" color="0" var_color="1" color_speed="0.5" symmetry="0" name="" animate="1" pre_gaussian_blur="0.5" auger="0.239" auger_sym="0" auger_weight="0.5" auger_freq="5" auger_scale="0.1" auger_half_scale="0.05" coefs="0.626679 0.404912 -1.39364 0.577971 -1.88912 -0.899374" post="0.495347 -1.08021 1.6088 0.622876 1.08311 -1.36326" chaos="5 1 0 0.1 0 0 0 " opacity="0" blur="0"/>
+    <xform weight="1" color="0" var_color="1" color_speed="0" symmetry="1" name="" animate="1" cylinder="0.25" coefs="-0.656407 -1.34583 1.34583 -0.656407 0.838736 3.28811" post="0 0.5 -0.5 0 0 0" chaos="0 0 10 0 1 0 0 " opacity="0" blur="0"/>
+    <xform weight="5" color="0" var_color="1" color_speed="0.005" symmetry="0.99" name="" animate="1" loonie="1" coefs="-1.63806 0.01233 -0.01233 -1.63806 0.766781 -0.064407" chaos="0 0 0 0 0 0 1 " opacity="0" blur="0"/>
+    <xform weight="0.5" color="0" var_color="1" color_speed="0" symmetry="1" name="" animate="1" splits="1" splits_x="0" splits_y="0.125" coefs="0.999269 -0.03823 0.03823 0.999269 -0.164434 -0.017928" chaos="0 0 1 0 1 0 0 " opacity="0" blur="0"/>
+    <xform weight="0.5" color="0" var_color="1" color_speed="0" symmetry="1" name="" animate="1" spherical="1" coefs="1 0 0 1 -0.96773 -0.042305" chaos="0 0 0 0 0 1 0 " opacity="1" blur="0"/>
+    <finalxform color="0" var_color="1" color_speed="0" symmetry="1" name="" animate="0" bipolar="0.528" bipolar_shift="0.582" coefs="-0.661016 0.750371 -0.750371 -0.661016 0.634075 0.257055" post="0 -1 1 0 0 0" opacity="1"/>
+    <palette count="256" format="RGB">
+      E77E9CE982AAB93FA35D22671B583D000000000000770918
+      B8050FFA0107C20E078A1B086E1C08521E09000000000000
+      000000580F03B11F06B12105B12305842914573023000000
+      000000000000000000000000000000000000000000000000
+      0000000000000000000000000000003A3F297A8269D5B0D0
+      E8BDA4FCCA78F2D15DE9D943EAD641EBD33FE8DB6CE8D2A7
+      E8CAE3F2CDE7FCD0EBFCB1D8FD93C5D15DB89E1C8FAC2844
+      604241155D3F0A2E1F000000000000000000000000000000
+      00000000000000000039050D720B1BC43B06DB751DDEB432
+      A7A63F70994C4890322187191C7A1F127822000000000000
+      000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000000000000000
+      310D34631A697E187B99178ECA0B94E945A9E77BBB8A6381
+      2D4B47162523000000000000000000000000000000000000
+      0000000000000000000000000000000000000000001B1601
+      372D035236026E4001D79729FDC443000000000000000000
+      000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000000000000000
+      0000000000003A2806743800D46213FE6E26BC590B000000
+      000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000025C07027E26
+      218719288C1558981F7F962097A229A3A627A6B5238FC642
+      7FBC2D67AA2753A72275B911C9D938CDDA4ED0BC34B9A229
+      80854434670E000000000000000000000000000000000000
+      000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000000000000000
+      0000000000000000000000000000004C32478F026F991A8E
+   </palette>
+    <edit date="Mon Apr 05 10:31:16 -0500 2021" action="edit">
+      <edit filename="C:/Users/dahud/FractoriumShepherd/Fractorium/Examples/plangkye_examples.flame" index="2"/>
+    </edit>
+  </flame>
+</flames>

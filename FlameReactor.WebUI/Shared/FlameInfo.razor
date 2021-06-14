@@ -1,0 +1,15 @@
+﻿@using FlameReactor.DB.Models
+
+<div class="flameinfo-wrapper">
+    <span>
+        Generation: @flame.Generation
+        <br />
+        Promiscuity: @flame.Promiscuity
+    </span>
+    @ChildContent
+</div>
+
+@code {
+    [Parameter] public RenderFragment ChildContent { get; set; }
+    [Parameter] public Flame flame { get; set; }
+}

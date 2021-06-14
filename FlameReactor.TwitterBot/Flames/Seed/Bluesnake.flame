@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flames>
+  <flame version="EMBER-WIN-21.21.4.1" time="0" name="Flame_2020-12-04-122057_4" size="1280 720" center="0 0" scale="402.083" rotate="0" supersample="2" filter="1" filter_shape="gaussian" temporal_filter_type="gaussian" temporal_filter_width="1" quality="1000" temporal_samples="100" sub_batch_size="10240" fuse="40" rand_range="0.9" background="0 0 0" brightness="4" gamma="4" highlight_power="0" logscale_k2="0" vibrancy="1" estimator_radius="0" estimator_minimum="0" estimator_curve="0.4" gamma_threshold="0.13" cam_zpos="0.4" cam_persp="2" cam_yaw="0" cam_pitch="0" cam_dof="0.01" blur_curve="0.95" palette_mode="linear" interpolation="linear" interpolation_type="linear" plugins="juliascope cell post_julia julia disc spherical cross" new_linear="1" curves="0 0 1 0.25 0.25 1 0.5 0.5 1 0.75 0.75 1 0 0 1 0.25 0.25 1 0.5 0.5 1 0.75 0.75 1 0 0 1 0.25 0.25 1 0.5 0.5 1 0.75 0.75 1 0 0 1 0.25 0.25 1 0.5 0.5 1 0.75 0.75 1 " overall_curve="0 0 0.25 0.25 0.5 0.5 0.75 0.75 1 1 " red_curve="0 0 0.25 0.25 0.5 0.5 0.75 0.75 1 1 " green_curve="0 0 0.25 0.25 0.5 0.5 0.75 0.75 1 1 " blue_curve="0 0 0.25 0.25 0.5 0.5 0.75 0.75 1 1 ">
+    <xform weight="0.3" color="0" var_color="1" color_speed="0.5" symmetry="0" name="" animate="1" juliascope="1" juliascope_dist="1" juliascope_power="1" cell="1" cell_size="1" post_julia="1" coefs="-0.709386 -0.155734 0.280825 0.687736 -0.0945904 -0.176356" opacity="1" blur="0"/>
+    <xform weight="0.3" color="0.5" var_color="1" color_speed="0.5" symmetry="0" name="" animate="1" julia="0.6" coefs="-0.603876 -0.0516403 0.157015 0.818373 -0.117619 -0.224521" opacity="1" blur="0"/>
+    <xform weight="0.1" color="1" var_color="1" color_speed="0.5" symmetry="0" name="" animate="1" disc="0.6" coefs="-0.3 0.8 0.6 0.2 -0.2 -0.2" opacity="1" blur="0"/>
+    <xform weight="0.2" color="0.37" var_color="1" color_speed="0.4" symmetry="0.2" name="" animate="1" spherical="1" cross="-0.01" coefs="-0.0850354 2.82715 -2.82715 -0.0850354 0 -0" post="0.685528 -0.728046 0.728046 0.685528 0 0" opacity="1" blur="0">
+      <motion motion_frequency="1" motion_function="sin" motion_offset="-9999" symmetry="19999" sinusoidal="0.1"/>
+    </xform>
+    <palette count="256" format="RGB">
+      18190910262D08312D093736092334052531061B2715281B
+      22450B4564094A8D0A56B108B6FF0ABCFF0BC5FF0CC3FF26
+      519B363E6A6B1B63561856460D3B35062534081F29081E26
+      091A22061820100E1F3009255609387E0D5D960E6CBB1081
+      FF05CCFF25FCFF4DFFFF4BFFFF42FFFF0AFF9E0A968B0968
+      841E4A70673089B43BC9FF448CFF1146FF1719BBCF17D3EB
+      04CDFF06BBFF059AF12E7ED5196BB3116F9015809206B1B9
+      0A9CE30ACCFF45E5FF47E5FF47D7FFDE1CC1FF3ECDFF10C7
+      EA1CB3A5366B3B40582939481C3844311A1C221E1A181815
+      14091310110B0C1906061409060E1506151F051A26062534
+      04394809384F063D52063C56063D540A2A4409202D081B25
+      051B220815232308212D061F360A2239103C3B094A400848
+      510C4F450B4617105A11308C0A65B6146AE90B87FF0ACAFF
+      0BFFFF06FFFF05FFFF08FFFF1CFFFF19D5FF08CEFF06C5FF
+      0C8CFF0A8BDD12609C094876063E59042242031F2D051520
+      050A180509130C05111109110A060E090A0E040C15060917
+      04081B0A091E08061909051209080D0D0E09061406051409
+      060E05080E0A080D1109191A09191C081A1A081F120C251A
+      18271223340A314F0925550B194E040D38061120090D1E0A
+      081806131A0C191A082223133444454B6352445F7328717C
+      095475064767054462043756081B3906142E082130062D37
+      062B3D063C5A0E446E0852870B46A6064A94094876054E75
+      0658810C6E8E047DBA0A85CD0689CF0584C6047AB209608D
+      093E780536520627370513260610260A12250A132B0B1442
+      0B215306406705548105828508A49C90FF4DBFFF43D1FF19
+      BBFF0B44C8123B7106542B154D12264C4E3F51682A769512
+      7A8812636C0A4A3E1437390C27320B211E0A11120B080D12
+      08101906151F0515200617210A15231B06202F0620400A34
+      4D093C36062B280620180512080D140515190A201E052121
+      09451B1A5A1A09674008436709278C0D45A81162D1186EDE
+      0972B20E67900A4F6E06405D042D4405212F0B1527280B25
+      2D082032082B3E124B1B236234084A370B26382F1937530B
+   </palette>
+    <edit date="Fri Apr 16 11:53:04 -0500 2021" action="edit">
+      <edit date="Fri Dec 04 11:21:30 -0600 2020" action="edit" filename="C:/Users/dahud/Desktop/render/Flame_2020-12-04-111938_2.flame" index="0">
+        <edit filename="No parent" index="1"/>
+      </edit>
+    </edit>
+  </flame>
+</flames>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flames>
+  <flame version="EMBER-WIN-1.0.0.21" time="0" name="ellipcs_by_tatasz" size="1280 720" center="-0.0690103 0.515524" scale="253.785" rotate="-36.85" supersample="2" filter="0.5" filter_shape="gaussian" temporal_filter_type="box" temporal_filter_width="1" quality="1000" temporal_samples="100" sub_batch_size="10240" fuse="30" rand_range="1" background="0 0 0" brightness="90" gamma="3.5" highlight_power="-1" logscale_k2="0" vibrancy="1" estimator_radius="0" estimator_minimum="0" estimator_curve="0.4" gamma_threshold="0" cam_zpos="0" cam_persp="0" cam_yaw="0" cam_pitch="0" cam_dof="0" blur_curve="0" palette_mode="linear" interpolation="linear" interpolation_type="log" plugins="hemisphere curl pre_bTransform elliptic foci pre_blur_zoom" new_linear="1" curves="0 0 1 0.25 0.25 1 0.5 0.5 1 0.75 0.75 1 0 0 1 0.222222 0.227273 1 0.449495 0.575758 1 0.757576 0.924242 1 0 0 1 0.20202 0.252525 1 0.449495 0.575758 1 0.772727 0.90404 1 0 0 1 0.242424 0.222222 1 0.464646 0.616162 1 0.787879 0.919192 1 " overall_curve="0 0 0.25 0.25 0.5 0.5 0.75 0.75 1 1 " red_curve="0 0 0.222222 0.227273 0.449495 0.575758 0.757576 0.924242 1 1 " green_curve="0 0 0.20202 0.252525 0.449495 0.575758 0.772727 0.90404 1 1 " blue_curve="0 0 0.242424 0.222222 0.464646 0.616162 0.787879 0.919192 1 1 ">
+    <xform weight="0.2" color="0" var_color="1" color_speed="0.05" symmetry="0.9" name="Iterator_0" animate="1" hemisphere="1" coefs="0.32768 0 2.00646e-17 0.32768 0.214235 0.119092" post="0.57 0 3.49024e-17 0.57 0.77 0" chaos="1 1 0 0 1 " opacity="1" blur="0"/>
+    <xform weight="8" color="1" var_color="1" color_speed="0" symmetry="1" name="Iterator_1" animate="1" curl="1" curl_c1="0.35" curl_c2="0" coefs="-0.394509 0.319914 -0.319914 -0.394509 -0.682125 0.148384" chaos="0 0 1 0 0 " opacity="0" blur="0"/>
+    <xform weight="0.5" color="0.75" var_color="1" color_speed="0.007" symmetry="0.986" name="Iterator_2" animate="1" pre_bTransform="1" pre_bTransform_rotate="-0.35" pre_bTransform_power="1" pre_bTransform_move="0.25" pre_bTransform_split="0" elliptic="1" coefs="-0.939743 0.0139115 -0.0139115 -0.939743 -0.810577 -0.839368" post="6.12323e-17 1 -1 1.22465e-16 0 0" chaos="0 0 0 1 0 " opacity="0" blur="0"/>
+    <xform weight="0.5" color="0.546027" var_color="1" color_speed="0" symmetry="1" name="Iterator_3" animate="1" foci="1" coefs="4.80949e-17 0.78545 -0.78545 9.61899e-17 0 0" post="0.5 0 3.06162e-17 0.5 0 0" chaos="1 1 0 0 1 " opacity="1" blur="0"/>
+    <xform weight="0.2" color="0.329868" var_color="1" color_speed="0" symmetry="1" name="Iterator_4" animate="1" pre_blur_zoom="1" pre_blur_zoom_length="1" pre_blur_zoom_x="2" pre_blur_zoom_y="0" hemisphere="1" coefs="0.185364 -0.185364 0.185364 0.185364 0.381269 -0.098693" post="0.57 0 3.49024e-17 0.57 -0.77 0" chaos="1 1 0 0 1 " opacity="1" blur="0"/>
+    <palette count="256" format="RGB">
+      295C6D28616C23616E245C6D1B5362015061064A57013A4E
+      00394D00394D093C4D154350364041534640684D42A15F3C
+      CE7637F59234FEA733FFA935FFA735F39136CC6834A76036
+      8145295D33254A2C2135221C2A221F25201C1B20231F2324
+      2026262127232428272523242C23262D28222B2C3024373D
+      143F50044251023F54013F54024055044557124057144355
+      174656154655124352033A4F00394C00394C0A3B4A193124
+      1E282A252A26292A242D2824312B1F342623402C253E3226
+      453526422F21412F253A30274337294B39374F3A37594039
+      57423D5C49427050458055427F483384432F894B34814733
+      76422D713D2863382759372B57392F563C2B524131523A2E
+      59362365351F723F24814425974D32B46139C66231E97A32
+      FC8E2DDE792BC86C23AE5A2C8A55335B3E2E4B322D372825
+      3325243126243A313237363B403E3F363E41324758336171
+      3B67725A47418056488457427F533A80482F733F34633E38
+      5C413A54362E4D31233D2A23492E2552302457302171392A
+      874A3791512BB46032D57731F99839FEA0402758693B464C
+      4A3C3B59433867422F7F46338C4B359E4F31AE5130B4512A
+      B3582BB95E2FC55A36D6612CFA8B2FFA9833FF942FFA862F
+      E26934CD5A2DBC60399F4E338547306F3E2F583B2D4A3C33
+      34373C233A401B434F1D5866256372256473336677376A7D
+      3C71833C77893072822C697C2B5E6F294B571F3F4A2A3841
+      2F3437393327342D252E33372F3437273B421D3D481E3E4D
+      1641521F404F3241463F413E453B39443937443E3E3D4550
+      2E5F703068753566743967743369752D62702A5B692D4148
+      3C403F3F3F3F3A3B3D313B3C21353E243434252928232220
+      28201E2B232030252136222144302559342475422D955333
+      B26B41EC8536FF9F3BFFAC42FF9F3DDD873AB96541B0603D
+      9D5B3988543C78523D855D3A9C623DA4603DA5603F935643
+      794B345F42324D3F36393D401F3F4A144154134858164E5F
+      16505E194E5E1D4D5B174B5619394623343C25262A252A24
+      292A252A2B262E33372D363F2F383F3440403742462A4A55
+   </palette>
+    <edit date="Mon Apr 05 10:32:29 -0500 2021" action="edit">
+      <edit filename="C:/Users/dahud/FractoriumShepherd/Fractorium/Examples/tatasz_examples.flame" index="8"/>
+    </edit>
+  </flame>
+</flames>

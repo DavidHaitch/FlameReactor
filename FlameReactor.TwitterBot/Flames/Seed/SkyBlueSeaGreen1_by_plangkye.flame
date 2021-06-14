@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flames>
+  <flame version="EMBER-WIN-1.0.0.21" time="0" name="SkyBlueSeaGreen1_by_plangkye" size="1280 720" center="0.0653391 2.04399" scale="249.6" rotate="0" supersample="2" filter="0.2" filter_shape="gaussian" temporal_filter_type="box" temporal_filter_width="1" quality="1000" temporal_samples="100" sub_batch_size="10240" fuse="15" rand_range="1" background="0 0 0" brightness="40" gamma="4.04" highlight_power="1" logscale_k2="0" vibrancy="1" estimator_radius="9" estimator_minimum="0" estimator_curve="0.4" gamma_threshold="0.17" cam_zpos="0" cam_persp="0" cam_yaw="0" cam_pitch="0" cam_dof="0" blur_curve="0" palette_mode="linear" interpolation="linear" interpolation_type="log" plugins="spherical blur linear eyefish pdj flatten gaussian_blur blur_circle stripes crackle polar2" new_linear="1" curves="0 0 1 0.25 0.25 1 0.75 0.75 1 1 1 1 0 0 1 0.25 0.25 1 0.75 0.75 1 1 1 1 0 0 1 0.25 0.25 1 0.75 0.75 1 1 1 1 0 0 1 0.25 0.25 1 0.75 0.75 1 1 1 1 " overall_curve="0 0 0.25 0.25 0.75 0.75 1 1 " red_curve="0 0 0.25 0.25 0.75 0.75 1 1 " green_curve="0 0 0.25 0.25 0.75 0.75 1 1 " blue_curve="0 0 0.25 0.25 0.75 0.75 1 1 ">
+    <xform weight="0.593" color="1" var_color="1" color_speed="0.2105" symmetry="0.579" name="" animate="1" spherical="1" blur="0" coefs="0.015625 0 0 0.015625 0 0" chaos="0 1 0 1 0 " opacity="1"/>
+    <xform weight="70" color="0" var_color="1" color_speed="0.00150001" symmetry="0.997" name="" animate="1" linear="0.983745" eyefish="0.202" pdj="0.292564" pdj_a="-1.355" pdj_b="0.368" pdj_c="-0.575" pdj_d="-0.342" flatten="1" coefs="-0.296529 0.923444 -0.907724 -0.310371 -0.330944 5.03116" opacity="1" blur="0"/>
+    <xform weight="0.593" color="0.151" var_color="1" color_speed="0.4" symmetry="0.2" name="" animate="1" gaussian_blur="1.978" blur_circle="1.318" coefs="0.015625 0 0 0.015625 0 0" chaos="0 1 0 1 0 " opacity="1" blur="0"/>
+    <xform weight="0.5" color="1" var_color="1" color_speed="0.05" symmetry="0.9" name="" animate="1" eyefish="0.202" pdj="0.118564" pdj_a="-1.355" pdj_b="0.368" pdj_c="-0.575" pdj_d="-0.342" stripes="1.184" stripes_space="0.5" stripes_warp="0" flatten="1" coefs="-0.296529 0.923444 -0.907724 -0.310371 -0.330944 5.03116" opacity="1" blur="0"/>
+    <xform weight="0.593" color="0.151" var_color="1" color_speed="0.4" symmetry="0.2" name="" animate="1" crackle="2" crackle_cellsize="1" crackle_power="0" crackle_distort="1" crackle_scale="0" crackle_z="0" coefs="1 0 0 1 0 0" chaos="0 1 0 1 0 " opacity="1" blur="0"/>
+    <finalxform color="0" var_color="1" color_speed="0" symmetry="1" name="" animate="0" polar2="4.023" coefs="-0.009638 -0.999954 0.999954 -0.009638 0.464719 -2.1532" opacity="1"/>
+    <palette count="256" format="RGB">
+      7FE77975E48771E0956ADAA163D4AC64CDB060C8AD59C4AA
+      51B7A948A9A6469FA64194A23F8C9F3A859B367E9A397B97
+      3D77943D758E477187526D855D69836762806B5982744F82
+      7C4682873C82903280952A7F94277B9427778D2C7487336D
+      7F3D6E7B4A7575527C6A59895F5F955460A24B60AC445DB6
+      405BC13556CB2A55D61E56E21559E8085CEB0064EE006DF0
+      0075F5007EFC0087FF0090FF0095FF009AFF009CFF009CFF
+      009BFF0095FF0090FC008AF20083E9007EE10079DB0078DA
+      0078DA0072DA006EDB006EDE086BDF1069E11367E11766E2
+      1864E11A63E12A59E0275ADC255BD92456D42452D02753C3
+      2B55B72E58B3325BAF446AA249759C4E809758889062918A
+      6895866E9A8377A97576A87875A87C78A8787BA9757FA771
+      83A66D8A9E668C955982973C849A2E879E2193A3139FA805
+      A4A804AAA904B4A505AFA008AA9C0BA68F10A382159D7915
+      9871158E63158556167148106F47086D46006B42006A3F00
+      663E00633D005440004F3D004B3A0041390538380B313512
+      2A331A1C36280E3A36024652034E5E05566B055971055D78
+      056685056E91017EAA0084B7008AC40092D2009BE000A0E7
+      00A5EE00B3F300C2F600DAEC00E0E300E7DB00E8D600E9D2
+      00E8C607E4B80FD49C12C89115BD8615B78215B17E19A97C
+      1E9E7521946D218A64217F52227F43247F35267F2E287F27
+      27801928791020670C1A6210155D15125B15105915095215
+      024716003A1D00351D003A1D004019004716005113005C0C
+      006407006D07008300008D00009800009900009B00029800
+      059800079800089B00089400089000088D00078500057C00
+      057400047200057400047200047000036E00026D00017400
+      00740000770000780000770900750E00741300701A006723
+      00602A00583100444700424C004151004058004160004164
+      00466908466B15486E2F546A3556663C596348625B4F6754
+      5B6951606B526D6A4F72694F78694F8367548E63559C6654
+      AA6A58BA7056C87555D68251E08D4EE89A46EBA83DE8B636
+      E1C22CD7D328BEE239B7E43DB1E741A5EB5298EB608CE86E
+   </palette>
+    <edit date="Mon Apr 05 10:31:27 -0500 2021" action="edit">
+      <edit filename="C:/Users/dahud/FractoriumShepherd/Fractorium/Examples/plangkye_examples.flame" index="4"/>
+    </edit>
+  </flame>
+</flames>

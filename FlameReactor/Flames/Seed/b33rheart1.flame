@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flames>
+  <flame version="EMBER-WIN-1.0.0.21" time="0" name="3D_illusion_by_b33rheart" size="1280 720" center="1.14653 1.10944" scale="584.4" rotate="88.3849" supersample="2" filter="1" filter_shape="gaussian" temporal_filter_type="box" temporal_filter_width="1" quality="1000" temporal_samples="100" sub_batch_size="10240" fuse="15" rand_range="1" background="0 0 0" brightness="135" gamma="5.25" highlight_power="-0.5" logscale_k2="0" vibrancy="1" estimator_radius="0" estimator_minimum="0" estimator_curve="0.4" gamma_threshold="0" cam_zpos="0" cam_persp="0" cam_yaw="0" cam_pitch="0" cam_dof="0" blur_curve="0" palette_mode="linear" interpolation="linear" interpolation_type="log" plugins="nBlur linear hexes post_log" new_linear="1" curves="0 0 1 0.29898 0.180612 1 0.459184 0.495919 1 0.643877 0.754082 1 0 0 1 0.254082 0.192857 1 0.467347 0.532653 1 0.745918 0.733673 1 0 0 1 0.245918 0.282653 1 0.585714 0.569388 1 0.745918 0.778571 1 0 0 1 0.29898 0.262245 1 0.557143 0.495918 1 0.786735 0.721429 1 " overall_curve="0 0 0.29898 0.180612 0.459184 0.495919 0.643877 0.754082 1 1 " red_curve="0 0 0.254082 0.192857 0.467347 0.532653 0.745918 0.733673 1 1 " green_curve="0 0 0.245918 0.282653 0.585714 0.569388 0.745918 0.778571 1 1 " blue_curve="0 0 0.29898 0.262245 0.557143 0.495918 0.786735 0.721429 1 1 ">
+    <xform weight="0.6" color="0.729" var_color="1" color_speed="0" symmetry="1" name="" animate="1" nBlur="1" nBlur_numEdges="3" nBlur_numStripes="-15" nBlur_ratioStripes="0.45" nBlur_ratioHole="0.6" nBlur_circumCircle="0" nBlur_adjustToLinear="0" nBlur_equalBlur="0" nBlur_exactCalc="0" nBlur_highlightEdges="0.1" coefs="1.497 0 0 1.497 0 0" post="-0.667332 0 0 -0.222444 -0.00075 -0.888889" chaos="0 0 0 99 0 1.94428 2.90864 1.6827 1 0 1 " opacity="0" blur="0"/>
+    <xform weight="0.6" color="0.784" var_color="1" color_speed="1" symmetry="-1" name="" animate="1" linear="1" coefs="0.498653 0.863691 -0.863691 0.498653 0 0" post="1.002 0 0 1.002 -0.00075 0" chaos="1 0.17209 0 2.91714 0.604784 2.91066 0 2.66243 0 0 2.12991 " opacity="0" blur="0"/>
+    <xform weight="0.6" color="0.325" var_color="1" color_speed="1" symmetry="-1" name="" animate="1" linear="1" coefs="-0.499002 0.864296 -0.864296 -0.499002 0 0" post="1.002 0 0 1.002 -0.00075 0" chaos="1.75599 2.12989 0.841254 1.46722 0 1.15739 2.7377 1 1 2.20635 0 " opacity="0.6" blur="0"/>
+    <xform weight="0.5" color="0.435" var_color="1" color_speed="0.5" symmetry="0" name="" animate="1" linear="1" coefs="-0.498504 -0.863433 0.863433 -0.498504 0 0" post="1.002 0 0 1.002 -0.00275 0" chaos="1.61785 1 0.556705 1 1.4167 2.02663 1 1.0005 0 1 0.80716 " opacity="0.4" blur="0"/>
+    <xform weight="0.4" color="0.157" var_color="1" color_speed="0.07" symmetry="0.86" name="" animate="1" linear="1" coefs="0.499002 0.288099 -0.288099 0.499002 0 0" post="1.001 0 0 1.001 -0.00275 0" chaos="1 2.76853 0.950456 0 2.20763 0 0.641305 0.778168 0.030101 0 1.66016 " opacity="0.4" blur="0"/>
+    <xform weight="0.3" color="0.631" var_color="1" color_speed="-1" symmetry="3" name="" animate="1" linear="1" coefs="0.998003 0 0 0.998003 0 -2" post="1.002 0 0 1.002 0.00025 0" chaos="0 0.270562 0 0 2.00567 1 1.45019 1.84467 1.63568 1 0 " opacity="0.4" blur="0"/>
+    <xform weight="0.7" color="0.714" var_color="1" color_speed="0.7" symmetry="-0.4" name="" animate="1" linear="1" coefs="0.998003 0 0 0.998003 0 2" post="1.002 0 0 1.002 0.00025 0" chaos="0.190177 1.98376 1 1 2.6472 0.881403 0.385453 0 1.75299 2.47862 1.25705 " opacity="1" blur="0"/>
+    <xform weight="0.7" color="0.624" var_color="1" color_speed="0.88" symmetry="-0.76" name="" animate="1" linear="1" coefs="0.998003 0 0 0.998003 1.73205 1" post="1.002 0 0 1.002 0.00025 0" chaos="1 0 1 0 0 0.510926 0.512649 1.34511 1 1 0 " opacity="1" blur="0"/>
+    <xform weight="0.7" color="0.549" var_color="1" color_speed="1" symmetry="-1" name="" animate="1" linear="1" coefs="0.998003 0 0 0.998003 -1.73205 1" post="1.002 0 0 1.002 0.00025 0" chaos="2.81399 1.45281 0 0.26726 0 0 1 0 2.06882 2.6467 0.302765 " opacity="1" blur="0"/>
+    <xform weight="0.7" color="0.988" var_color="1" color_speed="0.88" symmetry="-0.76" name="" animate="1" linear="1" coefs="0.998003 0 0 0.998003 -1.73205 -1" post="1.002 0 0 1.002 0.00025 0" chaos="2.23473 0 1 0.464249 0 0.229805 1 0 2.44519 1 1.94761 " opacity="1" blur="0"/>
+    <xform weight="0.7" color="0.49" var_color="1" color_speed="1" symmetry="-1" name="" animate="1" linear="1" coefs="0.998003 0 0 0.998003 1.73205 -1" post="1.002 0 0 1.002 0.00025 0" chaos="1.29375 1 0 1 0 0.958644 0 0.692152 0.475094 1 1.39451 " opacity="1" blur="0"/>
+    <finalxform color="0.612" var_color="1" color_speed="0.837" symmetry="-0.674" name="" animate="0" hexes="1" hexes_cellsize="1.155" hexes_power="1.55" hexes_rotate="0.2505" hexes_scale="1" post_log="1.05" post_log_base="3.1183" coefs="1 0 0 1 0 0" opacity="1"/>
+    <palette count="256" format="RGB">
+      8C4A617D6D72344A62997E775A435343666D583E4D1F5366
+      45546C135F7342455E626569194B616B5158766B67335660
+      8170644F5559375A693146544D586D26566B3E6378274A61
+      375D6219455B455461505D6264737E83606165746F4C5060
+      174C5763587F0B5B6D635D833F55701E5268643E60536073
+      3C4D659A86816D4A5A6C7371633E510E4A5C6E5A72095B6D
+      6D546B646273174C5F8C4A617D6D72344A62CA8E7D65495A
+      6C7371633E510E4A5C6E5A72095B6D6D546B646273174C5F
+      8C4A617D6D72344A62997E775A435343666D583E4D1F5366
+      45546C135F7342455E626569194B616B5158766B67335660
+      8170644F5559375A693146544D586D26566B3E6378274A61
+      375D6219455B455461505D6264737E83606165746F4C5060
+      174C5763587F0B5B6D635D833F55701E5268643E60536073
+      3C4D659A86816D4A5A6C7371633E510E4A5C6E5A72095B6D
+      6D546B646273174C5F8C4A617D6D72344A62CA8E7D65495A
+      6C7371633E510E4A5C6E5A72095B6D6D546B646273174C5F
+      8C4A617D6D72344A62997E775A435343666D583E4D1F5366
+      45546C135F7342455E626569194B616B5158766B67335660
+      8170644F5559375A693146544D586D26566B3E6378274A61
+      375D6219455B455461505D6264737E83606165746F4C5060
+      174C5763587F0B5B6D635D833F55701E5268643E60536073
+      3C4D659A86816D4A5A6C7371633E510E4A5C6E5A72095B6D
+      6D546B646273174C5F8C4A617D6D72344A62CA8E7D65495A
+      6C7371633E510E4A5C6E5A72095B6D6D546B646273174C5F
+      8C4A617D6D72344A62997E775A435343666D583E4D1F5366
+      45546C135F7342455E626569194B616B5158766B67335660
+      8170644F5559375A693146544D586D26566B3E6378274A61
+      375D6219455B455461505D6264737E83606165746F4C5060
+      174C5763587F0B5B6D635D833F55701E5268643E60536073
+      3C4D659A86816D4A5A6C7371633E510E4A5C6E5A72095B6D
+      6D546B646273174C5F8C4A617D6D72344A62CA8E7D65495A
+      6C7371633E510E4A5C6E5A72095B6D6D546B646273174C5F
+   </palette>
+    <edit date="Mon Apr 05 10:17:47 -0500 2021" action="edit">
+      <edit filename="C:/Users/dahud/FractoriumShepherd/Fractorium/Examples/b33rheart_examples.flame" index="10"/>
+    </edit>
+  </flame>
+</flames>

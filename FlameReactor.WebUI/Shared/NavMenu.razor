@@ -1,0 +1,63 @@
+﻿@using System.Timers
+@using System.IO
+@using FlameReactor.WebUI.Shared
+@implements IDisposable
+@inherits NavMenuModel
+@inject AppState app
+<div class="navbar navbar-dark">
+    <div class="py-0 mx-md-auto text-center d-flex flex-column align-self-start" style="font-size: 26px; color: white; font-weight: 100">
+        <div style="font-family: 'Comfortaa', sans-serif">Flame Reactor</div>
+        <div hidden="@app.IsIdle" class="mx-auto text-center pulse" style="font-size:11px; font-weight:300; color: indianred; font-family: 'Comfortaa', sans-serif ">
+            Reaction in progress. Please stand by.
+        </div>
+    </div>
+
+    <button class="navbar-toggler mr-1 align-self-start mt-1 fadeable fadeout" @onclick="ToggleNavMenu" style="font-size:10px" hidden="@app.IsBreeding">
+        <span class="navbar-toggler-icon"> </span>Flames
+    </button>
+</div>
+
+<div class="@NavMenuCssClass" @onclick="ToggleNavMenu" hidden="@app.IsBreeding">
+    <div class="px-3 fadeable fadeout">
+        @*<div class="row">
+            <div class="col-12 text-center" style="color: darkgrey; font-size:12px;font-weight:300;">
+                Capacity built this for Flipside 2021.
+            </div>
+        </div>*@
+        <div class="row justify-content-around">
+            @foreach (var flame in FlameChoices)
+            {
+                <div class="col-5 col-md-12 my-2 mx-2" @onclick="() => ChooseFlame(flame)" hidden="@app.IsBreeding">
+                    <div class="row">
+                        <div class="col-12 text-center" style="min-height: 1.5rem; font-weight: 100">
+                            <span style="color: white;" hidden="@flame.Unnamed">@flame.DisplayName</span>
+                        </div>
+                    </div>
+                    <FlameInfo flame="@flame" >
+                        <div class="row" >
+                            <div class="col-12">
+                                <img src="@flame.ThumbPathWeb" style="width:100%; object-fit: contain"  />
+                            </div>
+                        </div>
+                    </FlameInfo>
+
+                    <div class="row" style=" z-index: 2">
+                        @*<div class="col-6 pr-0" hidden="@flame.Named">
+                            <button type="button" class="btn btn-dark" @onclick="() => NameFlame(flame)" style="width: 100%">Name</button>
+                        </div>
+                        <div class="col-6 pr-0" hidden="@flame.Unnamed">
+                            <button type="button" class="btn btn-dark" @onclick="() => NameFlame(flame)" style="width: 100%">Rename</button>
+                        </div>*@
+                        <div class="col-12">
+                            <button type="button" class="btn btn-success" disabled="@app.IsBreeding"  style="width: 100%">Breed</button>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@code {
+
+}

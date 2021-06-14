@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<flames>
+  <flame version="EMBER-WIN-1.0.0.20" time="0" name="Flame_2020-12-12-135440_2" size="1280 720" center="-0.0189317 0.0899207" scale="610" rotate="0" supersample="2" filter="1" filter_shape="gaussian" temporal_filter_type="box" temporal_filter_width="1.2" quality="1000" temporal_samples="100" sub_batch_size="10240" fuse="15" rand_range="1" background="0 0 0" brightness="4" gamma="4" highlight_power="-1" logscale_k2="0" vibrancy="1" estimator_radius="11" estimator_minimum="0" estimator_curve="0.6" gamma_threshold="0" cam_zpos="0.6" cam_persp="0.15" cam_yaw="0" cam_pitch="1.5708" cam_dof="0.005" blur_curve="0" palette_mode="linear" interpolation="linear" interpolation_type="log" plugins="julia3D fibonacci heat pre_bubbleT3D roundspher3D loonie_3D curl3D post_ovoid3d" new_linear="1" curves="0 0 1 0.25 0.25 1 0.5 0.5 1 0.75 0.75 1 0 0 1 0.25 0.25 1 0.5 0.5 1 0.75 0.75 1 0 0 1 0.25 0.25 1 0.5 0.5 1 0.75 0.75 1 0 0 1 0.25 0.25 1 0.5 0.5 1 0.75 0.75 1 " overall_curve="0 0 0.25 0.25 0.5 0.5 0.75 0.75 1 1 " red_curve="0 0 0.25 0.25 0.5 0.5 0.75 0.75 1 1 " green_curve="0 0 0.25 0.25 0.5 0.5 0.75 0.75 1 1 " blue_curve="0 0 0.25 0.25 0.5 0.5 0.75 0.75 1 1 ">
+    <xform weight="0.5" color="0.398901" var_color="1" color_speed="0.5" symmetry="0" name="" animate="1" julia3D="1" julia3D_power="2" fibonacci="0.05" heat="0.1" heat_theta_period="1" heat_theta_phase="0" heat_theta_amp="1" heat_phi_period="1" heat_phi_phase="0" heat_phi_amp="0" heat_r_period="1" heat_r_phase="0" heat_r_amp="0" coefs="1 0 0 1 0 1" opacity="1" blur="0"/>
+    <xform weight="0.25" color="0.205051" var_color="1" color_speed="0.5" symmetry="0" name="" animate="1" pre_bubbleT3D="1.5" pre_bubbleT3D_number_of_stripes="0" pre_bubbleT3D_ratio_of_stripes="1" pre_bubbleT3D_angle_of_hole="0" pre_bubbleT3D_exponentZ="1" pre_bubbleT3D_symmetryZ="0" pre_bubbleT3D_modusBlur="0" roundspher3D="1" coefs="0.998146 0.0608626 -0.0608626 0.998146 -0.235542 0.0967403" post="0.999848 0.0174524 -0.0174524 0.999848 -0.193481 -0.6898" opacity="1" blur="0"/>
+    <finalxform color="0" var_color="1" color_speed="0.5" symmetry="0" name="" animate="1" loonie_3D="3.5" curl3D="1" curl3D_cx="0" curl3D_cy="0" curl3D_cz="0" post_ovoid3d="10" post_ovoid3d_x="1" post_ovoid3d_y="1" post_ovoid3d_z="0.75" coefs="1 0 0 1 0 0" opacity="1"/>
+    <palette count="256" format="RGB">
+      A04400652A004A250A29456A2C8DB973B3C6D6C5A2F7E86E
+      EBF450FFE93FF8F23AFEFC3BFEFE02FCCF05EA9316A95729
+      722700611F00542D006129008E4B00E25A01EC5000F84200
+      FC4200FD5400FF6100F84D00FE4C00FF4F0FF86000F56E00
+      FE8C03F4863AF14167C946596F40144D3A003A3100254200
+      1D4B0E095005005D16006659044E8F032DB30333C30145CB
+      0269E20077FB0457D0A01A80911561B13B4CAE241D9A3200
+      7C4400895900A06900AD7100B07600EB6603FF6400FB6800
+      E49D15FDA850FAB779EDBAA7F3F8F8FDFEFFFFFEFFFEFEFE
+      FCFDFEE9ECFDC1FDFFB2EFFE72E1F82CFFFF0DEEFE23E9FE
+      56DFFEA2EDEFA9FFFA9EF0E953CBFD0DA3EF0385E301568E
+      205D443338004C3A02452B00472300290511150200150400
+      0817000C2500012700051A0006110003160400024100387A
+      002D8C0F3F7618406C035265043157000034000010020900
+      03110B0011110019140B27290B2223011E0F112900141900
+      4D16006F2901A06A24BCA863B5F0A6AAFFD4D3EFF7FBFFFD
+      F5F4FDFED0F1EEA598EE934DF37A02F87F00FCCB00FFFF00
+      FFFF11F5F745F8EE81DBD5B672C2F404B6F210C8FF6FD5F6
+      C6E6FBE1E8F7FEEFDFFFEAA9FCF195C7CC7797E462A3B262
+      7477392E741E165C5E19469A0725A1011AB20320B80138D0
+      0650FC0B7DF23F7CFE72ADD571ADC859B1792E81740181AA
+      068EE5008AFF017FFE0286EB0462BD273752512A00631A01
+      AF4400C57200DFB050F3EEC5FEFEFEFFFEFDF2FCA8E9F841
+      B2FB113CFB01019C4E0E6D444378375D6609AD9100E2E040
+      FBF99DFFFFFDE8FDF0DAF0B8F9C87ED9C174CEAE58BCC16A
+      9BBEBE7EABD3B2D9F7D8D3F7FFFCFFFFFFFFFEFFFEFEFEEB
+      FEF99AFDD636E8B306F08A00FF6708FF570AF36C02CFA000
+      B8B800F1F107FEFB00FDE90AC8EC05C5FA13B5F000B8A300
+      A48805775B00834300965B00CF2601FA3C00F64D00DD831A
+      BD8A4C8784845BA9AB09BFDF01DCD00CF6DF00C1FF04A6FE
+      09A4EF0893FE377AFB548DB7928547A27B17968A029B9901
+      A28D00A18800A58F00A59C00A4BC0073D02279FE586A84AD
+   </palette>
+    <edit date="Sun Dec 13 13:23:53 -0600 2020" action="edit">
+      <edit filename="No parent" index="1"/>
+    </edit>
+  </flame>
+</flames>

@@ -1,0 +1,34 @@
+﻿@inherits ViewportModel
+@inject AppState app
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-auto ml-auto">
+            <span class="oi oi-question-mark thumb-btn mx-3 mx-md-0 my-0 my-md-3 fadeable fadeout" style="color: white" @onclick="() => ShowAbout()"></span>
+        </div>
+        <div class="col-auto">
+            <span class="oi oi-thumb-up thumb-btn mx-3 mx-md-0 my-0 my-md-3 fadeable fadeout" style="color: white" @onclick="() => Upvote()" hidden="@voted"></span>
+        </div>
+        <div class="col-auto">
+            <span class="oi oi-thumb-down thumb-btn mx-3 mx-md-0 my-0 my-md-3 fadeable fadeout" style="color: white" @onclick="() => Downvote()" hidden="@voted"></span>
+        </div>
+        <div class="col-auto mr-auto" hidden="@IsFullscreen">
+            <span class="oi oi-fullscreen-enter fullscreen-btn mx-3 mx-md-0 my-0 my-md-3 fadeable fadeout" style="color: white" @onclick="() => EnterFullscreen()"></span>
+        </div>
+        <div class="col-auto mr-auto" hidden="@IsNotFullscreen">
+            <span class="oi oi-fullscreen-exit fullscreen-btn mx-3 mx-md-0 my-0 my-md-3 fadeable fadeout" style="color: white" @onclick="() => ExitFullscreen()"></span>
+        </div>
+    </div>
+</div>
+
+<div hidden="@app.AlertEmpty" class="@app.AlertMessageClass p-2" style="text-align:center">@app.AlertMessage</div>
+
+<div class="progress progbar" hidden="@app.IsIdle">
+    <div class="progress-bar bg-success" role="progressbar" style="@($"width: {app.PercentDone}%")" aria-valuemin="0" aria-valuenow="@app.PercentDone" aria-valuemax="100"><span class="ml-1">@app.ProgressMessage</span></div>
+</div>
+<audio id="alertbell"><source src="/audio/Bell.mp3" /></audio>
+<video @ref="videobox" playsinline autoplay="autoplay" muted="muted" loop src="@app.CurrentFlame.VideoPathWeb" class="backgroundVid"></video>
+@*<button type="button" class="btn btn-light about-btn fadeable fadeout" @onclick="() => ShowAbout()"> What is this?</button>*@
+@code {
+
+}
