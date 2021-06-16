@@ -1,6 +1,7 @@
 ﻿using FlameReactor.DB.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +12,12 @@ namespace FlameReactor.FlameActions
 {
     class MutateFlamesAction : FlameAction
     {
-        public MutateFlamesAction(Action<RenderStepEventArgs> stepEvent) : base(stepEvent) { }
+        private List<string> allVars = new List<string>();
+        public MutateFlamesAction(Action<RenderStepEventArgs> stepEvent) : base(stepEvent) 
+        {
+            allVars = File.ReadAllLines("./allvars.txt").ToList();
+        }
+
         public override async Task<Flame[]> Act(FlameConfig flameConfig, params Flame[] flames)
         {
             for (var i = 0; i < flames.Length; i++)
@@ -31,7 +37,6 @@ namespace FlameReactor.FlameActions
             {
                 "all_vars",
                 "one_xform",
-                "one_xform",
                 "addMotion",
                 "delete_xform",
                 "add_symmetry",
@@ -42,7 +47,6 @@ namespace FlameReactor.FlameActions
             var friendlyMethods = new List<string>()
             {
                 "all variations",
-                "one gene",
                 "one gene",
                 "by adding motion",
                 "by removing a gene",
@@ -55,6 +59,7 @@ namespace FlameReactor.FlameActions
             var method = methods[methodIdx];
             
             StepEvent(new RenderStepEventArgs("Mutating " + friendlyMethods[methodIdx], "", 10));
+
             if (method == "addMotion")
             {
                 flame = InsertMotion(flame, flameConfig);
@@ -86,7 +91,7 @@ namespace FlameReactor.FlameActions
                 foreach(var xform in doc.Descendants("xform"))
                 {
                     if (Util.Rand.NextDouble() > flameConfig.MotionDensity) continue;
-                    var name = xform.Attributes().Where(a => double.TryParse(a.Value, out var irrelevant) && a.Name != "symmetry" && a.Name != "animate" && a.Name != "name").OrderBy(a => Util.Rand.Next()).Last().Name;
+                    var name = xform.Attributes().Where(a => double.TryParse(a.Value, out var irrelevant) && (allVars.Contains(a.Name.LocalName) || a.Name == "color")).OrderBy(a => Util.Rand.Next()).Last().Name;
                     xform.Add(CreateMotionElement(xform, name.LocalName));
                     xform.SetAttributeValue(name, null);
                 }
@@ -94,7 +99,7 @@ namespace FlameReactor.FlameActions
                 foreach (var xform in doc.Descendants("finalxform"))
                 {
                     if (Util.Rand.NextDouble() > flameConfig.MotionDensity) continue;
-                    var name = xform.Attributes().Where(a => double.TryParse(a.Value, out var irrelevant) && a.Name != "symmetry" && a.Name != "animate" && a.Name != "name").OrderBy(a => Util.Rand.Next()).Last().Name;
+                    var name = xform.Attributes().Where(a => double.TryParse(a.Value, out var irrelevant) && (allVars.Contains(a.Name.LocalName) || a.Name == "color")).OrderBy(a => Util.Rand.Next()).Last().Name;
                     xform.Add(CreateMotionElement(xform, name.LocalName));
                     xform.SetAttributeValue(name, null);
                 }

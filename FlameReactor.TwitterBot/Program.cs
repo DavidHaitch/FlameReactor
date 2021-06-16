@@ -46,6 +46,8 @@ namespace FlameReactor.TwitterBot
             ember.FlameConfig.ResolutionMultiplier = 1.0;
             ember.FlameConfig.MotionDensity = 0.25;
             ember.FlameConfig.MutationChance = 0.33;
+            ember.FlameConfig.AlternateSetpoint = 0.5;
+            ember.FlameConfig.UnionSetpoint = 1.0;
             var flame = ember.Breed();
             flame.Wait();
             var rand = new Random((int)DateTime.Now.Ticks);

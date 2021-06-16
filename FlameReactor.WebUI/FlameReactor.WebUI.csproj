@@ -5,6 +5,10 @@
     <UserSecretsId>b7b54284-4912-42e7-a69f-20ec49c37ce0</UserSecretsId>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+
   <ItemGroup>
     <Compile Remove="wwwroot\Flames\**" />
     <Content Remove="wwwroot\Flames\**" />

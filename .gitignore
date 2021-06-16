@@ -413,6 +413,7 @@ FodyWeavers.xsd
 **/secrets.json
 **/FluffySpoonAspNetLetsEncryptCertificate_Account
 **/FluffySpoonAspNetLetsEncryptCertificate_Site
+**/FluffySpoonAspNetLetsEncryptChallenge_Challenges
 *.sqlite
 *.sqlite-shm
 *.sqlite-wal

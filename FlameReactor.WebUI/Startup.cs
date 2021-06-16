@@ -42,7 +42,7 @@ namespace FlameReactor.WebUI
             var leOptions = new LetsEncryptOptions()
             {
                 Email = Configuration["LetsEncrypt:Email"], //LetsEncrypt will send you an e-mail here when the certificate is about to expire
-                UseStaging = true, //switch to true for testing
+                UseStaging = false, //switch to true for testing
                 Domains = new[] { Configuration["LetsEncrypt:Domain"] },
                 TimeUntilExpiryBeforeRenewal = TimeSpan.FromDays(28), //renew automatically 30 days before expiry
                 TimeAfterIssueDateBeforeRenewal = TimeSpan.FromDays(7), //renew automatically 7 days after the last certificate was issued
@@ -83,7 +83,7 @@ namespace FlameReactor.WebUI
                 app.UseExceptionHandler("/Error");
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseRouting();
             app.UseFluffySpoonLetsEncrypt();

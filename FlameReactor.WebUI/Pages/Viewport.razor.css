@@ -22,6 +22,18 @@
     font-size: 24px;
 }
 
+.twitter-btn {
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+    z-index: 3;
+    font-size: 24px;
+}
+
+.twitter-btn::before {
+    content:'';
+}
+
 .thumb-btn {
     display: flex;
     justify-content: space-around;

@@ -104,7 +104,7 @@ namespace FlameReactor.WebUI.Shared
                         });
                         db.SaveChanges();
                     }
-                    Ember.Vote(IPAddress, fc, 4, true);
+                    Ember.Vote(IPAddress, fc, 2, true);
                 }
             });
             if (AppState.IsIdle)
