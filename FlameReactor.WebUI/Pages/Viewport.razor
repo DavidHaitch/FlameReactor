@@ -3,25 +3,25 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-auto ml-auto">
-            <a class="oi twitter-btn" href="https://twitter.com/FlameReactorBot">
-                <img src="./twitter.svg" style="height:30px; width:30px" class="mx-3 mx-md-0 my-0 my-md-3 fadeable fadeout" />
+        <div class="col-2 ml-auto">
+            <a class="oi twitter-btn" @onclick="() => OpenTwitter()">
+                <img src="./twitter.svg" style="height:30px; width:30px" class="my-0 my-md-3  fadeable fadeout" />
             </a>
         </div>
-        <div class="col-auto">
-            <span class="oi oi-question-mark thumb-btn mx-3 mx-md-0 my-0 my-md-3 fadeable fadeout" style="color: white" @onclick="() => ShowAbout()"></span>
+        <div class="col-2">
+            <span class="oi oi-question-mark thumb-btn my-0 my-md-3 fadeable fadeout" style="color: white" @onclick="() => ShowAbout()"></span>
         </div>
-        <div class="col-auto" hidden="@voted">
-            <span class="oi oi-thumb-up thumb-btn mx-3 mx-md-0 my-0 my-md-3 fadeable fadeout" style="color: white" @onclick="() => Upvote()" ></span>
+        <div class="col-2">
+            <span class="oi oi-thumb-up thumb-btn my-0 my-md-3 fadeable fadeout" style="@voteStyle" @onclick="() => Upvote()"></span>
         </div>
-        <div class="col-auto" hidden="@voted">
-            <span class="oi oi-thumb-down thumb-btn mx-3 mx-md-0 my-0 my-md-3 fadeable fadeout" style="color: white" @onclick="() => Downvote()" ></span>
+        <div class="col-2" >
+            <span class="oi oi-thumb-down thumb-btn my-0 my-md-3 fadeable fadeout" style="@voteStyle" @onclick="() => Downvote()" ></span>
         </div>
-        <div class="col-auto mr-auto" hidden="@IsFullscreen">
-            <span class="oi oi-fullscreen-enter fullscreen-btn mx-3 mx-md-0 my-0 my-md-3 fadeable fadeout" style="color: white" @onclick="() => EnterFullscreen()"></span>
+        <div class="col-2 mr-auto" hidden="@IsFullscreen">
+            <span class="oi oi-fullscreen-enter fullscreen-btn my-0 my-md-3 fadeable fadeout" style="color: white" @onclick="() => EnterFullscreen()"></span>
         </div>
-        <div class="col-auto mr-auto" hidden="@IsNotFullscreen">
-            <span class="oi oi-fullscreen-exit fullscreen-btn mx-3 mx-md-0 my-0 my-md-3 fadeable fadeout" style="color: white" @onclick="() => ExitFullscreen()"></span>
+        <div class="col-2 mr-auto" hidden="@IsNotFullscreen">
+            <span class="oi oi-fullscreen-exit fullscreen-btn my-0 my-md-3 fadeable fadeout" style="color: white" @onclick="() => ExitFullscreen()"></span>
         </div>
     </div>
 </div>

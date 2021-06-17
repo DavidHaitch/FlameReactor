@@ -117,10 +117,10 @@ namespace FlameReactor.FlameActions
         private XElement CreateMotionElement(XElement parent, string name)
         {
             var motionFunctions = new List<string>() { "sin", "sin", "triangle", "hill", "hill" };
-            var motionFrequencies = new List<string>() { "1", "2", "4", "8" };
+            var motionFrequencies = new List<string>() { "1", "2","2", "4" };
 
             var motionAttrName = name;
-            var motionAttr = new XAttribute(motionAttrName, (Util.Rand.NextDouble() + 0.5).ToString().Substring(0, 3));
+            var motionAttr = new XAttribute(motionAttrName, ((Util.Rand.NextDouble()/2) + 0.5).ToString().Substring(0, 3));
             var motionFunction = motionFunctions[Util.Rand.Next(0, motionFunctions.Count)];
             var motionFrequency = motionFrequencies[Util.Rand.Next(0, motionFrequencies.Count)];
             var attributes = new List<XAttribute>();

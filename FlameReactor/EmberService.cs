@@ -135,7 +135,7 @@ namespace FlameReactor
                 flame = await mutateFlames.Act(FlameConfig, flame);
                 flame = await mutateFlames.Act(FlameConfig, flame);
                 flame = await mutateFlames.Act(FlameConfig, flame);
-                flame = await fixColorPalettes.Act(FlameConfig, flame);
+                //flame = await fixColorPalettes.Act(FlameConfig, flame);
                 flame = await rectifyGenomes.Act(FlameConfig, flame);
                 flame = await renderFlames.Act(FlameConfig, flame);
                 if (flame.Any(f => f == null)) throw new Exception("Breed error");

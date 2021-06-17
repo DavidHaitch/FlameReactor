@@ -38,7 +38,7 @@ namespace FlameReactor.WebUI.Pages
         protected bool IsFullscreen = false;
         protected bool voted = true;
         protected bool IsNotFullscreen => !IsFullscreen;
-
+        protected string voteStyle => voted ? "color: gray" : "color: white";
         protected override void OnInitialized()
         {
             base.OnInitialized();
@@ -48,7 +48,7 @@ namespace FlameReactor.WebUI.Pages
             if (firstRender)
             {
                 var votename = IPAddress + "\t" + AppState.CurrentFlame.Name;
-                using(var db = new FlameReactorContext())
+                using (var db = new FlameReactorContext())
                 {
                     voted = db.Votes.Any(v => v.IPAddress == IPAddress && v.FlameId == AppState.CurrentFlame.ID);
                 }
@@ -96,6 +96,22 @@ namespace FlameReactor.WebUI.Pages
         private async void SetVideo(string path)
         {
             await JS.InvokeVoidAsync("FR.load", videobox);
+        }
+
+        protected async void OpenTwitter()
+        {
+            using (var db = new FlameReactorContext())
+            {
+                db.InteractionEvents.Add(new InteractionEvent()
+                {
+                    IPAddress = IPAddress,
+                    Timestamp = DateTimeOffset.Now,
+                    InteractionType = "TwitterClick",
+                    Details = ""
+                });
+                db.SaveChanges();
+            }
+            await JS.InvokeVoidAsync("FR.OpenInNewTab", "https://twitter.com/FlameReactorBot");
         }
 
         protected void ShowAbout()
@@ -153,12 +169,34 @@ namespace FlameReactor.WebUI.Pages
         protected void Upvote()
         {
             voted = true;
+            using (var db = new FlameReactorContext())
+            {
+                db.InteractionEvents.Add(new InteractionEvent()
+                {
+                    IPAddress = IPAddress,
+                    Timestamp = DateTimeOffset.Now,
+                    InteractionType = "VoteManual",
+                    Details = "Up"
+                });
+                db.SaveChanges();
+            }
             Ember.Vote(IPAddress, AppState.CurrentFlame, 5);
         }
 
         protected void Downvote()
         {
             voted = true;
+            using (var db = new FlameReactorContext())
+            {
+                db.InteractionEvents.Add(new InteractionEvent()
+                {
+                    IPAddress = IPAddress,
+                    Timestamp = DateTimeOffset.Now,
+                    InteractionType = "VoteManual",
+                    Details = "Down"
+                });
+                db.SaveChanges();
+            }
             Ember.Vote(IPAddress, AppState.CurrentFlame, -5);
         }
 

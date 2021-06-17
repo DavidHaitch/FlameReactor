@@ -9,8 +9,12 @@ FR.logRenderStep = function (renderStepEvent) {
     console.log(renderStepEvent);
 };
 
+FR.OpenInNewTab = function (url) {
+    window.open(url, '_blank').focus();
+}
+
 FR.playSound = function () {
-    document.getElementById('alertbell').volume = 0.5;
+    document.getElementById('alertbell').volume = 0.25;
     document.getElementById('alertbell').play();
 };
 

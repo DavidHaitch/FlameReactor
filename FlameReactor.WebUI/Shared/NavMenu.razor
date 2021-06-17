@@ -4,7 +4,7 @@
 @implements IDisposable
 @inherits NavMenuModel
 @inject AppState app
-<div class="navbar navbar-dark">
+<div class="navbar navbar-light">
     <div class="py-0 mx-md-auto text-center d-flex flex-column align-self-start" style="font-size: 26px; color: white; font-weight: 100">
         <div style="font-family: 'Comfortaa', sans-serif">Flame Reactor</div>
         <div hidden="@app.IsIdle" class="mx-auto text-center pulse" style="font-size:11px; font-weight:300; color: indianred; font-family: 'Comfortaa', sans-serif ">
@@ -12,8 +12,8 @@
         </div>
     </div>
 
-    <button class="navbar-toggler mr-1 align-self-start mt-1 fadeable fadeout" @onclick="ToggleNavMenu" style="font-size:10px" hidden="@app.IsBreeding">
-        <span class="navbar-toggler-icon"> </span>Flames
+    <button class="navbar-toggler mr-1 align-self-start mt-1 fadeable fadeout" @onclick="ToggleNavMenu" style="font-size:11px" hidden="@app.IsBreeding">
+        <span class="navbar-toggler-icon"></span>Choose a Flame
     </button>
 </div>
 

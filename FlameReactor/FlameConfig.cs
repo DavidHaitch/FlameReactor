@@ -10,19 +10,19 @@ namespace FlameReactor
     {
         public FlameConfig()
         {
-            GenomeTries = 15;
-            LoopFrames = 600;
+            GenomeTries = 10;
+            LoopFrames = 450;
             Quality = 1000;
             TS = 20;
-            MutationChance = 0.25;
+            MutationChance = 0.66;
             AlternateSetpoint = 0.5;
-            UnionSetpoint = 0.75;
+            UnionSetpoint = 1.0;
             Supersample = 2;
-            MaxTransforms = 20;
+            MaxTransforms = 10;
             MaxScale = 2000;
-            MaxDisplacement = 5;
+            MaxDisplacement = 2;
             ResolutionMultiplier = 1;
-            RenderResolutionMultiplier = 1;
+            RenderResolutionMultiplier = 1.5;
             MotionDensity = 0.15;
             PromiscuityDecay = 2;
         }
