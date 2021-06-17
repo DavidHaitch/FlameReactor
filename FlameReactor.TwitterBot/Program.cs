@@ -54,14 +54,14 @@ namespace FlameReactor.TwitterBot
             var firstLine = formatFlameDesc(firstLines[rand.Next(firstLines.Count)], flame.Result);
             var secondLine = formatFlameDesc(secondLines[rand.Next(secondLines.Count)], flame.Result);
             var thirdLine = formatFlameDesc(thirdLines[rand.Next(thirdLines.Count)], flame.Result);
-            var status = firstLine + "\n" + secondLine + "\n" + thirdLine + "\n" + formatFlameDesc(hashtags, flame.Result).Replace("-", "—");
+            var status = firstLine + "\n" + secondLine + "\n" + thirdLine + "\n" + formatFlameDesc(hashtags, flame.Result).Replace("-", "_");
             var tweet = twitterService.UploadSingleImageAsync(status, flame.Result.ImagePath);
             tweet.Wait();
             var animated = ember.Animate(flame.Result);
             animated.Wait();
             var animationLine = formatFlameDesc(animationLines[rand.Next(animationLines.Count)], flame.Result);
 
-            twitterService.UploadVideoAsync(tweet.Result, animationLine + "\n" + formatFlameDesc(hashtags, flame.Result).Replace("-", "—"), animated.Result.VideoPath).Wait();
+            twitterService.UploadVideoAsync(tweet.Result, animationLine + "\n" + formatFlameDesc(hashtags, flame.Result).Replace("-", "_"), animated.Result.VideoPath).Wait();
         }
 
         private static string formatFlameDesc(string template, Flame flame)
