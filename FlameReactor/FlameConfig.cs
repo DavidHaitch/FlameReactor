@@ -14,17 +14,17 @@ namespace FlameReactor
             LoopFrames = 450;
             Quality = 1000;
             TS = 20;
-            MutationChance = 0.66;
-            AlternateSetpoint = 0.5;
-            UnionSetpoint = 1.0;
+            MutationChance = 0.33;
+            AlternateSetpoint = 0.45;
+            UnionSetpoint = 0.9;
             Supersample = 2;
-            MaxTransforms = 10;
+            MaxTransforms = 15;
             MaxScale = 2000;
             MaxDisplacement = 2;
             ResolutionMultiplier = 1;
             RenderResolutionMultiplier = 1.5;
             MotionDensity = 0.15;
-            PromiscuityDecay = 2;
+            SelectionStability = 4;
         }
 
         public int GenomeTries { get; set; }
@@ -41,6 +41,6 @@ namespace FlameReactor
         public double ResolutionMultiplier { get; set; }
         public double RenderResolutionMultiplier { get; set; }
         public double MotionDensity { get; set; }
-        public double PromiscuityDecay { get; internal set; }
+        public int SelectionStability { get; internal set; }
     }
 }

@@ -17,7 +17,9 @@ namespace FlameReactor.TwitterBot
 
             var firstLines = new List<string>()
             {
-                "This is $flameName, offspring of $p1Name and $p2Name."
+                "This is $flameName, offspring of $p1Name and $p2Name.",
+                "Meet $flameName, child of $p1Name and $p2Name.",
+                "$p1Name and $p2Name mated to produce $flameName."
             };
 
             var secondLines = new List<string>()
@@ -27,27 +29,32 @@ namespace FlameReactor.TwitterBot
 
             var thirdLines = new List<string>()
             {
-                "Please welcome them to the world."
+                "Please welcome them to the world.",
+                "They are excited to meet you.",
+                "They are a bit shy.",
+                "$flameName is especially proud of their patterns",
+                "$flameName wishes they had more colors."
             };
 
             var animationLines = new List<string>()
             {
-                "$flameName dances."
+                "$flameName dances for you.",
+                "$flameName morphs in delight."
             };
 
             var hashtags = "#fractal #fractalflame #fractalart #generativeArt #$flameName #$p1Name #$p2Name";
             var twitterService = startup.Provider.GetRequiredService<TwitterService>();
             var ember = new EmberService("Flames/Pool");
             ember.FlameConfig.LoopFrames = 600;
-            ember.FlameConfig.GenomeTries = 10;
+            ember.FlameConfig.GenomeTries = 20;
             ember.FlameConfig.MaxDisplacement = 10;
             ember.FlameConfig.Quality = 1500;
             ember.FlameConfig.RenderResolutionMultiplier = 1.5;
             ember.FlameConfig.ResolutionMultiplier = 1.0;
             ember.FlameConfig.MotionDensity = 0.25;
             ember.FlameConfig.MutationChance = 0.33;
-            ember.FlameConfig.AlternateSetpoint = 0.5;
-            ember.FlameConfig.UnionSetpoint = 1.0;
+            ember.FlameConfig.AlternateSetpoint = 0.45;
+            ember.FlameConfig.UnionSetpoint = 0.9;
             var flame = ember.Breed();
             flame.Wait();
             var rand = new Random((int)DateTime.Now.Ticks);

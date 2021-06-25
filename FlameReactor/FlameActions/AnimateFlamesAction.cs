@@ -92,7 +92,7 @@ namespace FlameReactor.FlameActions
                     "-i", animationDir +"/%0"+ frameCount + "d.png",
                     "-vcodec", "libx264",
                     "-pix_fmt", "yuv420p",
-                    "-crf", "22",
+                    "-crf", "26",
                     "-preset", "slow",
                     animationDir + "/" + flame.Name + ".mp4" })).WaitForExit();
             }

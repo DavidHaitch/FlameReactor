@@ -50,19 +50,26 @@ namespace FlameReactor
             }
         }
 
-        public List<Flame> GetEligibleFlames(int count)
+        public List<Flame> GetEligibleFlames(int count, Flame currentFlame)
         {
             var r = Util.Rand.NextDouble();
             var flamesByEligibility = new List<Flame>().AsEnumerable();
             using (var db = new FlameReactorContext())
             {
-                flamesByEligibility = db.Flames.ToList().OrderBy(f => Util.Rand.Next()).OrderByDescending(f => f.Rating - (Math.Pow(f.Promiscuity, FlameConfig.PromiscuityDecay)) + Util.Rand.Next(-5, 5));
+                var minRating = db.Flames.Min(f => f.Rating);
+                var maxRating = db.Flames.Max(f => f.Rating);
+                var minPromiscuity = db.Flames.Min(f => f.Promiscuity);
+                var maxPromiscuity = db.Flames.Max(f => f.Promiscuity);
+                flamesByEligibility = db.Flames.ToList()
+                    .Where(f => f.ID != currentFlame.ID && (f.Birth == null || (!f.Birth.Parents.Any(f1 => f1.ID == currentFlame.ID)
+                             && !f.Birth.Parents.Any(f1 => f1.Birth == null || f1.Birth.Parents.Any(f2 => f2.ID == currentFlame.ID)))))
+                    .OrderBy(f => Util.Rand.Next());
+                    //.OrderBy(f => f.Promiscuity + Util.Rand.Next(minPromiscuity / FlameConfig.SelectionStability, maxPromiscuity / FlameConfig.SelectionStability))
+                    //.OrderByDescending(f => f.Rating + Util.Rand.Next(maxRating / FlameConfig.SelectionStability * -1, maxRating / FlameConfig.SelectionStability));
             }
 
             if (r < 0.8)
                 return flamesByEligibility.Take(count).ToList();
-            else if (r < 0.9)
-                return flamesByEligibility.Reverse().Take(count).ToList();
             else
                 return GetRandomFlames(count);
         }
@@ -71,7 +78,7 @@ namespace FlameReactor
         {
             using (var db = new FlameReactorContext())
             {
-                return db.Flames.ToList().OrderByDescending(x => (new FileInfo(x.GenomePath).CreationTime)).First();
+                return db.Flames.ToList().OrderByDescending(x => x.Generation).First();
             }
         }
 

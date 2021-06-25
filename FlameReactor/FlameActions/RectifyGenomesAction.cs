@@ -68,7 +68,7 @@ namespace FlameReactor.FlameActions
                 }
             }
 
-            if (xforms.Count(x => x.Attribute("animate").Value == "1") <= xforms.Count() * 0.66)
+            if (xforms.Count(x => x.Attribute("animate").Value == "1") <= xforms.Count() * 0.5)
             {
                 Console.WriteLine("Randomizing bad animation settings.");
                 foreach (var n in xforms)
@@ -77,7 +77,7 @@ namespace FlameReactor.FlameActions
                 }
 
                 var xformCount = xforms.Count();
-                for (var i = 0; i <= xformCount * 0.66; i++)
+                for (var i = 0; i <= xformCount * 0.5; i++)
                 {
                     xforms.ElementAt(Util.Rand.Next(0, xformCount)).SetAttributeValue("animate", 1);
                 }

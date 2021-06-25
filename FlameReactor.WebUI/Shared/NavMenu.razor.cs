@@ -58,7 +58,7 @@ namespace FlameReactor.WebUI.Shared
                     }
                 }
 
-                FlameChoices = Ember.GetEligibleFlames(4);
+                FlameChoices = Ember.GetEligibleFlames(4, AppState.CurrentFlame);
                 timer = new Timer();
                 timer.Interval = 1000;
                 timer.Elapsed += OnTimerInterval;
@@ -77,19 +77,19 @@ namespace FlameReactor.WebUI.Shared
             {
                 if(fc.Name != f.Name)
                 {
-                    using(var db = new FlameReactorContext())
-                    {
-                        db.InteractionEvents.Add(new InteractionEvent()
-                        {
-                            IPAddress = IPAddress,
-                            Timestamp = DateTimeOffset.Now,
-                            InteractionType = "Nonselect-Downvote",
-                            Details = "Nonselection-downvoting " + fc.Name
-                        });
-                        db.SaveChanges();
-                    }
+                    //using(var db = new FlameReactorContext())
+                    //{
+                    //    db.InteractionEvents.Add(new InteractionEvent()
+                    //    {
+                    //        IPAddress = IPAddress,
+                    //        Timestamp = DateTimeOffset.Now,
+                    //        InteractionType = "Nonselect-Downvote",
+                    //        Details = "Nonselection-downvoting " + fc.Name
+                    //    });
+                    //    db.SaveChanges();
+                    //}
 
-                    Ember.Vote(IPAddress, fc, -1, true);
+                    //Ember.Vote(IPAddress, fc, -1, true);
                 }
                 else
                 {
@@ -104,7 +104,7 @@ namespace FlameReactor.WebUI.Shared
                         });
                         db.SaveChanges();
                     }
-                    Ember.Vote(IPAddress, fc, 2, true);
+                    Ember.Vote(IPAddress, fc, 1, true);
                 }
             });
             if (AppState.IsIdle)
@@ -163,7 +163,7 @@ namespace FlameReactor.WebUI.Shared
                 await OnStateChange.InvokeAsync(0);
                 if (File.Exists("./wwwroot/current.png")) File.Delete("./wwwroot/current.png");
                 File.Copy(AppState.CurrentFlame.ImagePath, "./wwwroot/current.png");
-                FlameChoices = Ember.GetEligibleFlames(4);
+                FlameChoices = Ember.GetEligibleFlames(4, AppState.CurrentFlame);
             }
             catch (Exception ex)
             {
