@@ -45,7 +45,7 @@ namespace FlameReactor.TwitterBot
             var hashtags = "#fractal #fractalflame #fractalart #generativeArt #$flameName #$p1Name #$p2Name";
             var twitterService = startup.Provider.GetRequiredService<TwitterService>();
             var ember = new EmberService("Flames/Pool");
-            ember.FlameConfig.LoopFrames = 600;
+            ember.FlameConfig.LoopFrames = 300;
             ember.FlameConfig.GenomeTries = 20;
             ember.FlameConfig.MaxDisplacement = 10;
             ember.FlameConfig.Quality = 1500;
@@ -53,7 +53,7 @@ namespace FlameReactor.TwitterBot
             ember.FlameConfig.ResolutionMultiplier = 1.0;
             ember.FlameConfig.MotionDensity = 0.25;
             ember.FlameConfig.MutationChance = 0.33;
-            ember.FlameConfig.AlternateSetpoint = 0.45;
+            ember.FlameConfig.AlternateSetpoint = 0.25;
             ember.FlameConfig.UnionSetpoint = 0.9;
             var flame = ember.Breed();
             flame.Wait();

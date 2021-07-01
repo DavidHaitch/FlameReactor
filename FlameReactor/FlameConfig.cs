@@ -25,6 +25,7 @@ namespace FlameReactor
             RenderResolutionMultiplier = 1.5;
             MotionDensity = 0.15;
             SelectionStability = 4;
+            AnimationDensity = 0.25;
         }
 
         public int GenomeTries { get; set; }
@@ -42,5 +43,6 @@ namespace FlameReactor
         public double RenderResolutionMultiplier { get; set; }
         public double MotionDensity { get; set; }
         public int SelectionStability { get; internal set; }
+        public double AnimationDensity { get; set; }
     }
 }

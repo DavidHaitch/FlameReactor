@@ -13,7 +13,7 @@ namespace FlameReactor.FlameActions
     class MutateFlamesAction : FlameAction
     {
         private List<string> allVars = new List<string>();
-        public MutateFlamesAction(Action<RenderStepEventArgs> stepEvent) : base(stepEvent) 
+        public MutateFlamesAction(Action<RenderStepEventArgs> stepEvent) : base(stepEvent)
         {
             allVars = File.ReadAllLines("./allvars.txt").ToList();
         }
@@ -37,27 +37,27 @@ namespace FlameReactor.FlameActions
             {
                 "all_vars",
                 "one_xform",
-                "addMotion",
                 "delete_xform",
                 "add_symmetry",
-                //"post_xforms",
-                "all_coefs"
+                "post_xforms",
+                "all_coefs",
+                "addMotion"
             };
 
             var friendlyMethods = new List<string>()
             {
                 "all variations",
                 "one gene",
-                "by adding motion",
                 "by removing a gene",
                 "by adding symmetry",
-                //"post-affines",
-                "all coefficients"
+                "post-affines",
+                "all coefficients",
+                "by adding motion"
             };
 
             var methodIdx = Util.Rand.Next(0, methods.Count);
             var method = methods[methodIdx];
-            
+
             StepEvent(new RenderStepEventArgs("Mutating " + friendlyMethods[methodIdx], "", 10));
 
             if (method == "addMotion")
@@ -88,7 +88,7 @@ namespace FlameReactor.FlameActions
 
             foreach (var n in doc.Descendants("flame"))
             {
-                foreach(var xform in doc.Descendants("xform"))
+                foreach (var xform in doc.Descendants("xform"))
                 {
                     if (Util.Rand.NextDouble() > flameConfig.MotionDensity) continue;
                     var name = xform.Attributes().Where(a => double.TryParse(a.Value, out var irrelevant) && (allVars.Contains(a.Name.LocalName) || a.Name == "color")).OrderBy(a => Util.Rand.Next()).Last().Name;
@@ -117,10 +117,10 @@ namespace FlameReactor.FlameActions
         private XElement CreateMotionElement(XElement parent, string name)
         {
             var motionFunctions = new List<string>() { "sin", "sin", "triangle", "hill", "hill" };
-            var motionFrequencies = new List<string>() { "1", "2","2", "4" };
+            var motionFrequencies = new List<string>() { "1", "2", "2", "4" };
 
             var motionAttrName = name;
-            var motionAttr = new XAttribute(motionAttrName, ((Util.Rand.NextDouble()/2) + 0.5).ToString().Substring(0, 3));
+            var motionAttr = new XAttribute(motionAttrName, ((Util.Rand.NextDouble() / 2) + 0.5).ToString().Substring(0, 3));
             var motionFunction = motionFunctions[Util.Rand.Next(0, motionFunctions.Count)];
             var motionFrequency = motionFrequencies[Util.Rand.Next(0, motionFrequencies.Count)];
             var attributes = new List<XAttribute>();

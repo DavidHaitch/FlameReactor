@@ -31,7 +31,7 @@ namespace FlameReactor.FlameActions
                 n.SetAttributeValue("name", flame.Name);
                 n.SetAttributeValue("size", "1280 720");
                 n.SetAttributeValue("zoom", "0");
-                //n.SetAttributeValue("gamma_threshold", 0.01);
+                n.SetAttributeValue("gamma_threshold", 0.1);
                 //n.SetAttributeValue("gamma", 8);
                 var scale = n.Attribute("scale").Value;
                 if (scale.Contains("e") || Convert.ToDouble(scale) > flameConfig.MaxScale)
@@ -66,9 +66,14 @@ namespace FlameReactor.FlameActions
                 {
                     xform.SetAttributeValue("animate", Math.Round(Convert.ToDouble(animate)));
                 }
+
+                foreach(var attr in xform.Attributes())
+                {
+                    if (attr.Name.LocalName.Contains("blur")) attr.Value = "0";
+                }
             }
 
-            if (xforms.Count(x => x.Attribute("animate").Value == "1") <= xforms.Count() * 0.5)
+            if (xforms.All(x => x.Attribute("animate").Value == "1") || xforms.Count(x => x.Attribute("animate").Value == "1") <= xforms.Count() * flameConfig.AnimationDensity)
             {
                 Console.WriteLine("Randomizing bad animation settings.");
                 foreach (var n in xforms)
@@ -77,7 +82,7 @@ namespace FlameReactor.FlameActions
                 }
 
                 var xformCount = xforms.Count();
-                for (var i = 0; i <= xformCount * 0.5; i++)
+                for (var i = 0; i <= xformCount * flameConfig.AnimationDensity; i++)
                 {
                     xforms.ElementAt(Util.Rand.Next(0, xformCount)).SetAttributeValue("animate", 1);
                 }
