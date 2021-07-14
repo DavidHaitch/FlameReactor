@@ -180,7 +180,7 @@ namespace FlameReactor.WebUI.Pages
                 });
                 db.SaveChanges();
             }
-            Ember.Vote(IPAddress, AppState.CurrentFlame, 5);
+            Ember.Vote(IPAddress, AppState.CurrentFlame, 4);
         }
 
         protected void Downvote()
@@ -197,7 +197,7 @@ namespace FlameReactor.WebUI.Pages
                 });
                 db.SaveChanges();
             }
-            Ember.Vote(IPAddress, AppState.CurrentFlame, -5);
+            Ember.Vote(IPAddress, AppState.CurrentFlame, -4);
         }
 
         public void Dispose()

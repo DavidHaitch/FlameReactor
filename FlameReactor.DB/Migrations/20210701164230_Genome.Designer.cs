@@ -3,14 +3,16 @@ using System;
 using FlameReactor.DB;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FlameReactor.DB.Migrations
 {
     [DbContext(typeof(FlameReactorContext))]
-    partial class FlameReactorContextModelSnapshot : ModelSnapshot
+    [Migration("20210701164230_Genome")]
+    partial class Genome
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -85,6 +87,9 @@ namespace FlameReactor.DB.Migrations
                     b.Property<string>("GenomePath")
                         .HasColumnType("TEXT");
 
+                    b.Property<byte[]>("Image")
+                        .HasColumnType("BLOB");
+
                     b.Property<string>("ImagePath")
                         .HasColumnType("TEXT");
 
@@ -96,6 +101,12 @@ namespace FlameReactor.DB.Migrations
 
                     b.Property<int>("Rating")
                         .HasColumnType("INTEGER");
+
+                    b.Property<byte[]>("Thumbnail")
+                        .HasColumnType("BLOB");
+
+                    b.Property<byte[]>("Video")
+                        .HasColumnType("BLOB");
 
                     b.Property<string>("VideoPath")
                         .HasColumnType("TEXT");

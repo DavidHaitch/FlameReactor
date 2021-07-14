@@ -1,6 +1,7 @@
 ﻿using FlameReactor.DB;
 using FlameReactor.DB.Models;
 using FlameReactor.FlameActions;
+using Microsoft.EntityFrameworkCore;
 using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.Processing;
 using System;
@@ -46,7 +47,7 @@ namespace FlameReactor
         {
             using (var db = new FlameReactorContext())
             {
-                return db.Flames.ToList().OrderBy(f => Util.Rand.Next()).Take(count).ToList();
+                return db.Flames.ToList().Where(f => !f.Dead).OrderBy(f => Util.Rand.Next()).Take(count).ToList();
             }
         }
 
@@ -60,18 +61,23 @@ namespace FlameReactor
                 var maxRating = db.Flames.Max(f => f.Rating);
                 var minPromiscuity = db.Flames.Min(f => f.Promiscuity);
                 var maxPromiscuity = db.Flames.Max(f => f.Promiscuity);
-                flamesByEligibility = db.Flames.ToList()
-                    .Where(f => f.ID != currentFlame.ID && (f.Birth == null || (!f.Birth.Parents.Any(f1 => f1.ID == currentFlame.ID)
-                             && !f.Birth.Parents.Any(f1 => f1.Birth == null || f1.Birth.Parents.Any(f2 => f2.ID == currentFlame.ID)))))
-                    .OrderBy(f => Util.Rand.Next());
-                    //.OrderBy(f => f.Promiscuity + Util.Rand.Next(minPromiscuity / FlameConfig.SelectionStability, maxPromiscuity / FlameConfig.SelectionStability))
-                    //.OrderByDescending(f => f.Rating + Util.Rand.Next(maxRating / FlameConfig.SelectionStability * -1, maxRating / FlameConfig.SelectionStability));
+                var current = db.Flames
+                    .Include(f => f.Birth).ThenInclude(b => b.Parents)
+                    .ThenInclude(p => p.Birth).ThenInclude(b => b.Parents)
+                    .First(f => f.ID == currentFlame.ID);
+                flamesByEligibility = db.Flames
+                    .Include(f => f.Birth).ThenInclude(b => b.Parents)
+                    .ThenInclude(p => p.Birth).ThenInclude(b => b.Parents).ToList()
+                    .Where(f => !f.Dead && f.ID != current.ID 
+                       && (current.Birth == null || (!current.Birth.Parents.Any(f1 => f1.ID == f.ID)))
+                       && (current.Birth == null || current.Birth.Parents.All(p => p.Birth == null || (!p.Birth.Parents.Any(f2 => f2.ID == f.ID)))));
+
+                flamesByEligibility = flamesByEligibility.OrderBy(f => Util.Rand.Next());
+                flamesByEligibility = flamesByEligibility.OrderByDescending(f => (f.Rating + (Util.Rand.Next(maxRating * -1, maxRating) * FlameConfig.SelectionInstability) - f.Promiscuity));
+                //flamesByEligibility = flamesByEligibility.OrderByDescending(f => f.Rating + Util.Rand.Next(maxRating / FlameConfig.SelectionStability * -1, maxRating / FlameConfig.SelectionStability));
             }
 
-            if (r < 0.8)
-                return flamesByEligibility.Take(count).ToList();
-            else
-                return GetRandomFlames(count);
+            return flamesByEligibility.Take(count).ToList();
         }
 
         public Flame GetMostRecentFlame()
@@ -103,12 +109,19 @@ namespace FlameReactor
         {
             using (var db = new FlameReactorContext())
             {
-                var f = db.Flames.FirstOrDefault(f => f.ID == flame.ID);
+                var f = db.Flames.Include(f => f.Birth).FirstOrDefault(f => f.ID == flame.ID);
                 if (f == null) throw new Exception("Tried to vote on nonexistent flame: " + flame.ID);
 
                 if (!force && db.Votes.Any(v => v.IPAddress == IP && v.FlameId == flame.ID)) return false;
                 if (!force) db.Votes.Add(new Vote() { FlameId = flame.ID, IPAddress = IP, Adjustment = adjustment });
                 f.Rating += adjustment;
+                Console.WriteLine("Voting on " + f.DisplayName + " by " + adjustment);
+                if (Math.Abs(adjustment / 2) > 0 && f.BirthID != null)
+                {
+                    var parents = db.Flames.Include(x => x.Breedings).ToList().Where(x => x.Breedings.Any(b => b.ID == f.BirthID)).ToList();
+                    parents.ForEach(p => Vote(IP, p, adjustment / 2, true));
+                    db.Flames.UpdateRange(parents);
+                }
                 db.SaveChanges();
                 return true;
             }
@@ -139,9 +152,11 @@ namespace FlameReactor
 
                 db.SaveChanges();
 
-                flame = await mutateFlames.Act(FlameConfig, flame);
-                flame = await mutateFlames.Act(FlameConfig, flame);
-                flame = await mutateFlames.Act(FlameConfig, flame);
+                while (Util.Rand.NextDouble() < FlameConfig.MutationChance)
+                {
+                    flame = await mutateFlames.Act(FlameConfig, flame);
+                }
+
                 //flame = await fixColorPalettes.Act(FlameConfig, flame);
                 flame = await rectifyGenomes.Act(FlameConfig, flame);
                 flame = await renderFlames.Act(FlameConfig, flame);
@@ -161,10 +176,11 @@ namespace FlameReactor
             await Task.Delay(100);
             using (var db = new FlameReactorContext())
             {
-                var flame = await animateFlames.Act(FlameConfig, fl);
-                if (flame.Any(f => f == null)) throw new Exception("Breed error");
-                db.SaveChanges();
+                var flame = await animateFlames.Act(FlameConfig, db.Flames.FirstOrDefault(f => f.ID == fl.ID));
+                if (flame.Any(f => f == null)) throw new Exception("Animation error");
                 var f = flame.First();
+                db.Flames.Update(f);
+                db.SaveChanges();
                 OnRaiseRenderCompleteEvent(new RenderCompleteEventArgs(f.VideoPathWeb));
                 return f;
             }
@@ -211,6 +227,11 @@ namespace FlameReactor
                     {
                         db.Flames.Add(tempFlame);
                     }
+                }
+
+                foreach (var f in db.Flames)
+                {
+                    f.Update();
                 }
 
                 db.SaveChanges();

@@ -3,14 +3,16 @@ using System;
 using FlameReactor.DB;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FlameReactor.DB.Migrations
 {
     [DbContext(typeof(FlameReactorContext))]
-    partial class FlameReactorContextModelSnapshot : ModelSnapshot
+    [Migration("20210701161438_CreateDeath")]
+    partial class CreateDeath
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -78,9 +80,6 @@ namespace FlameReactor.DB.Migrations
 
                     b.Property<int>("Generation")
                         .HasColumnType("INTEGER");
-
-                    b.Property<string>("Genome")
-                        .HasColumnType("TEXT");
 
                     b.Property<string>("GenomePath")
                         .HasColumnType("TEXT");

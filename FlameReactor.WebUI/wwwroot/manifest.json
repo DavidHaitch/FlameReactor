@@ -1,0 +1,10 @@
+﻿{
+  "manifest_version": 2,
+  "icons": {
+    "16": "favicon-16.png",
+    "32": "favicon-32.png",
+    "180": "favicon-180.png",
+    "192": "favicon-192.png",
+    "512": "favicon-512.png"
+  }
+}

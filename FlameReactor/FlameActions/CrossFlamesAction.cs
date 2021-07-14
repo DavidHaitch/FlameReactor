@@ -31,11 +31,6 @@ namespace FlameReactor.FlameActions
 
         private async Task<Flame> CrossFlames(FlameConfig flameConfig, Flame flame1, Flame flame2)
         {
-            //if (Util.Rand.Next() % 2 == 0)
-            //{
-            //    swap(ref flame1, ref flame2);
-            //}
-
             flame1.Promiscuity++;
             flame2.Promiscuity++;
 
@@ -68,6 +63,7 @@ namespace FlameReactor.FlameActions
                 var name = names[Util.Rand.Next(names.Count())];
                 child.DisplayName = name.First().ToString().ToUpper() + name.Substring(1).ToLower();
                 child.Generation = flame1.Generation >= flame2.Generation ? flame1.Generation + 1 : flame2.Generation + 1;
+                child.Genome = File.ReadAllText(child.GenomePath);
                 child.Birth = new Breeding();
                 child.Birth.Parents.Add(flame1);
                 child.Birth.Parents.Add(flame2);

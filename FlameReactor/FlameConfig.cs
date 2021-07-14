@@ -19,13 +19,13 @@ namespace FlameReactor
             UnionSetpoint = 0.9;
             Supersample = 2;
             MaxTransforms = 15;
-            MaxScale = 2000;
+            MaxScale = 1000;
             MaxDisplacement = 2;
             ResolutionMultiplier = 1;
             RenderResolutionMultiplier = 1.5;
             MotionDensity = 0.15;
-            SelectionStability = 4;
-            AnimationDensity = 0.25;
+            SelectionInstability = 4;
+            AnimationDensity = 0.1;
         }
 
         public int GenomeTries { get; set; }
@@ -42,7 +42,7 @@ namespace FlameReactor
         public double ResolutionMultiplier { get; set; }
         public double RenderResolutionMultiplier { get; set; }
         public double MotionDensity { get; set; }
-        public int SelectionStability { get; internal set; }
+        public int SelectionInstability { get; internal set; }
         public double AnimationDensity { get; set; }
     }
 }

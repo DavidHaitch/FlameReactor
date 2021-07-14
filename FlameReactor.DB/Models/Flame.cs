@@ -21,7 +21,7 @@ namespace FlameReactor.DB.Models
 
         public string Name { get; set; }
         public string GenomePath { get; set; }
-
+        public string Genome { get; set; }
         [JsonIgnore]
         [NotMapped]
         public string GenomePathWeb { get
@@ -98,6 +98,8 @@ namespace FlameReactor.DB.Models
         public int Rating { get; set; }
         public int Generation { get; set; }
 
+        public bool Dead { get; set; }
+
         public Flame()
         {
             if (DisplayName == null) DisplayName = Name;
@@ -129,6 +131,15 @@ namespace FlameReactor.DB.Models
             if (!File.Exists(ImagePath))
             {
                 ImagePath = "";
+            }
+
+            if(!File.Exists(GenomePath))
+            {
+                Dead = true;
+            }
+            else if(string.IsNullOrWhiteSpace(Genome))
+            {
+                Genome = File.ReadAllText(GenomePath);
             }
 
             VideoPath = Path.Combine(poolPath, Name, Name + ".mp4");

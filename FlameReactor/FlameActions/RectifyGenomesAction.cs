@@ -1,6 +1,7 @@
 ﻿using FlameReactor.DB.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -67,9 +68,9 @@ namespace FlameReactor.FlameActions
                     xform.SetAttributeValue("animate", Math.Round(Convert.ToDouble(animate)));
                 }
 
-                foreach(var attr in xform.Attributes())
+                foreach (var attr in xform.Attributes())
                 {
-                    if (attr.Name.LocalName.Contains("blur")) attr.Value = "0";
+                    if (attr.Name.LocalName.Contains("blur")) attr.Value = "0.1";
                 }
             }
 
@@ -93,6 +94,8 @@ namespace FlameReactor.FlameActions
                 writer.Formatting = Formatting.Indented;
                 doc.Save(writer);
             }
+
+            flame.Genome = File.ReadAllText(flame.GenomePath);
         }
     }
 }

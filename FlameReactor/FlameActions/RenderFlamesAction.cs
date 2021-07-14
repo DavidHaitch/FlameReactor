@@ -26,12 +26,13 @@ namespace FlameReactor.FlameActions
         private async Task<Flame> RenderFlame(FlameConfig flameConfig, Flame flame)
         {
             StepEvent(new RenderStepEventArgs("Rendering", string.Empty, 15));
-            var render = await Util.RunProcess(EnvironmentPaths.EmberRenderPath, new[] { "--quality=" + 2000, "--demax=4", "--sp", "--supersample=2", "--opencl", "--prefix=" + flame.Name + ".", "--in=" + flame.GenomePath,
+            var render = await Util.RunProcess(EnvironmentPaths.EmberRenderPath, new[] { "--quality=" + 2000, "--demax=8", "--sp", "--supersample=2", "--opencl", "--prefix=" + flame.Name + ".", "--in=" + flame.GenomePath,
                             "--hs=" + flameConfig.RenderResolutionMultiplier,
                 "--ws=" + flameConfig.RenderResolutionMultiplier,
                 "--ss=" + flameConfig.RenderResolutionMultiplier});
             render.WaitForExit(5 * 60 * 1000);
             if (!render.HasExited || render.ExitCode != 0) throw new Exception("Render failed");
+
             flame.Update();
             MakeThumbnail(flame.ImagePath);
             StepEvent(new RenderStepEventArgs("Render Complete", flame.ImagePathWeb, 15));

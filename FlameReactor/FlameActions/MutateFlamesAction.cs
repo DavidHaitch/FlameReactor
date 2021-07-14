@@ -31,14 +31,12 @@ namespace FlameReactor.FlameActions
 
         private async Task<Flame> MutateFlame(FlameConfig flameConfig, Flame flame)
         {
-            var r = Util.Rand.NextDouble();
-            if (r > flameConfig.MutationChance) return flame;
             var methods = new List<string>()
             {
                 "all_vars",
                 "one_xform",
                 "delete_xform",
-                "add_symmetry",
+                //"add_symmetry",
                 "post_xforms",
                 "all_coefs",
                 "addMotion"
@@ -49,7 +47,7 @@ namespace FlameReactor.FlameActions
                 "all variations",
                 "one gene",
                 "by removing a gene",
-                "by adding symmetry",
+                //"by adding symmetry",
                 "post-affines",
                 "all coefficients",
                 "by adding motion"
@@ -79,6 +77,7 @@ namespace FlameReactor.FlameActions
             }
 
             flame.Update();
+            flame.Genome = File.ReadAllText(flame.GenomePath);
             return flame;
         }
 

@@ -46,9 +46,11 @@ namespace FlameReactor.TwitterBot
             var twitterService = startup.Provider.GetRequiredService<TwitterService>();
             var ember = new EmberService("Flames/Pool");
             ember.FlameConfig.LoopFrames = 300;
-            ember.FlameConfig.GenomeTries = 20;
+            ember.FlameConfig.GenomeTries = 10;
             ember.FlameConfig.MaxDisplacement = 10;
             ember.FlameConfig.Quality = 1500;
+            ember.FlameConfig.MaxTransforms = 8;
+            ember.FlameConfig.MaxScale = 500;
             ember.FlameConfig.RenderResolutionMultiplier = 1.5;
             ember.FlameConfig.ResolutionMultiplier = 1.0;
             ember.FlameConfig.MotionDensity = 0.25;
