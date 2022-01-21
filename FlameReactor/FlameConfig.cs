@@ -10,22 +10,23 @@ namespace FlameReactor
     {
         public FlameConfig()
         {
-            GenomeTries = 10;
+            GenomeTries = 100;
             LoopFrames = 450;
-            Quality = 1000;
+            Quality = 2500;
             TS = 20;
-            MutationChance = 0.33;
+            MutationChance = 0.66;
             AlternateSetpoint = 0.45;
             UnionSetpoint = 0.9;
             Supersample = 2;
-            MaxTransforms = 15;
-            MaxScale = 1000;
-            MaxDisplacement = 2;
+            MaxTransforms = 150;
+            MaxScale = 20000;
+            MaxDisplacement = 100;
             ResolutionMultiplier = 1;
             RenderResolutionMultiplier = 1.5;
             MotionDensity = 0.15;
-            SelectionInstability = 4;
-            AnimationDensity = 0.1;
+            SelectionInstability = 0.1;
+            AnimationDensity = 0.0;
+            MaxBlur = 1.0;
         }
 
         public int GenomeTries { get; set; }
@@ -42,7 +43,8 @@ namespace FlameReactor
         public double ResolutionMultiplier { get; set; }
         public double RenderResolutionMultiplier { get; set; }
         public double MotionDensity { get; set; }
-        public int SelectionInstability { get; internal set; }
+        public double SelectionInstability { get; set; }
         public double AnimationDensity { get; set; }
+        public double MaxBlur { get; set; }
     }
 }

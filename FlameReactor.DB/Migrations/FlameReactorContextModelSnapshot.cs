@@ -39,6 +39,9 @@ namespace FlameReactor.DB.Migrations
                     b.Property<string>("IPAddress")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Referrer")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("UserAgent")
                         .HasColumnType("TEXT");
 
@@ -127,6 +130,28 @@ namespace FlameReactor.DB.Migrations
                     b.ToTable("InteractionEvents");
                 });
 
+            modelBuilder.Entity("FlameReactor.DB.Models.TweetRecord", b =>
+                {
+                    b.Property<ulong>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Faves")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("OwnerID")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Retweets")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("OwnerID");
+
+                    b.ToTable("TweetRecord");
+                });
+
             modelBuilder.Entity("FlameReactor.DB.Models.Vote", b =>
                 {
                     b.Property<string>("IPAddress")
@@ -167,9 +192,23 @@ namespace FlameReactor.DB.Migrations
                     b.Navigation("Birth");
                 });
 
+            modelBuilder.Entity("FlameReactor.DB.Models.TweetRecord", b =>
+                {
+                    b.HasOne("FlameReactor.DB.Models.Flame", "Owner")
+                        .WithMany("Tweets")
+                        .HasForeignKey("OwnerID");
+
+                    b.Navigation("Owner");
+                });
+
             modelBuilder.Entity("FlameReactor.DB.Models.Breeding", b =>
                 {
                     b.Navigation("Child");
+                });
+
+            modelBuilder.Entity("FlameReactor.DB.Models.Flame", b =>
+                {
+                    b.Navigation("Tweets");
                 });
 #pragma warning restore 612, 618
         }

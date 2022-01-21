@@ -84,7 +84,7 @@ a, .btn-link {
 .fadeout {
     visibility: visible;
     opacity: 1;
-    animation: fadeoutanim 1s 30s 1;
+    animation: fadeoutanim 1s 10s 1;
     animation-fill-mode: forwards;
 }
 

@@ -14,7 +14,7 @@ FR.OpenInNewTab = function (url) {
 }
 
 FR.playSound = function () {
-    document.getElementById('alertbell').volume = 0.25;
+    document.getElementById('alertbell').volume = 0.1;
     document.getElementById('alertbell').play();
 };
 
@@ -43,7 +43,7 @@ FR.WakeUI = function () {
     var fadeables = document.getElementsByClassName('fadeable');
     for (var i = 0; i < fadeables.length; i++) {
         if (fadeables[i].classList.contains('fadeout')) {
-            if (fadeables[i].getAnimations()[0] == undefined || fadeables[i].getAnimations()[0].playState != 'running')
+            if (fadeables[i].getAnimations == undefined || fadeables[i].getAnimations()[0] == undefined || fadeables[i].getAnimations()[0].playState != 'running')
             fadeables[i].classList.remove('fadeout');
         }
         else {

@@ -50,7 +50,7 @@ namespace FlameReactor.FlameActions
             }
             StepEvent(new RenderStepEventArgs("Breeding" + friendlyMethod, method, 5));
             var crossProcess = await Util.RunProcess(EnvironmentPaths.EmberGenomePath,
-                new[] { "--debug", "--tries=" + flameConfig.GenomeTries, "--cross0=" + flame1.GenomePath, "--cross1=" + flame2.GenomePath, method, "--maxxforms=" + flameConfig.MaxTransforms, "--noedits" },
+                new[] { "--debug", "--opencl", "--sp", "--tries=" + flameConfig.GenomeTries, "--cross0=" + flame1.GenomePath, "--cross1=" + flame2.GenomePath, method, "--maxxforms=" + flameConfig.MaxTransforms, "--noedits" },
                 //new[] { "--opencl", "--quality=" + 500, "--tries=" + flameConfig.GenomeTries, "--cross0=" + flame1.GenomePath, "--cross1=" + flame2.GenomePath, "--method=" + method },
                 childName);
 

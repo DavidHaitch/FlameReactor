@@ -18,6 +18,7 @@ namespace FlameReactor.WebUI.Pages
 
         public string UserAgent { get; set; }
         public string IPAddress { get; set; }
+        public string Referrer { get; set; }
 
         // The following links may be useful for getting the IP Adress:
         // https://stackoverflow.com/questions/35441521/remoteipaddress-is-always-null
@@ -30,6 +31,8 @@ namespace FlameReactor.WebUI.Pages
             // which you can query to get required information. Here, however, we pass 
             // its string representation
             IPAddress = _httpContextAccssor.HttpContext.Connection.RemoteIpAddress.ToString();
+            var headers = _httpContextAccssor.HttpContext.Request.GetTypedHeaders();
+            Referrer = headers.Referer != null ?headers.Referer.OriginalString : null;
         }
     }
 }

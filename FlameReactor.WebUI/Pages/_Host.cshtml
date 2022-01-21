@@ -34,7 +34,7 @@
 <body>
     @*<component type="typeof(App)" render-mode="ServerPrerendered" />*@
     <div>
-        @(await Html.RenderComponentAsync<App>(RenderMode.Server, new { IPAddress = Model.IPAddress, UserAgent = Model.UserAgent }))
+        @(await Html.RenderComponentAsync<App>(RenderMode.Server, new { IPAddress = Model.IPAddress, UserAgent = Model.UserAgent, Referrer = Model.Referrer }))
     </div>
     <div id="blazor-error-ui">
         <environment include="Staging,Production">

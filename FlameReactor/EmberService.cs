@@ -47,37 +47,41 @@ namespace FlameReactor
         {
             using (var db = new FlameReactorContext())
             {
-                return db.Flames.ToList().Where(f => !f.Dead).OrderBy(f => Util.Rand.Next()).Take(count).ToList();
+                return db.Flames.ToList().Where(f => !f.Dead && f.Generation < 5).OrderBy(f => Util.Rand.Next()).Take(count).ToList();
             }
         }
 
-        public List<Flame> GetEligibleFlames(int count, Flame currentFlame)
+        public List<Flame> GetEligibleFlames(int count, Flame currentFlame = null)
         {
-            var r = Util.Rand.NextDouble();
-            var flamesByEligibility = new List<Flame>().AsEnumerable();
+            var rand = new Random();
+            var r = rand.NextDouble();
+
             using (var db = new FlameReactorContext())
             {
                 var minRating = db.Flames.Min(f => f.Rating);
                 var maxRating = db.Flames.Max(f => f.Rating);
                 var minPromiscuity = db.Flames.Min(f => f.Promiscuity);
                 var maxPromiscuity = db.Flames.Max(f => f.Promiscuity);
-                var current = db.Flames
+
+                var flamesByEligibility = db.Flames
                     .Include(f => f.Birth).ThenInclude(b => b.Parents)
-                    .ThenInclude(p => p.Birth).ThenInclude(b => b.Parents)
-                    .First(f => f.ID == currentFlame.ID);
-                flamesByEligibility = db.Flames
-                    .Include(f => f.Birth).ThenInclude(b => b.Parents)
-                    .ThenInclude(p => p.Birth).ThenInclude(b => b.Parents).ToList()
-                    .Where(f => !f.Dead && f.ID != current.ID 
+                    .ThenInclude(p => p.Birth).ThenInclude(b => b.Parents).ToList();
+                if (currentFlame != null)
+                {
+                    var current = db.Flames
+                        .Include(f => f.Birth).ThenInclude(b => b.Parents)
+                        .ThenInclude(p => p.Birth).ThenInclude(b => b.Parents)
+                        .First(f => f.ID == currentFlame.ID);
+                    flamesByEligibility = flamesByEligibility.Where(f => !f.Dead && f.ID != current.ID
+                       && f.Generation <= current.Generation
                        && (current.Birth == null || (!current.Birth.Parents.Any(f1 => f1.ID == f.ID)))
-                       && (current.Birth == null || current.Birth.Parents.All(p => p.Birth == null || (!p.Birth.Parents.Any(f2 => f2.ID == f.ID)))));
+                       && (current.Birth == null || current.Birth.Parents.All(p => p.Birth == null || (!p.Birth.Parents.Any(f2 => f2.ID == f.ID))))).ToList();
+                }
 
-                flamesByEligibility = flamesByEligibility.OrderBy(f => Util.Rand.Next());
-                flamesByEligibility = flamesByEligibility.OrderByDescending(f => (f.Rating + (Util.Rand.Next(maxRating * -1, maxRating) * FlameConfig.SelectionInstability) - f.Promiscuity));
-                //flamesByEligibility = flamesByEligibility.OrderByDescending(f => f.Rating + Util.Rand.Next(maxRating / FlameConfig.SelectionStability * -1, maxRating / FlameConfig.SelectionStability));
+                flamesByEligibility = flamesByEligibility.OrderBy(f => Util.Rand.Next()).ToList();
+                flamesByEligibility = flamesByEligibility.OrderByDescending(f => f.Rating - (Util.Rand.Next(0, (int)FlameConfig.SelectionInstability))).ToList();
+                return flamesByEligibility.Take(count).ToList();
             }
-
-            return flamesByEligibility.Take(count).ToList();
         }
 
         public Flame GetMostRecentFlame()
@@ -92,7 +96,7 @@ namespace FlameReactor
         {
             var flameName = Path.Combine(EnvironmentPaths.FlamePoolPath, "seed_" + Guid.NewGuid().ToString() + ".flame");
             await Util.RunProcess(EnvironmentPaths.EmberGenomePath,
-            new[] { "--tries=" + FlameConfig.GenomeTries, "--debug" },
+            new[] { "--tries=" + FlameConfig.GenomeTries, "--debug", "--opencl" },
             flameName);
             var flame = new Flame(flameName);
             await rectifyGenomes.Act(FlameConfig, flame);
@@ -101,6 +105,68 @@ namespace FlameReactor
             using (var db = new FlameReactorContext())
             {
                 db.Flames.Add(flame);
+                db.SaveChanges();
+            }
+        }
+
+        public List<Flame> GetUntweetedFlames()
+        {
+            using (var db = new FlameReactorContext())
+            {
+                return db.Flames.Where(f => f.Tweets.Count() == 0 && f.Generation > 0).Include(f => f.Birth).ThenInclude(b => b.Parents).ToList();
+            }
+        }
+
+        public List<TweetRecord> GetTweetRecords()
+        {
+            using (var db = new FlameReactorContext())
+            {
+                return db.TweetRecord.Include(tr => tr.Owner).ToList();
+            }
+        }
+
+        public TweetRecord UpdateTweetRecord(TweetRecord tweetRecord)
+        {
+            if (tweetRecord == null) return null;
+
+            using (var db = new FlameReactorContext())
+            {
+                var tr = db.TweetRecord.FirstOrDefault(t => t.ID == tweetRecord.ID);
+                tr.Faves = tweetRecord.Faves;
+                tr.Retweets = tweetRecord.Retweets;
+                db.SaveChanges();
+                return tr;
+            }
+        }
+        public void AddTweetRecordToFlame(Flame flame, TweetRecord tweetRecord)
+        {
+            using (var db = new FlameReactorContext())
+            {
+                var f = db.Flames.FirstOrDefault(f => f.ID == flame.ID);
+                tweetRecord.Owner = f;
+                db.TweetRecord.Add(tweetRecord);
+                db.SaveChanges();
+            }
+        }
+
+        public void SetFlameRating(Flame flame, int rating)
+        {
+            using (var db = new FlameReactorContext())
+            {
+                var f = db.Flames.FirstOrDefault(f => f.ID == flame.ID);
+                if (f == null) return;
+                f.Rating = rating;
+                db.SaveChanges();
+            }
+        }
+
+        public void SetFlameRating(int flameId, int rating)
+        {
+            using (var db = new FlameReactorContext())
+            {
+                var f = db.Flames.FirstOrDefault(f => f.ID == flameId);
+                if (f == null) return;
+                f.Rating = rating;
                 db.SaveChanges();
             }
         }
@@ -129,7 +195,7 @@ namespace FlameReactor
 
         public async Task<Flame> Breed()
         {
-            var rand = GetRandomFlames(2);
+            var rand = GetEligibleFlames(2);
             return await Breed(rand[0], rand[1]);
         }
 
@@ -222,24 +288,34 @@ namespace FlameReactor
             {
                 foreach (var f in Directory.GetFiles(FlameDir).Where(x => x.EndsWith(".flame")))
                 {
-                    var tempFlame = new Flame(f);
-                    if (!db.Flames.Any(f_ => f_.Name == tempFlame.Name))
+                    if (!db.Flames.Any(f_ => f_.Name == Path.GetFileNameWithoutExtension(f)))
                     {
-                        db.Flames.Add(tempFlame);
+                        var flamePaths = DecomposeFlameFile(f);
+                        foreach(var flamePath in flamePaths)
+                        {
+                            var tempFlame = new Flame(flamePath);
+                            Console.WriteLine("Adding new flame: " + flamePath);
+                            db.Flames.Add(tempFlame);
+                        }
                     }
                 }
 
+                Console.Write("Scanning flames...  ");
                 foreach (var f in db.Flames)
                 {
                     f.Update();
                 }
-
+                Console.WriteLine("Done.");
                 db.SaveChanges();
-                startingFlameCount = db.Flames.Count();
+                startingFlameCount = db.Flames.Count(f => !f.Dead);
             }
             var addedFlames = 0;
             var minFlockSize = 0;
-            var batchSize = 4;
+            var batchSize = 3;
+            if(startingFlameCount < minFlockSize)
+            {
+                Console.WriteLine($"{minFlockSize - startingFlameCount} flames missing.");
+            }
             while (startingFlameCount + addedFlames < minFlockSize)
             {
                 var processes = startingFlameCount + addedFlames + batchSize > minFlockSize ? minFlockSize - (startingFlameCount + addedFlames) : batchSize;
@@ -263,13 +339,12 @@ namespace FlameReactor
             {
                 using (var db = new FlameReactorContext())
                 {
-
-                    var missingFlames = new List<Flame>();
+                    Console.Write("Repairing flock... ");
+                    //var missingFlames = new List<Flame>();
                     var allFlames = db.Flames.ToList();
                     var names = File.ReadAllLines("./mysteryNames.txt").ToList();
                     foreach (var flame in allFlames)
                     {
-                        if (!File.Exists(flame.GenomePath)) missingFlames.Add(flame);
                         if (!File.Exists(flame.ImagePath)) flame.ImagePath = "";
                         if (!File.Exists(flame.VideoPath)) flame.VideoPath = "";
                         if (flame.DisplayName == flame.Name)
@@ -279,9 +354,25 @@ namespace FlameReactor
                         }
                     }
 
-                    missingFlames.ForEach(f => db.Flames.Remove(f));
+                    var missingFlames = db.Flames.ToList().Where(flame => !flame.Dead && !File.Exists(flame.GenomePath));
+                    foreach (var f in missingFlames)
+                    {
+                        //If the missing flame has a parsable genome, retain it as a dead flame.
+                        //Otherwise, remove it entirely.
+                        try
+                        {
+                            var genome = XDocument.Parse(f.Genome);
+                            var fl = db.Flames.First(fl => fl.ID == f.ID);
+                            fl.Dead = true;
+                            db.Flames.Update(fl);
+                        }
+                        catch (XmlException)
+                        {
+                            db.Flames.Remove(f);
+                        }
+                    };
                     db.SaveChanges();
-                    allFlames = db.Flames.ToList();
+                    allFlames = db.Flames.Where(f => !f.Dead).ToList();
 
                     var imagelessFlames = allFlames.Where(f => !File.Exists(f.ImagePath)).ToArray();
                     var videolessFlames = allFlames.Where(f => !File.Exists(f.VideoPath)).ToArray();
@@ -293,6 +384,7 @@ namespace FlameReactor
                     //videolessFlames = await animateFlames.Act(FlameConfig, videolessFlames);
 
                     db.SaveChanges();
+                    Console.WriteLine("Done.");
                 }
             }
             catch (Exception ex)
@@ -301,9 +393,42 @@ namespace FlameReactor
             }
         }
 
+        private List<string> DecomposeFlameFile(string flamePath)
+        {
+            var flameFiles = new List<string>();
+            var doc = XDocument.Load(flamePath);
+            var flameNodes = doc.Descendants("flame");
+            if (flameNodes.Count() > 1)
+            {
+                var root = Path.GetDirectoryName(flamePath);
+                var baseName = Path.GetFileNameWithoutExtension(flamePath);
+                int count = 0;
+                foreach(var node in flameNodes)
+                {
+                    if(node.Attribute("name").Value.EndsWith(" Bars"))
+                    {
+                        continue;
+                    }
+
+                    var filename = Path.Combine(root, $"{baseName}_{count}.flame");
+                    node.Save(filename);
+                    flameFiles.Add(filename);
+                    count++;
+                }
+
+                File.Delete(flamePath);
+            }
+            else
+            {
+                flameFiles.Add(flamePath);
+            }
+
+            return flameFiles;
+        }
+
         internal virtual void OnRaiseRenderStepEvent(RenderStepEventArgs e)
         {
-            Console.WriteLine(e.StepData);
+            Console.WriteLine($"{e.StepData} {e.FramePath}");
             var raiseEvent = RenderStep;
             if (raiseEvent != null)
             {

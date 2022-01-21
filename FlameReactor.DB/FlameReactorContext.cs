@@ -6,7 +6,7 @@ namespace FlameReactor.DB
 {
     public class FlameReactorContext : DbContext
     {
-        public FlameReactorContext(): this(new DbContextOptionsBuilder<FlameReactorContext>().UseSqlite(@"Data Source=.\FlameReactor.sqlite").Options)
+        public FlameReactorContext() : this(new DbContextOptionsBuilder<FlameReactorContext>().UseSqlite(@"Data Source=.\FlameReactor.sqlite").Options)
         {
         }
 
@@ -20,6 +20,7 @@ namespace FlameReactor.DB
         public DbSet<AccessEvent> AccessEvents { get; set; }
         public DbSet<InteractionEvent> InteractionEvents { get; set; }
         public DbSet<Vote> Votes { get; set; }
+        public DbSet<TweetRecord> TweetRecord { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -43,6 +44,9 @@ namespace FlameReactor.DB
             modelBuilder.Entity<Flame>()
                 .HasMany(f => f.Breedings)
                 .WithMany(b => b.Parents);
+            modelBuilder.Entity<Flame>()
+                .HasMany(f => f.Tweets)
+                .WithOne(t => t.Owner);
         }
     }
 }

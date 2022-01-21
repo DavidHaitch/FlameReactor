@@ -98,6 +98,8 @@ namespace FlameReactor.DB.Models
         public int Rating { get; set; }
         public int Generation { get; set; }
 
+        public List<TweetRecord> Tweets { get; set; } = new List<TweetRecord>();
+
         public bool Dead { get; set; }
 
         public Flame()

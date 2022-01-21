@@ -12,5 +12,6 @@ namespace FlameReactor.DB.Models
         public DateTimeOffset Timestamp { get; set; }
         public string IPAddress { get; set; }
         public string UserAgent { get; set; }
+        public string Referrer { get; set; }
     }
 }

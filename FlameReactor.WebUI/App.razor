@@ -2,16 +2,18 @@
 <CascadingBlazoredModal>
     <CascadingValue Name="IPAddress" Value="@IPAddress">
         <CascadingValue Name="UserAgent" Value="@UserAgent">
-            <Router AppAssembly="@typeof(Program).Assembly" PreferExactMatches="@true">
-                <Found Context="routeData">
-                    <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
-                </Found>
-                <NotFound>
-                    <LayoutView Layout="@typeof(MainLayout)">
-                        <p>Sorry, there's nothing at this address.</p>
-                    </LayoutView>
-                </NotFound>
-            </Router>
+            <CascadingValue Name="Referrer" Value="@Referrer">
+                <Router AppAssembly="@typeof(Program).Assembly" PreferExactMatches="@true">
+                    <Found Context="routeData">
+                        <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
+                    </Found>
+                    <NotFound>
+                        <LayoutView Layout="@typeof(MainLayout)">
+                            <p>Sorry, there's nothing at this address.</p>
+                        </LayoutView>
+                    </NotFound>
+                </Router>
+            </CascadingValue>
         </CascadingValue>
     </CascadingValue>
 </CascadingBlazoredModal>
@@ -23,4 +25,7 @@
 
     [Parameter]
     public string IPAddress { get; set; }
+
+    [Parameter]
+    public string Referrer { get; set; }
 }

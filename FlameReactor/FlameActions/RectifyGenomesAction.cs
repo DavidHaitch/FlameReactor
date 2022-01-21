@@ -32,7 +32,7 @@ namespace FlameReactor.FlameActions
                 n.SetAttributeValue("name", flame.Name);
                 n.SetAttributeValue("size", "1280 720");
                 n.SetAttributeValue("zoom", "0");
-                n.SetAttributeValue("gamma_threshold", 0.1);
+                //n.SetAttributeValue("gamma_threshold", 0.05);
                 //n.SetAttributeValue("gamma", 8);
                 var scale = n.Attribute("scale").Value;
                 if (scale.Contains("e") || Convert.ToDouble(scale) > flameConfig.MaxScale)
@@ -43,6 +43,7 @@ namespace FlameReactor.FlameActions
 
                 var center = n.Attribute("center").Value;
                 var centerElements = center.Split(" ");
+
                 if (Math.Max(flameConfig.MaxDisplacement, Math.Abs(Convert.ToDouble(centerElements[0]))) > flameConfig.MaxDisplacement)
                 {
                     Console.WriteLine("Coercing X displacement from " + centerElements[0] + " to " + flameConfig.MaxDisplacement);
@@ -62,15 +63,16 @@ namespace FlameReactor.FlameActions
 
             foreach (var xform in xforms)
             {
-                var animate = xform.Attribute("animate").Value;
-                if (animate.StartsWith("0."))
-                {
-                    xform.SetAttributeValue("animate", Math.Round(Convert.ToDouble(animate)));
-                }
+                var animate = xform.Attribute("animate") != null ? xform.Attribute("animate").Value : "0";
+                xform.SetAttributeValue("animate", Math.Round(Convert.ToDouble(animate)));
 
                 foreach (var attr in xform.Attributes())
                 {
-                    if (attr.Name.LocalName.Contains("blur")) attr.Value = "0.1";
+                    if (attr.Name.LocalName.Contains("blur"))
+                    {
+                        if(Convert.ToDouble(attr.Value) > flameConfig.MaxBlur)
+                        attr.Value = flameConfig.MaxBlur.ToString();
+                    }
                 }
             }
 
@@ -96,6 +98,7 @@ namespace FlameReactor.FlameActions
             }
 
             flame.Genome = File.ReadAllText(flame.GenomePath);
+            Console.WriteLine("Done rectifying " + flame.GenomePath);
         }
     }
 }

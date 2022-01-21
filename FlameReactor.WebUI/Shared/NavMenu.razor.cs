@@ -35,6 +35,7 @@ namespace FlameReactor.WebUI.Shared
         private Timer timer;
         [CascadingParameter(Name = "IPAddress")] public string IPAddress { get; set; }
         [CascadingParameter(Name = "UserAgent")] public string UserAgent { get; set; }
+        [CascadingParameter(Name = "Referrer")] public string Referrer { get; set; }
         protected string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
         private void OnTimerInterval(object sender, ElapsedEventArgs e)
         {
@@ -52,7 +53,8 @@ namespace FlameReactor.WebUI.Shared
                         {
                             IPAddress = IPAddress,
                             Timestamp = DateTimeOffset.Now,
-                            UserAgent = UserAgent
+                            UserAgent = UserAgent,
+                            Referrer = Referrer
                         });
                         db.SaveChanges();
                     }
@@ -77,19 +79,19 @@ namespace FlameReactor.WebUI.Shared
             {
                 if(fc.Name != f.Name)
                 {
-                    //using(var db = new FlameReactorContext())
-                    //{
-                    //    db.InteractionEvents.Add(new InteractionEvent()
-                    //    {
-                    //        IPAddress = IPAddress,
-                    //        Timestamp = DateTimeOffset.Now,
-                    //        InteractionType = "Nonselect-Downvote",
-                    //        Details = "Nonselection-downvoting " + fc.Name
-                    //    });
-                    //    db.SaveChanges();
-                    //}
+                    using (var db = new FlameReactorContext())
+                    {
+                        db.InteractionEvents.Add(new InteractionEvent()
+                        {
+                            IPAddress = IPAddress,
+                            Timestamp = DateTimeOffset.Now,
+                            InteractionType = "Nonselect-Downvote",
+                            Details = "Nonselection-downvoting " + fc.Name
+                        });
+                        db.SaveChanges();
+                    }
 
-                    //Ember.Vote(IPAddress, fc, -1, true);
+                    Ember.Vote(IPAddress, fc, -1, true);
                 }
                 else
                 {
@@ -159,7 +161,7 @@ namespace FlameReactor.WebUI.Shared
                 await OnStateChange.InvokeAsync(1);
                 var tempFlame = await Task.Run(() => Ember.Breed(f, AppState.CurrentFlame));
                 AppState.CurrentFlame = await Task.Run(() => Ember.Animate(tempFlame));
-                AppState.AlertMessage = AppState.CurrentFlame.DisplayName;
+                //AppState.AlertMessage = AppState.CurrentFlame.DisplayName;
                 await OnStateChange.InvokeAsync(0);
                 if (File.Exists("./wwwroot/current.png")) File.Delete("./wwwroot/current.png");
                 File.Copy(AppState.CurrentFlame.ImagePath, "./wwwroot/current.png");

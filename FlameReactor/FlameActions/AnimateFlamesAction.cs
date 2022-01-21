@@ -60,7 +60,7 @@ namespace FlameReactor.FlameActions
                         var percentDone = 20;
                         int animDone = (int)((frameNumber / totalFrames) * 80);
                         percentDone += (animDone);
-                        StepEvent(new RenderStepEventArgs("Animating - " + timeRemaining.Minutes + "m " + timeRemaining.Seconds + "s remaining", newestFile.Name, percentDone));
+                        StepEvent(new RenderStepEventArgs("Animating - " + Math.Floor(timeRemaining.TotalMinutes) + "m " + timeRemaining.Seconds + "s remaining", newestFile.Name, percentDone));
                     }
                    // await Task.Delay(1000);
                 }
@@ -77,25 +77,25 @@ namespace FlameReactor.FlameActions
             {
                 StepEvent(new RenderStepEventArgs("Encoding", "", 100));
                 var frameCount = Math.Floor(Math.Log10(totalFrames)) + 1;
-                (await Util.RunProcess(EnvironmentPaths.FFMpegPath,
-                new[] {
-                    "-framerate", "30",
-                    "-i", animationDir + "/%0"+ frameCount + "d.png",
-                    "-vcodec", "h264_nvenc",
-                    "-preset", "p6",
-                    "-pix_fmt", "yuv420p",
-                    "-cq", "24",
-                    animationDir + "/" + flame.Name + ".mp4" })).WaitForExit();
                 //(await Util.RunProcess(EnvironmentPaths.FFMpegPath,
                 //new[] {
                 //    "-framerate", "30",
-                //    "-i", animationDir +"/%0"+ frameCount + "d.png",
-                //    //"-vf", "scale=1280x720:flags=lanczos",
-                //    "-vcodec", "libx264",
+                //    "-i", animationDir + "/%0"+ frameCount + "d.png",
+                //    "-vcodec", "h264_nvenc",
+                //    "-preset", "p6",
                 //    "-pix_fmt", "yuv420p",
-                //    "-crf", "20",
-                //    "-preset", "slow",
+                //    "-cq", "22",
                 //    animationDir + "/" + flame.Name + ".mp4" })).WaitForExit();
+                (await Util.RunProcess(EnvironmentPaths.FFMpegPath,
+                new[] {
+                    "-framerate", "30",
+                    "-i", animationDir +"/%0"+ frameCount + "d.png",
+                    //"-vf", "scale=1280x720:flags=lanczos",
+                    "-vcodec", "libx264",
+                    "-pix_fmt", "yuv420p",
+                    "-crf", "24",
+                    "-preset", "slow",
+                    animationDir + "/" + flame.Name + ".mp4" })).WaitForExit();
             }
 
             foreach (var f in Directory.GetFiles(animationDir).Where(x => x.EndsWith(".png")))
