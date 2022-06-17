@@ -20,7 +20,7 @@ namespace FlameReactor.FlameActions
             }
 
             var childFlames = new List<Flame>();
-            for(var i = 0; i < flames.Length; i+=2)
+            for (var i = 0; i < flames.Length; i += 2)
             {
                 var f = await CrossFlames(flameConfig, flames[i], flames[i + 1]);
                 if (f != null) childFlames.Add(f);
@@ -49,11 +49,23 @@ namespace FlameReactor.FlameActions
                 friendlyMethod = " via union";
             }
             StepEvent(new RenderStepEventArgs("Breeding" + friendlyMethod, method, 5));
-            var crossProcess = await Util.RunProcess(EnvironmentPaths.EmberGenomePath,
-                new[] { "--debug", "--opencl", "--sp", "--tries=" + flameConfig.GenomeTries, "--cross0=" + flame1.GenomePath, "--cross1=" + flame2.GenomePath, method, "--maxxforms=" + flameConfig.MaxTransforms, "--noedits" },
-                //new[] { "--opencl", "--quality=" + 500, "--tries=" + flameConfig.GenomeTries, "--cross0=" + flame1.GenomePath, "--cross1=" + flame2.GenomePath, "--method=" + method },
-                childName);
+            var args = new[] { "--debug", "--opencl", "--sp", "--tries=" + flameConfig.GenomeTries, "--cross0=" + flame1.GenomePath, "--cross1=" + flame2.GenomePath, method,
+                    "--maxxforms=" + flameConfig.MaxTransforms, "--noedits",
+                    "--cvbreeding",
+                    $"--minrating={flameConfig.CvSettings.MinRating}",
+                    $"--blackmin={flameConfig.CvSettings.BlackFractionMin}",
+                    $"--blackmax={flameConfig.CvSettings.BlackFractionMax}",
+                    $"--contoursmin={flameConfig.CvSettings.ContoursMin}",
+                    $"--contoursmax={flameConfig.CvSettings.ContoursMax}",
+                    $"--sharpnessmin={flameConfig.CvSettings.SharpnessMin}",
+                    $"--sharpnessmax={flameConfig.CvSettings.SharpnessMax}",
+                    $"--blackweight={flameConfig.CvSettings.BlackFractionWeight}",
+                    $"--contourweight={flameConfig.CvSettings.ContourWeight}",
+                    $"--sharpnessweight={flameConfig.CvSettings.SharpnessWeight}"
+            };
 
+            Console.WriteLine("Breeding with args: " + string.Join(' ', args));
+            var crossProcess = await Util.RunProcess(EnvironmentPaths.EmberGenomePath, args, childName);
             crossProcess.WaitForExit();
             var exitCode = crossProcess.ExitCode;
             if (exitCode == 0)
@@ -63,7 +75,6 @@ namespace FlameReactor.FlameActions
                 var name = names[Util.Rand.Next(names.Count())];
                 child.DisplayName = name.First().ToString().ToUpper() + name.Substring(1).ToLower();
                 child.Generation = flame1.Generation >= flame2.Generation ? flame1.Generation + 1 : flame2.Generation + 1;
-                child.Genome = File.ReadAllText(child.GenomePath);
                 child.Birth = new Breeding();
                 child.Birth.Parents.Add(flame1);
                 child.Birth.Parents.Add(flame2);

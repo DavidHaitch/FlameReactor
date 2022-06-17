@@ -26,7 +26,7 @@ namespace FlameReactor.FlameActions
         private async Task<Flame> RenderFlame(FlameConfig flameConfig, Flame flame)
         {
             StepEvent(new RenderStepEventArgs("Rendering", Path.GetFileNameWithoutExtension(flame.GenomePath), 15));
-            var render = await Util.RunProcess(EnvironmentPaths.EmberRenderPath, new[] { "--quality=" + 2000, "--demax=8", "--sp", "--supersample=2", "--opencl", "--prefix=" + flame.Name + ".", "--in=" + flame.GenomePath,
+            var render = await Util.RunProcess(EnvironmentPaths.EmberRenderPath, new[] {"--debug", "--quality=" + 2000, "--demax=8", "--sp", "--supersample=2", "--opencl", "--prefix=" + flame.Name + ".", "--in=" + flame.GenomePath,
                             "--hs=" + flameConfig.RenderResolutionMultiplier,
                 "--ws=" + flameConfig.RenderResolutionMultiplier,
                 "--ss=" + flameConfig.RenderResolutionMultiplier});

@@ -82,9 +82,6 @@ namespace FlameReactor.DB.Migrations
                     b.Property<int>("Generation")
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Genome")
-                        .HasColumnType("TEXT");
-
                     b.Property<string>("GenomePath")
                         .HasColumnType("TEXT");
 

@@ -62,25 +62,43 @@ namespace FlameReactor.TwitterBot
                 "$flameName in flight."
             };
 
-            var hashtags = "\nIf this flame is beautiful, ❤️ or RT to improve its chances for future breedings.\n#fractal #fractalflame #fractalart #generativeArt #$flameName #$p1Name #$p2Name";
-            var fallbackHashtags = "\nIf this flame is beautiful, ❤️ or RT to improve its chances for future breedings.\n #$flameName #$p1Name #$p2Name";
+            var hashtags = new List<string>()
+            {
+                "#fractal #fractalflame #fractalart #generativeArt #$flameName #$p1Name #$p2Name",
+                "#fractal #fractalflame #fractalart #generativeArt #$flameName #$p1Name #$p2Name",
+                "#fractal #fractalflame #fractalart #generativeArt #$flameName #$p1Name #$p2Name",
+                "#fractal #fractalflame #fractalart #generativeArt #$flameName #$p1Name #$p2Name",
+                "#fractal #fractalflame #fractalart #generativeArt #$flameName #$p1Name #$p2Name",
+                "#fractal #fractalflame #fractalart #generativeArt #$flameName #$p1Name #$p2Name",
+                "#fractal #fractalflame #fractalart #generativeArt #$flameName #$p1Name #$p2Name",
+                "#fractal #fractalflame #fractalart #generativeArt #$flameName #$p1Name #$p2Name",
+                "#fractal #fractalflame #fractalart #generativeArt #$flameName #$p1Name #$p2Name"
+            };
+
+            var callToAction = "\nIf this flame is beautiful, ❤️ or RT to improve its chances for future breedings.\n";
+            var fallbackHashtags = "#$flameName #$p1Name #$p2Name";
             var twitterService = startup.Provider.GetRequiredService<TwitterService>();
             var ember = new EmberService("Flames/Pool");
-            ember.FlameConfig.LoopFrames = 600;
-            ember.FlameConfig.GenomeTries = 30;
-            ember.FlameConfig.MaxDisplacement = 10.0;
-            ember.FlameConfig.Quality = 1500;
-            ember.FlameConfig.MaxTransforms = 5;
-            ember.FlameConfig.MaxScale = 5000;
-            ember.FlameConfig.RenderResolutionMultiplier = 1.5;
-            ember.FlameConfig.ResolutionMultiplier = 1.5;
-            ember.FlameConfig.MotionDensity = 0.25;
-            ember.FlameConfig.MutationChance = 0.55;
-            ember.FlameConfig.AlternateSetpoint = 0.001;
-            ember.FlameConfig.UnionSetpoint = 0.8;
-            ember.FlameConfig.SelectionInstability = 70;
-            ember.FlameConfig.MaxBlur = 0.001;
-
+            //ember.FlameConfig.LoopFrames = 600;
+            //ember.FlameConfig.GenomeTries = 100;
+            //ember.FlameConfig.MaxDisplacement = 10.0;
+            //ember.FlameConfig.CenterMagnetism = 0.5;
+            //ember.FlameConfig.Quality = 1500;
+            //ember.FlameConfig.MaxTransforms = 10;
+            //ember.FlameConfig.MinScale = 150;
+            //ember.FlameConfig.MaxScale = 5000;
+            //ember.FlameConfig.RenderResolutionMultiplier = 1.5;
+            //ember.FlameConfig.ResolutionMultiplier = 1.5;
+            //ember.FlameConfig.MotionDensity = 0.1;
+            //ember.FlameConfig.MutationChance = 0.65;
+            //ember.FlameConfig.AlternateSetpoint = 0.033;
+            //ember.FlameConfig.UnionSetpoint = 0.8;
+            //ember.FlameConfig.SelectionInstability = 150;
+            //ember.FlameConfig.AnimationDensity = 0.5;
+            //ember.FlameConfig.OrbitDensity = 0.25;
+            //ember.FlameConfig.MaxBlur = 1.0;
+            //ember.FlameConfig.TS = 100;
+            //ember.SaveConfig();
             try
             {
                 //RectifyTweetedFlames(ember, twitterService).Wait();
@@ -92,14 +110,22 @@ namespace FlameReactor.TwitterBot
                 var firstLine = formatFlameDesc(firstLines[rand.Next(firstLines.Count)], flame.Result);
                 var secondLine = formatFlameDesc(secondLines[rand.Next(secondLines.Count)], flame.Result);
                 var thirdLine = formatFlameDesc(thirdLines[rand.Next(thirdLines.Count)], flame.Result);
-                var status = firstLine + "\n" + secondLine + "\n" + thirdLine + "\n" + formatFlameDesc(hashtags, flame.Result).Replace("-", "_");
-                if(status.Length > 275)
+                var hashtag = formatFlameDesc(hashtags[rand.Next(hashtags.Count)], flame.Result);
+                var status = firstLine + "\n"
+                    + secondLine + "\n"
+                    + thirdLine + "\n"
+                    + formatFlameDesc(callToAction, flame.Result)
+                    + formatFlameDesc(hashtag, flame.Result).Replace("-", "_");
+                if (status.Length > 275)
                 {
-                    status = firstLine + "\n" + secondLine + "\n" + formatFlameDesc(hashtags, flame.Result).Replace("-", "_");
+                    status = firstLine + "\n"
+                    + secondLine + "\n"
+                    + formatFlameDesc(callToAction, flame.Result)
+                    + formatFlameDesc(hashtag, flame.Result).Replace("-", "_");
                 }
                 if (status.Length > 275)
                 {
-                    status = firstLine + "\n" + secondLine + "\n" + formatFlameDesc(fallbackHashtags, flame.Result).Replace("-", "_");
+                    status = firstLine + "\n" + secondLine + "\n" + formatFlameDesc(callToAction, flame.Result) + formatFlameDesc(fallbackHashtags, flame.Result).Replace("-", "_");
                 }
                 var tweet = twitterService.UploadSingleImageAsync(status, flame.Result.ImagePath);
                 tweet.Wait();
@@ -112,14 +138,14 @@ namespace FlameReactor.TwitterBot
                 animated.Wait();
                 var animationLine = formatFlameDesc(animationLines[rand.Next(animationLines.Count)], flame.Result);
 
-                var videoTweet = twitterService.UploadVideoAsync(tweet.Result, animationLine + "\n" + formatFlameDesc(hashtags, flame.Result).Replace("-", "_"), animated.Result.VideoPath);
+                var videoTweet = twitterService.UploadVideoAsync(tweet.Result, animationLine + "\n" + formatFlameDesc(callToAction, flame.Result) + formatFlameDesc(hashtag, flame.Result).Replace("-", "_"), animated.Result.VideoPath);
                 videoTweet.Wait();
                 if (videoTweet.Result != null)
                 {
                     ember.AddTweetRecordToFlame(flame.Result, new TweetRecord() { ID = videoTweet.Result.StatusID, Faves = 0, Retweets = 0 });
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 File.AppendAllText("error.log", "--------------" + "\n");
                 File.AppendAllText("error.log", DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToShortTimeString() + "\n");
@@ -133,7 +159,7 @@ namespace FlameReactor.TwitterBot
         {
             var rand = new Random(DateTime.Now.Millisecond);
             var flames = es.GetUntweetedFlames().OrderBy(f => rand.Next()).Take(10);
-            foreach(var flame in flames)
+            foreach (var flame in flames)
             {
                 Thread.Sleep(1000);
                 var tweetId = await ts.GetTweetIdForFlameName(flame.DisplayName + " " + flame.Birth.Parents[0].DisplayName + " FlameReactorBot");

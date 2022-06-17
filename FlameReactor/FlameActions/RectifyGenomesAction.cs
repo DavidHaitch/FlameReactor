@@ -15,7 +15,7 @@ namespace FlameReactor.FlameActions
         public RectifyGenomesAction(Action<RenderStepEventArgs> stepEvent) : base(stepEvent) { }
         public override async Task<Flame[]> Act(FlameConfig flameConfig, params Flame[] flames)
         {
-            foreach(var flame in flames)
+            foreach (var flame in flames)
             {
                 RectifyGenome(flameConfig, flame);
             }
@@ -40,6 +40,11 @@ namespace FlameReactor.FlameActions
                     Console.WriteLine("Coercing scale from " + scale + " to " + flameConfig.MaxScale);
                     n.SetAttributeValue("scale", flameConfig.MaxScale);
                 }
+                else if (Convert.ToDouble(scale) < flameConfig.MinScale)
+                {
+                    Console.WriteLine("Coercing scale from " + scale + " to " + flameConfig.MinScale);
+                    n.SetAttributeValue("scale", flameConfig.MinScale);
+                }
 
                 var center = n.Attribute("center").Value;
                 var centerElements = center.Split(" ");
@@ -56,10 +61,27 @@ namespace FlameReactor.FlameActions
 
                 var centerX = Math.Clamp(Convert.ToDouble(centerElements[0]), flameConfig.MaxDisplacement * -1, flameConfig.MaxDisplacement);
                 var centerY = Math.Clamp(Convert.ToDouble(centerElements[1]), flameConfig.MaxDisplacement * -1, flameConfig.MaxDisplacement);
+
+                if (Math.Abs(Convert.ToDouble(centerElements[0])) < flameConfig.CenterMagnetism)
+                {
+                    Console.WriteLine($"Magnetising X from {centerElements[0]} to 0.");
+                    centerX = 0;
+                }
+
+                if (Math.Abs(Convert.ToDouble(centerElements[1])) < flameConfig.CenterMagnetism)
+                {
+                    Console.WriteLine($"Magnetising Y from {centerElements[1]} to 0.");
+                    centerY = 0;
+                }
+
                 n.SetAttributeValue("center", centerX + " " + centerY);
             }
 
             var xforms = doc.Descendants("xform");
+            foreach (var final in doc.Descendants("finalxform"))
+            {
+                xforms.Append(final);
+            }
 
             foreach (var xform in xforms)
             {
@@ -70,8 +92,8 @@ namespace FlameReactor.FlameActions
                 {
                     if (attr.Name.LocalName.Contains("blur"))
                     {
-                        if(Convert.ToDouble(attr.Value) > flameConfig.MaxBlur)
-                        attr.Value = flameConfig.MaxBlur.ToString();
+                        if (Convert.ToDouble(attr.Value) > flameConfig.MaxBlur)
+                            attr.Value = flameConfig.MaxBlur.ToString();
                     }
                 }
             }
@@ -91,13 +113,38 @@ namespace FlameReactor.FlameActions
                 }
             }
 
+            foreach (var n in xforms)
+            {
+                if (n.Attribute("orbit") == null)
+                {
+                    n.SetAttributeValue("orbit", 0);
+                }
+            }
+
+            if (xforms.All(x => x.Attribute("orbit").Value != "0") || xforms.Count(x => x.Attribute("orbit").Value != "0") <= xforms.Count() * flameConfig.OrbitDensity)
+            {
+                Console.WriteLine("Randomizing bad orbit settings.");
+                foreach (var n in xforms)
+                {
+                    n.SetAttributeValue("orbit", 0);
+                }
+
+                var xformCount = xforms.Count();
+                for (var i = 0; i <= xformCount * flameConfig.AnimationDensity; i++)
+                {
+                    if (Util.Rand.NextDouble() < 0.5)
+                        xforms.ElementAt(Util.Rand.Next(0, xformCount)).SetAttributeValue("orbit", 1);
+                    else
+                        xforms.ElementAt(Util.Rand.Next(0, xformCount)).SetAttributeValue("orbit", -1);
+                }
+            }
+
             using (var writer = new XmlTextWriter(flame.GenomePath, new UTF8Encoding(false)))
             {
                 writer.Formatting = Formatting.Indented;
                 doc.Save(writer);
             }
 
-            flame.Genome = File.ReadAllText(flame.GenomePath);
             Console.WriteLine("Done rectifying " + flame.GenomePath);
         }
     }

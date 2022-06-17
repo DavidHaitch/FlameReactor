@@ -43,16 +43,17 @@ namespace FlameReactor.FlameActions
         {
             var methods = new List<MutationMethod>()
             {
-                new MutationMethod(){MethodName =  "all_vars", Weight = 20, FriendlyMethodName = "all variations"},
-                new MutationMethod(){MethodName =  "color_points", Weight = 20, FriendlyMethodName = "color points"},
-                new MutationMethod(){MethodName =  "one_xform", Weight = 40, FriendlyMethodName = "one gene"},
-                new MutationMethod(){MethodName =  "delete_xform", Weight = 20, FriendlyMethodName = "by removing a gene"},
-                new MutationMethod(){MethodName =  "add_symmetry", Weight = 30, FriendlyMethodName = "by adding symmetry"},
-                new MutationMethod(){MethodName =  "post_xforms", Weight = 30, FriendlyMethodName = "post-affines"},
-                new MutationMethod(){MethodName =  "all_coefs", Weight = 40, FriendlyMethodName = "all coefficients"},
-                new MutationMethod(){MethodName =  "addMotion", Weight = 10, FriendlyMethodName = "by adding motion"},
-                new MutationMethod(){MethodName =  "addChaos", Weight = 4, FriendlyMethodName = "by adding chaos"},
-                new MutationMethod(){MethodName =  "randomizeAnimation", Weight = 20, FriendlyMethodName = "by randomizing animations"}
+                new MutationMethod(){MethodName =  "all_vars", Weight = flameConfig.MutationWeights["all_vars"], FriendlyMethodName = "all variations"},
+                new MutationMethod(){MethodName =  "color_points", Weight = flameConfig.MutationWeights["color_points"], FriendlyMethodName = "color points"},
+                new MutationMethod(){MethodName =  "one_xform", Weight = flameConfig.MutationWeights["one_xform"], FriendlyMethodName = "one gene"},
+                new MutationMethod(){MethodName =  "delete_xform", Weight = flameConfig.MutationWeights["delete_xform"], FriendlyMethodName = "by removing a gene"},
+                new MutationMethod(){MethodName =  "add_symmetry", Weight = flameConfig.MutationWeights["add_symmetry"], FriendlyMethodName = "by adding symmetry"},
+                new MutationMethod(){MethodName =  "post_xforms", Weight = flameConfig.MutationWeights["post_xforms"], FriendlyMethodName = "post-affines"},
+                new MutationMethod(){MethodName =  "all_coefs", Weight = flameConfig.MutationWeights["all_coefs"], FriendlyMethodName = "all coefficients"},
+                new MutationMethod(){MethodName =  "addMotion", Weight = flameConfig.MutationWeights["addMotion"], FriendlyMethodName = "by adding motion"},
+                new MutationMethod(){MethodName =  "addOrbit", Weight = flameConfig.MutationWeights["addOrbit"], FriendlyMethodName = "by adding an orbit"},
+                new MutationMethod(){MethodName =  "addChaos", Weight = flameConfig.MutationWeights["addChaos"], FriendlyMethodName = "by adding chaos"},
+                new MutationMethod(){MethodName =  "randomizeAnimation", Weight = flameConfig.MutationWeights["randomizeAnimation"], FriendlyMethodName = "by randomizing animations"}
             };
 
             methods = methods.OrderBy(m => Util.Rand.NextDouble()).ToList();
@@ -80,6 +81,11 @@ namespace FlameReactor.FlameActions
                 flame = AddChaos(flame, flameConfig);
                 Thread.Sleep(2000);
             }
+            else if (selectedMethod.MethodName == "addOrbit")
+            {
+                flame = AddOrbit(flame, flameConfig);
+                Thread.Sleep(2000);
+            }
             else if (selectedMethod.MethodName == "randomizeAnimation")
             {
                 flame = RandomizeAnimations(flame, flameConfig);
@@ -92,9 +98,23 @@ namespace FlameReactor.FlameActions
             }
             else
             {
-                var mutateProcess = await Util.RunProcess(EnvironmentPaths.EmberGenomePath,
-                    new[] { "--debug", "--opencl", "--speed=2", "--sp", "--tries=" + flameConfig.GenomeTries, "--mutate=" + flame.GenomePath, "--method=" + selectedMethod.MethodName, "--maxxforms=" + flameConfig.MaxTransforms, "--noedits" },
-                    flame.GenomePath);
+                var args = new[] { "--debug", "--opencl", "--speed=2", "--sp", "--tries=" + flameConfig.GenomeTries, "--mutate=" + flame.GenomePath, "--method=" + selectedMethod.MethodName,
+                        "--maxxforms=" + flameConfig.MaxTransforms, "--noedits",
+                    "--cvbreeding",
+                    $"--minrating={flameConfig.CvSettings.MinRating}",
+                    $"--blackmin={flameConfig.CvSettings.BlackFractionMin}",
+                    $"--blackmax={flameConfig.CvSettings.BlackFractionMax}",
+                    $"--contoursmin={flameConfig.CvSettings.ContoursMin}",
+                    $"--contoursmax={flameConfig.CvSettings.ContoursMax}",
+                    $"--sharpnessmin={flameConfig.CvSettings.SharpnessMin}",
+                    $"--sharpnessmax={flameConfig.CvSettings.SharpnessMax}",
+                    $"--blackweight={flameConfig.CvSettings.BlackFractionWeight}",
+                    $"--contourweight={flameConfig.CvSettings.ContourWeight}",
+                    $"--sharpnessweight={flameConfig.CvSettings.SharpnessWeight}"
+                };
+                Console.WriteLine("Mutating with args: " + string.Join(' ', args));
+
+                var mutateProcess = await Util.RunProcess(EnvironmentPaths.EmberGenomePath,args,flame.GenomePath);
 
                 mutateProcess.WaitForExit(5 * 60 * 1000);
                 if (!mutateProcess.HasExited)
@@ -105,7 +125,6 @@ namespace FlameReactor.FlameActions
             }
 
             flame.Update();
-            flame.Genome = File.ReadAllText(flame.GenomePath);
             return flame;
         }
         private Flame RandomizeColorPoints(Flame flame, FlameConfig flameConfig)
@@ -114,10 +133,52 @@ namespace FlameReactor.FlameActions
 
             foreach (var n in doc.Descendants("flame"))
             {
-                var xformCount = doc.Descendants("xform").Count();
-                foreach (var xform in doc.Descendants("xform"))
+                var xforms = doc.Descendants("xform");
+                foreach (var final in doc.Descendants("finalxform"))
+                {
+                    xforms.Append(final);
+                }
+
+                foreach (var xform in xforms)
                 {
                     xform.SetAttributeValue("color", Util.Rand.NextDouble());
+                }
+            }
+
+            using (var writer = new XmlTextWriter(flame.GenomePath, new UTF8Encoding(false)))
+            {
+                writer.Formatting = Formatting.Indented;
+                doc.Save(writer);
+            }
+
+            return flame;
+        }
+
+        private Flame AddOrbit(Flame flame, FlameConfig flameConfig)
+        {
+            var doc = XDocument.Load(flame.GenomePath);
+
+            foreach (var n in doc.Descendants("flame"))
+            {
+                var xforms = doc.Descendants("xform");
+                foreach(var final in doc.Descendants("finalxform"))
+                {
+                    xforms.Append(final);
+                }
+
+                foreach (var xform in xforms)
+                {
+                    if (Util.Rand.NextDouble() < 0.25)
+                    {
+                        if(Util.Rand.NextDouble() < 0.5)
+                            xform.SetAttributeValue("orbit", "1");
+                        else
+                            xform.SetAttributeValue("orbit", "-1");
+                    }
+                    else
+                    {
+                        xform.SetAttributeValue("orbit", "0");
+                    }
                 }
             }
 

@@ -33,7 +33,27 @@ namespace FlameReactor
         public EmberService(string FlameDir)
         {
             EnvironmentPaths.FlamePoolPath = FlameDir;
-            FlameConfig = new FlameConfig();
+
+            var configInit = false;
+            if (File.Exists("./flameConfig.json"))
+            {
+                try
+                {
+                    FlameConfig = JsonSerializer.Deserialize<FlameConfig>(File.ReadAllText("./flameConfig.json"));
+                    configInit = true;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Failed to load flameConfig.json - " + ex.Message);
+                }
+            }
+            if(!configInit)
+            {
+                Console.WriteLine("No flameConfig.json found, using defaults.");
+                FlameConfig = new FlameConfig();
+                SaveConfig();
+            }
+
             animateFlames = new AnimateFlamesAction(OnRaiseRenderStepEvent);
             crossFlames = new CrossFlamesAction(OnRaiseRenderStepEvent);
             fixColorPalettes = new FixColorPalettesAction(OnRaiseRenderStepEvent);
@@ -41,6 +61,11 @@ namespace FlameReactor
             rectifyGenomes = new RectifyGenomesAction(OnRaiseRenderStepEvent);
             renderFlames = new RenderFlamesAction(OnRaiseRenderStepEvent);
             BuildFlames(FlameDir).Wait();
+        }
+
+        public void SaveConfig()
+        {
+            File.WriteAllText("./flameConfig.json", JsonSerializer.Serialize(FlameConfig, new JsonSerializerOptions { WriteIndented = true }));
         }
 
         public List<Flame> GetRandomFlames(int count)
@@ -96,7 +121,7 @@ namespace FlameReactor
         {
             var flameName = Path.Combine(EnvironmentPaths.FlamePoolPath, "seed_" + Guid.NewGuid().ToString() + ".flame");
             await Util.RunProcess(EnvironmentPaths.EmberGenomePath,
-            new[] { "--tries=" + FlameConfig.GenomeTries, "--debug", "--opencl" },
+            new[] { "--tries=" + FlameConfig.GenomeTries, "--debug", "--opencl", "--cvbreeding" },
             flameName);
             var flame = new Flame(flameName);
             await rectifyGenomes.Act(FlameConfig, flame);
@@ -291,7 +316,7 @@ namespace FlameReactor
                     if (!db.Flames.Any(f_ => f_.Name == Path.GetFileNameWithoutExtension(f)))
                     {
                         var flamePaths = DecomposeFlameFile(f);
-                        foreach(var flamePath in flamePaths)
+                        foreach (var flamePath in flamePaths)
                         {
                             var tempFlame = new Flame(flamePath);
                             Console.WriteLine("Adding new flame: " + flamePath);
@@ -312,7 +337,7 @@ namespace FlameReactor
             var addedFlames = 0;
             var minFlockSize = 0;
             var batchSize = 3;
-            if(startingFlameCount < minFlockSize)
+            if (startingFlameCount < minFlockSize)
             {
                 Console.WriteLine($"{minFlockSize - startingFlameCount} flames missing.");
             }
@@ -357,19 +382,7 @@ namespace FlameReactor
                     var missingFlames = db.Flames.ToList().Where(flame => !flame.Dead && !File.Exists(flame.GenomePath));
                     foreach (var f in missingFlames)
                     {
-                        //If the missing flame has a parsable genome, retain it as a dead flame.
-                        //Otherwise, remove it entirely.
-                        try
-                        {
-                            var genome = XDocument.Parse(f.Genome);
-                            var fl = db.Flames.First(fl => fl.ID == f.ID);
-                            fl.Dead = true;
-                            db.Flames.Update(fl);
-                        }
-                        catch (XmlException)
-                        {
-                            db.Flames.Remove(f);
-                        }
+                        db.Flames.Remove(f);
                     };
                     db.SaveChanges();
                     allFlames = db.Flames.Where(f => !f.Dead).ToList();
@@ -396,16 +409,27 @@ namespace FlameReactor
         private List<string> DecomposeFlameFile(string flamePath)
         {
             var flameFiles = new List<string>();
-            var doc = XDocument.Load(flamePath);
+            XDocument doc;
+            try
+            {
+                doc = XDocument.Load(flamePath);
+            }
+            catch (XmlException ex)
+            {
+                Console.WriteLine($"{flamePath} was not valid XML!");
+                File.Delete(flamePath);
+                return flameFiles;
+            }
+
             var flameNodes = doc.Descendants("flame");
             if (flameNodes.Count() > 1)
             {
                 var root = Path.GetDirectoryName(flamePath);
                 var baseName = Path.GetFileNameWithoutExtension(flamePath);
                 int count = 0;
-                foreach(var node in flameNodes)
+                foreach (var node in flameNodes)
                 {
-                    if(node.Attribute("name").Value.EndsWith(" Bars"))
+                    if (node.Attribute("name").Value.EndsWith(" Bars"))
                     {
                         continue;
                     }

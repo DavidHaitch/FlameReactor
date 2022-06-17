@@ -38,7 +38,9 @@ namespace FlameReactor.WebUI.Controllers
         public ActionResult SetParams([FromBody] FlameConfig fc, string apiKey)
         {
             if (apiKey != _configuration["APIKey"]) return Unauthorized();
+            
             _emberService.FlameConfig = fc;
+            _emberService.SaveConfig();
             return Ok();
         }
     }
