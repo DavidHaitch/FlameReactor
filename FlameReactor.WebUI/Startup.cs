@@ -66,7 +66,11 @@ namespace FlameReactor.WebUI
             services.AddFluffySpoonLetsEncryptMemoryChallengePersistence();
 
             services.AddAntiforgery(o => o.SuppressXFrameOptionsHeader = true);
-            services.AddSingleton<EmberService>(_ => new EmberService("wwwroot/Flames/Pool"));
+            services.AddDbContext<FlameReactorContext>();
+            services.AddSingleton<EmberService>(sp =>
+            {
+                return new EmberService("wwwroot/Flames/Pool", new DbContextOptionsBuilder<FlameReactorContext>().UseSqlite(@"Data Source=.\FlameReactor.sqlite").Options); 
+            });
             services.AddSingleton<AppState>();
             services.AddSingleton(Configuration);
         }

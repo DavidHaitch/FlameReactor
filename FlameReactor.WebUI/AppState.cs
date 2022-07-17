@@ -1,4 +1,5 @@
-﻿using FlameReactor.DB.Models;
+﻿using FlameReactor.DB;
+using FlameReactor.DB.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,10 +29,9 @@ namespace FlameReactor.WebUI
         {
             get
             {
-                if (_currentFlame == null) _currentFlame = new EmberService("wwwroot/Flames/Pool").GetRandomFlames(1).First();
-                //if (_currentFlame == null) _currentFlame = new EmberService("wwwroot/Flames/Pool").GetMostRecentFlame();
+                if (_currentFlame == null) _currentFlame = _emberService.GetRandomFlames(1).First();
+                //if (_currentFlame == null) _currentFlame = _emberService.GetMostRecentFlame();
                 return _currentFlame;
-
             }
             set
             {
@@ -40,5 +40,10 @@ namespace FlameReactor.WebUI
         }
 
         private Flame _currentFlame;
+        private readonly EmberService _emberService;
+        public AppState(EmberService emberService)
+        {
+            _emberService = emberService;
+        }
     }
 }

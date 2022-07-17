@@ -1,4 +1,6 @@
-﻿using FlameReactor.DB.Models;
+﻿using FlameReactor.DB;
+using FlameReactor.DB.Models;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -36,6 +38,17 @@ namespace FlameReactor.TwitterBot
                 "They are excited to meet you.",
                 "They are a bit shy.",
                 "They are famously lustful.",
+                "They'd like to go to Mars someday.",
+                "They like dusty fractals.",
+                "They like geometric fractals.",
+                "They like sharp fractals.",
+                "They like blurry fractals.",
+                "They like simple fractals.",
+                "They like fancy fractals.",
+                "They like fast fractals.",
+                "They like slow fractals.",
+                "They want to know what you had for dinner.",
+                "Their favorite color hasn't been invented yet.",
                 "They are quite curious.",
                 "Their favorite color is blue.",
                 "Their favorite color is green.",
@@ -45,15 +58,16 @@ namespace FlameReactor.TwitterBot
                 "$flameName prefers cats to dogs.",
                 "We don't quite know what to do with this one.",
                 "$flameName is especially proud of their patterns",
-                "$flameName wishes they had more colors."
+                "$flameName wishes they had more colors.",
+                "$flameName wonders if they're as good as their parents."
             };
 
             var animationLines = new List<string>()
             {
                 "$flameName dances for you.",
-                "$flameName morphs in delight.",
                 "$flameName wiggles.",
                 "$flameName twitches.",
+                "$flameName spins.",
                 "$flameName flows.",
                 "$flameName moves.",
                 "The rotation of $flameName.",
@@ -64,21 +78,18 @@ namespace FlameReactor.TwitterBot
 
             var hashtags = new List<string>()
             {
-                "#fractal #fractalflame #fractalart #generativeArt #$flameName #$p1Name #$p2Name",
-                "#fractal #fractalflame #fractalart #generativeArt #$flameName #$p1Name #$p2Name",
-                "#fractal #fractalflame #fractalart #generativeArt #$flameName #$p1Name #$p2Name",
-                "#fractal #fractalflame #fractalart #generativeArt #$flameName #$p1Name #$p2Name",
-                "#fractal #fractalflame #fractalart #generativeArt #$flameName #$p1Name #$p2Name",
-                "#fractal #fractalflame #fractalart #generativeArt #$flameName #$p1Name #$p2Name",
-                "#fractal #fractalflame #fractalart #generativeArt #$flameName #$p1Name #$p2Name",
-                "#fractal #fractalflame #fractalart #generativeArt #$flameName #$p1Name #$p2Name",
-                "#fractal #fractalflame #fractalart #generativeArt #$flameName #$p1Name #$p2Name"
+                "#generativeArt",
+                "#fractalArt",
+                "#fractal",
+                "#fractalFlame",
+                "#artBot"
             };
 
             var callToAction = "\nIf this flame is beautiful, ❤️ or RT to improve its chances for future breedings.\n";
             var fallbackHashtags = "#$flameName #$p1Name #$p2Name";
             var twitterService = startup.Provider.GetRequiredService<TwitterService>();
-            var ember = new EmberService("Flames/Pool");
+            var mastodonService = startup.Provider.GetRequiredService<MastodonService>();
+            var ember = new EmberService("Flames/Pool", new DbContextOptionsBuilder<FlameReactorContext>().UseSqlite(@"Data Source=.\FlameReactor.sqlite").Options);
             //ember.FlameConfig.LoopFrames = 600;
             //ember.FlameConfig.GenomeTries = 100;
             //ember.FlameConfig.MaxDisplacement = 10.0;
@@ -102,8 +113,11 @@ namespace FlameReactor.TwitterBot
             try
             {
                 //RectifyTweetedFlames(ember, twitterService).Wait();
+                Console.Write("Updating flame ratings...");
                 UpdateFlameRatingsFromTweetsAsync(ember, twitterService).Wait();
-
+                UpdateFlameRatingsFromTootsAsync(ember, mastodonService).Wait();
+                UpdateFlameRatings(ember);
+                Console.WriteLine(" Done");
                 var flame = ember.Breed();
                 flame.Wait();
                 var rand = new Random((int)DateTime.Now.Ticks);
@@ -127,26 +141,40 @@ namespace FlameReactor.TwitterBot
                 {
                     status = firstLine + "\n" + secondLine + "\n" + formatFlameDesc(callToAction, flame.Result) + formatFlameDesc(fallbackHashtags, flame.Result).Replace("-", "_");
                 }
+                var toot = mastodonService.UploadSingleImageAsync(status, flame.Result.ImagePath);
+                toot.Wait();
+                if (toot.Result != null)
+                {
+                    ember.AddTweetRecordToFlame(flame.Result, new TweetRecord() { ID = (ulong)toot.Result.Id, Faves = 0, Retweets = 0, Source = "Mastodon" });
+                }
+
                 var tweet = twitterService.UploadSingleImageAsync(status, flame.Result.ImagePath);
                 tweet.Wait();
                 if (tweet.Result != null)
                 {
-                    ember.AddTweetRecordToFlame(flame.Result, new TweetRecord() { ID = tweet.Result.StatusID, Faves = 0, Retweets = 0 });
+                    ember.AddTweetRecordToFlame(flame.Result, new TweetRecord() { ID = tweet.Result.StatusID, Faves = 0, Retweets = 0, Source = "Twitter" });
                 }
 
                 var animated = ember.Animate(flame.Result);
                 animated.Wait();
                 var animationLine = formatFlameDesc(animationLines[rand.Next(animationLines.Count)], flame.Result);
+                var videoToot = mastodonService.UploadVideoAsync(toot.Result, animationLine + "\n" + formatFlameDesc(callToAction, flame.Result) + formatFlameDesc(hashtag, flame.Result).Replace("-", "_"), animated.Result.VideoPath);
+                videoToot.Wait();
+                if (videoToot.Result != null)
+                {
+                    ember.AddTweetRecordToFlame(flame.Result, new TweetRecord() { ID = (ulong)videoToot.Result.Id, Faves = 0, Retweets = 0, Source = "Mastodon" });
+                }
 
                 var videoTweet = twitterService.UploadVideoAsync(tweet.Result, animationLine + "\n" + formatFlameDesc(callToAction, flame.Result) + formatFlameDesc(hashtag, flame.Result).Replace("-", "_"), animated.Result.VideoPath);
                 videoTweet.Wait();
                 if (videoTweet.Result != null)
                 {
-                    ember.AddTweetRecordToFlame(flame.Result, new TweetRecord() { ID = videoTweet.Result.StatusID, Faves = 0, Retweets = 0 });
+                    ember.AddTweetRecordToFlame(flame.Result, new TweetRecord() { ID = videoTweet.Result.StatusID, Faves = 0, Retweets = 0, Source = "Twitter" });
                 }
             }
             catch (Exception ex)
             {
+
                 File.AppendAllText("error.log", "--------------" + "\n");
                 File.AppendAllText("error.log", DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToShortTimeString() + "\n");
                 File.AppendAllText("error.log", ex.Message + "\n");
@@ -168,11 +196,25 @@ namespace FlameReactor.TwitterBot
             }
         }
 
+        private static async Task UpdateFlameRatingsFromTootsAsync(EmberService es, MastodonService ms)
+        {
+            var tweets = es.GetTweetRecords().Where(tr => tr.Source == "Mastodon").OrderByDescending(t => t.ID).Take(250);
+            var tasks = tweets.Select(t =>
+            {
+                return Task.Run(async () =>
+                {
+                    es.UpdateTweetRecord(await ms.GetCountsForTootAsync(t));
+                });
+            });
+
+            await Task.WhenAll(tasks);
+        }
+
         private static async Task UpdateFlameRatingsFromTweetsAsync(EmberService es, TwitterService ts)
         {
             if (await ts.GetStatusRequestsRemaining() < 250) return;
 
-            var tweets = es.GetTweetRecords().OrderByDescending(t => t.ID).Take(250);
+            var tweets = es.GetTweetRecords().Where(tr => tr.Source == null || tr.Source == "Twitter").OrderByDescending(t => t.ID).Take(250);
             var tasks = tweets.Select(t =>
             {
                 return Task.Run(async () =>
@@ -183,6 +225,16 @@ namespace FlameReactor.TwitterBot
 
             await Task.WhenAll(tasks);
 
+            var tweetsByOwner = es.GetTweetRecords().GroupBy(t => t.Owner);
+            foreach (var owner in tweetsByOwner)
+            {
+                var rating = owner.Sum(x => x.Faves) + owner.Sum(x => x.Retweets);
+                es.SetFlameRating(owner.Key, rating);
+            }
+        }
+
+        private static void UpdateFlameRatings(EmberService es)
+        {
             var tweetsByOwner = es.GetTweetRecords().GroupBy(t => t.Owner);
             foreach (var owner in tweetsByOwner)
             {

@@ -13,7 +13,7 @@ namespace FlameReactor.FlameActions
         public AnimateFlamesAction(Action<RenderStepEventArgs> stepEvent) : base(stepEvent) { }
         public override async Task<Flame[]> Act(FlameConfig flameConfig, params Flame[] flames)
         {
-            for(var i = 0; i < flames.Length; i++)
+            for (var i = 0; i < flames.Length; i++)
             {
                 flames[i] = await AnimateFlame(flameConfig, flames[i]);
             }
@@ -28,7 +28,7 @@ namespace FlameReactor.FlameActions
             Directory.CreateDirectory(animationDir);
             StepEvent(new RenderStepEventArgs("Sequencing", flame.ImagePathWeb, 17));
 
-            var sequenceProcess = await Util.RunProcess(EnvironmentPaths.EmberGenomePath, new[] { "--sequence=" + flame.GenomePath, "--loops=1", "--loopframes=" + flameConfig.LoopFrames, "--noedits"}, animationFlame);
+            var sequenceProcess = await Util.RunProcess(EnvironmentPaths.EmberGenomePath, new[] { "--sequence=" + flame.GenomePath, "--loops=1", "--loopframes=" + flameConfig.LoopFrames, "--noedits" }, animationFlame);
             sequenceProcess.WaitForExit();
 
             if (sequenceProcess.ExitCode != 0) return null;
@@ -62,9 +62,9 @@ namespace FlameReactor.FlameActions
                         percentDone += (animDone);
                         StepEvent(new RenderStepEventArgs("Animating - " + Math.Floor(timeRemaining.TotalMinutes) + "m " + timeRemaining.Seconds + "s remaining", newestFile.Name, percentDone));
                     }
-                   // await Task.Delay(1000);
+                    // await Task.Delay(1000);
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     Console.WriteLine(ex);
                 }
@@ -96,6 +96,36 @@ namespace FlameReactor.FlameActions
                     "-crf", "24",
                     "-preset", "slow",
                     animationDir + "/" + flame.Name + ".mp4" })).WaitForExit();
+
+                if ((new FileInfo(animationDir + "/" + flame.Name + ".mp4").Length / (1024 * 1024)) > 38)
+                {
+                    (await Util.RunProcess(EnvironmentPaths.FFMpegPath,
+                    new[] {
+                    "-y",
+                    "-i",  animationDir + "/" + flame.Name + ".mp4",
+                    "-c:v", "libx264",
+                    "-b:v", "8192k",
+                    "-pass", "1",
+                    "-an",
+                    "-f",
+                    "null",
+                    "NUL"
+                    })).WaitForExit();
+
+                    (await Util.RunProcess(EnvironmentPaths.FFMpegPath,
+                    new[] {
+                    "-y",
+                    "-i",  animationDir + "/" + flame.Name + ".mp4",
+                    "-c:v", "libx264",
+                    "-b:v", "8192k",
+                    "-pass", "2",
+                    "-c:a", "aac",
+                    "-b:a", "128k",
+                    animationDir + "/" + flame.Name + "_sm.mp4"
+                    })).WaitForExit();
+                    File.Delete(animationDir + "/" + flame.Name + ".mp4");
+                    File.Move(animationDir + "/" + flame.Name + "_sm.mp4", animationDir + "/" + flame.Name + ".mp4", true);
+                }
             }
 
             foreach (var f in Directory.GetFiles(animationDir).Where(x => x.EndsWith(".png")))

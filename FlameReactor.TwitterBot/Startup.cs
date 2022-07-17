@@ -32,6 +32,7 @@ namespace FlameReactor.TwitterBot
 
             services.AddSingleton(Configuration);
             services.AddTransient<TwitterService>();
+            services.AddTransient<MastodonService>();
 
             // build the pipeline
             provider = services.BuildServiceProvider();

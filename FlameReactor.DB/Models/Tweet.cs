@@ -12,5 +12,6 @@ namespace FlameReactor.DB.Models
         public int Faves { get; set; }
         public int Retweets { get; set; }
         public Flame Owner { get; set; }
+        public string Source { get; set; }
     }
 }

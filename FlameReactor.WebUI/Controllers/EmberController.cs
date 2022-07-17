@@ -8,13 +8,6 @@ using Microsoft.Extensions.Configuration;
 
 namespace FlameReactor.WebUI.Controllers
 {
-    public class EmberParams
-    {
-        public int GenomeTries { get; set; }
-        public int LoopFrames { get; set; }
-        public int Quality { get; set; }
-    }
-
     [Route("api/[controller]")]
     [ApiController]
     public class EmberController : ControllerBase
